@@ -1,0 +1,2562 @@
+0C00                          .ORG   0x0C00   
+0C00                LOOP1:       
+0C00                          ;*Macro unroll: 	tree 32, 16
+0C00                          ;*Macro unroll: 	v_poke	32-1,	16,	c_forest
+0C00   11 1F 04               LD   DE,64 * (16) + (32-1)   
+0C03   3A FC 17               LD   A,(c_forest)   
+0C06   12                     LD   (DE),A   
+0C07                          ;*Macro unroll: 	v_poke	32,	16,	c_forest
+0C07   11 20 04               LD   DE,64 * (16) + (32)   
+0C0A   3A FC 17               LD   A,(c_forest)   
+0C0D   12                     LD   (DE),A   
+0C0E                          ;*Macro unroll: 	v_poke	32-1,	16+1,	c_forest
+0C0E   11 5F 04               LD   DE,64 * (16+1) + (32-1)   
+0C11   3A FC 17               LD   A,(c_forest)   
+0C14   12                     LD   (DE),A   
+0C15                          ;*Macro unroll: 	v_poke	32,	16+1,	c_forest
+0C15   11 60 04               LD   DE,64 * (16+1) + (32)   
+0C18   3A FC 17               LD   A,(c_forest)   
+0C1B   12                     LD   (DE),A   
+0C1C                          ;*Macro unroll: 	v_poke	32-2,	16+2,	c_forest
+0C1C   11 9E 04               LD   DE,64 * (16+2) + (32-2)   
+0C1F   3A FC 17               LD   A,(c_forest)   
+0C22   12                     LD   (DE),A   
+0C23                          ;*Macro unroll: 	v_poke	32-1,	16+2,	c_forest
+0C23   11 9F 04               LD   DE,64 * (16+2) + (32-1)   
+0C26   3A FC 17               LD   A,(c_forest)   
+0C29   12                     LD   (DE),A   
+0C2A                          ;*Macro unroll: 	v_poke	32,	16+2,	c_forest
+0C2A   11 A0 04               LD   DE,64 * (16+2) + (32)   
+0C2D   3A FC 17               LD   A,(c_forest)   
+0C30   12                     LD   (DE),A   
+0C31                          ;*Macro unroll: 	v_poke	32+1,	16+2,	c_forest
+0C31   11 A1 04               LD   DE,64 * (16+2) + (32+1)   
+0C34   3A FC 17               LD   A,(c_forest)   
+0C37   12                     LD   (DE),A   
+0C38                          ;*Macro unroll: 	v_poke	32-2,	16+3,	c_forest
+0C38   11 DE 04               LD   DE,64 * (16+3) + (32-2)   
+0C3B   3A FC 17               LD   A,(c_forest)   
+0C3E   12                     LD   (DE),A   
+0C3F                          ;*Macro unroll: 	v_poke	32-1,	16+3,	c_forest
+0C3F   11 DF 04               LD   DE,64 * (16+3) + (32-1)   
+0C42   3A FC 17               LD   A,(c_forest)   
+0C45   12                     LD   (DE),A   
+0C46                          ;*Macro unroll: 	v_poke	32,	16+3,	c_forest
+0C46   11 E0 04               LD   DE,64 * (16+3) + (32)   
+0C49   3A FC 17               LD   A,(c_forest)   
+0C4C   12                     LD   (DE),A   
+0C4D                          ;*Macro unroll: 	v_poke	32+1,	16+3,	c_forest
+0C4D   11 E1 04               LD   DE,64 * (16+3) + (32+1)   
+0C50   3A FC 17               LD   A,(c_forest)   
+0C53   12                     LD   (DE),A   
+0C54                          ;*Macro unroll: 	happy_holidays	3,	4,	c_black
+0C54                          ;*Macro unroll: 	letter_h	3,	4,	c_black
+0C54                          ;*Macro unroll: 	v_poke	3,	4,	c_black
+0C54   11 03 01               LD   DE,64 * (4) + (3)   
+0C57   3A 00 18               LD   A,(c_black)   
+0C5A   12                     LD   (DE),A   
+0C5B                          ;*Macro unroll: 	v_poke	3,	4+1,	c_black
+0C5B   11 43 01               LD   DE,64 * (4+1) + (3)   
+0C5E   3A 00 18               LD   A,(c_black)   
+0C61   12                     LD   (DE),A   
+0C62                          ;*Macro unroll: 	v_poke	3,	4+2,	c_black
+0C62   11 83 01               LD   DE,64 * (4+2) + (3)   
+0C65   3A 00 18               LD   A,(c_black)   
+0C68   12                     LD   (DE),A   
+0C69                          ;*Macro unroll: 	v_poke	3,	4+3,	c_black
+0C69   11 C3 01               LD   DE,64 * (4+3) + (3)   
+0C6C   3A 00 18               LD   A,(c_black)   
+0C6F   12                     LD   (DE),A   
+0C70                          ;*Macro unroll: 	v_poke	3,	4+4,	c_black
+0C70   11 03 02               LD   DE,64 * (4+4) + (3)   
+0C73   3A 00 18               LD   A,(c_black)   
+0C76   12                     LD   (DE),A   
+0C77                          ;*Macro unroll: 	v_poke	3+1,	4+2,	c_black
+0C77   11 84 01               LD   DE,64 * (4+2) + (3+1)   
+0C7A   3A 00 18               LD   A,(c_black)   
+0C7D   12                     LD   (DE),A   
+0C7E                          ;*Macro unroll: 	v_poke	3+2,	4,	c_black
+0C7E   11 05 01               LD   DE,64 * (4) + (3+2)   
+0C81   3A 00 18               LD   A,(c_black)   
+0C84   12                     LD   (DE),A   
+0C85                          ;*Macro unroll: 	v_poke	3+2,	4+1,	c_black
+0C85   11 45 01               LD   DE,64 * (4+1) + (3+2)   
+0C88   3A 00 18               LD   A,(c_black)   
+0C8B   12                     LD   (DE),A   
+0C8C                          ;*Macro unroll: 	v_poke	3+2,	4+2,	c_black
+0C8C   11 85 01               LD   DE,64 * (4+2) + (3+2)   
+0C8F   3A 00 18               LD   A,(c_black)   
+0C92   12                     LD   (DE),A   
+0C93                          ;*Macro unroll: 	v_poke	3+2,	4+3,	c_black
+0C93   11 C5 01               LD   DE,64 * (4+3) + (3+2)   
+0C96   3A 00 18               LD   A,(c_black)   
+0C99   12                     LD   (DE),A   
+0C9A                          ;*Macro unroll: 	v_poke	3+2,	4+4,	c_black
+0C9A   11 05 02               LD   DE,64 * (4+4) + (3+2)   
+0C9D   3A 00 18               LD   A,(c_black)   
+0CA0   12                     LD   (DE),A   
+0CA1                          ;*Macro unroll: 	letter_a	3+4,	4,	c_black
+0CA1                          ;*Macro unroll: 	v_poke	3+4,	4,	c_black
+0CA1   11 07 01               LD   DE,64 * (4) + (3+4)   
+0CA4   3A 00 18               LD   A,(c_black)   
+0CA7   12                     LD   (DE),A   
+0CA8                          ;*Macro unroll: 	v_poke	3+4,	4+1,	c_black
+0CA8   11 47 01               LD   DE,64 * (4+1) + (3+4)   
+0CAB   3A 00 18               LD   A,(c_black)   
+0CAE   12                     LD   (DE),A   
+0CAF                          ;*Macro unroll: 	v_poke	3+4,	4+2,	c_black
+0CAF   11 87 01               LD   DE,64 * (4+2) + (3+4)   
+0CB2   3A 00 18               LD   A,(c_black)   
+0CB5   12                     LD   (DE),A   
+0CB6                          ;*Macro unroll: 	v_poke	3+4,	4+3,	c_black
+0CB6   11 C7 01               LD   DE,64 * (4+3) + (3+4)   
+0CB9   3A 00 18               LD   A,(c_black)   
+0CBC   12                     LD   (DE),A   
+0CBD                          ;*Macro unroll: 	v_poke	3+4,	4+4,	c_black
+0CBD   11 07 02               LD   DE,64 * (4+4) + (3+4)   
+0CC0   3A 00 18               LD   A,(c_black)   
+0CC3   12                     LD   (DE),A   
+0CC4                          ;*Macro unroll: 	v_poke	3+4+1,	4,	c_black
+0CC4   11 08 01               LD   DE,64 * (4) + (3+4+1)   
+0CC7   3A 00 18               LD   A,(c_black)   
+0CCA   12                     LD   (DE),A   
+0CCB                          ;*Macro unroll: 	v_poke	3+4+1,	4+2,	c_black
+0CCB   11 88 01               LD   DE,64 * (4+2) + (3+4+1)   
+0CCE   3A 00 18               LD   A,(c_black)   
+0CD1   12                     LD   (DE),A   
+0CD2                          ;*Macro unroll: 	v_poke	3+4+2,	4,	c_black
+0CD2   11 09 01               LD   DE,64 * (4) + (3+4+2)   
+0CD5   3A 00 18               LD   A,(c_black)   
+0CD8   12                     LD   (DE),A   
+0CD9                          ;*Macro unroll: 	v_poke	3+4+2,	4+1,	c_black
+0CD9   11 49 01               LD   DE,64 * (4+1) + (3+4+2)   
+0CDC   3A 00 18               LD   A,(c_black)   
+0CDF   12                     LD   (DE),A   
+0CE0                          ;*Macro unroll: 	v_poke	3+4+2,	4+2,	c_black
+0CE0   11 89 01               LD   DE,64 * (4+2) + (3+4+2)   
+0CE3   3A 00 18               LD   A,(c_black)   
+0CE6   12                     LD   (DE),A   
+0CE7                          ;*Macro unroll: 	v_poke	3+4+2,	4+3,	c_black
+0CE7   11 C9 01               LD   DE,64 * (4+3) + (3+4+2)   
+0CEA   3A 00 18               LD   A,(c_black)   
+0CED   12                     LD   (DE),A   
+0CEE                          ;*Macro unroll: 	v_poke	3+4+2,	4+4,	c_black
+0CEE   11 09 02               LD   DE,64 * (4+4) + (3+4+2)   
+0CF1   3A 00 18               LD   A,(c_black)   
+0CF4   12                     LD   (DE),A   
+0CF5                          ;*Macro unroll: 	letter_p	3+8,	4,	c_black
+0CF5                          ;*Macro unroll: 	v_poke	3+8,	4,	c_black
+0CF5   11 0B 01               LD   DE,64 * (4) + (3+8)   
+0CF8   3A 00 18               LD   A,(c_black)   
+0CFB   12                     LD   (DE),A   
+0CFC                          ;*Macro unroll: 	v_poke	3+8,	4+1,	c_black
+0CFC   11 4B 01               LD   DE,64 * (4+1) + (3+8)   
+0CFF   3A 00 18               LD   A,(c_black)   
+0D02   12                     LD   (DE),A   
+0D03                          ;*Macro unroll: 	v_poke	3+8,	4+2,	c_black
+0D03   11 8B 01               LD   DE,64 * (4+2) + (3+8)   
+0D06   3A 00 18               LD   A,(c_black)   
+0D09   12                     LD   (DE),A   
+0D0A                          ;*Macro unroll: 	v_poke	3+8,	4+3,	c_black
+0D0A   11 CB 01               LD   DE,64 * (4+3) + (3+8)   
+0D0D   3A 00 18               LD   A,(c_black)   
+0D10   12                     LD   (DE),A   
+0D11                          ;*Macro unroll: 	v_poke	3+8,	4+4,	c_black
+0D11   11 0B 02               LD   DE,64 * (4+4) + (3+8)   
+0D14   3A 00 18               LD   A,(c_black)   
+0D17   12                     LD   (DE),A   
+0D18                          ;*Macro unroll: 	v_poke	3+8+1,	4,	c_black
+0D18   11 0C 01               LD   DE,64 * (4) + (3+8+1)   
+0D1B   3A 00 18               LD   A,(c_black)   
+0D1E   12                     LD   (DE),A   
+0D1F                          ;*Macro unroll: 	v_poke	3+8+1,	4+2,	c_black
+0D1F   11 8C 01               LD   DE,64 * (4+2) + (3+8+1)   
+0D22   3A 00 18               LD   A,(c_black)   
+0D25   12                     LD   (DE),A   
+0D26                          ;*Macro unroll: 	v_poke	3+8+2,	4,	c_black
+0D26   11 0D 01               LD   DE,64 * (4) + (3+8+2)   
+0D29   3A 00 18               LD   A,(c_black)   
+0D2C   12                     LD   (DE),A   
+0D2D                          ;*Macro unroll: 	v_poke	3+8+2,	4+1,	c_black
+0D2D   11 4D 01               LD   DE,64 * (4+1) + (3+8+2)   
+0D30   3A 00 18               LD   A,(c_black)   
+0D33   12                     LD   (DE),A   
+0D34                          ;*Macro unroll: 	v_poke	3+8+2,	4+2,	c_black
+0D34   11 8D 01               LD   DE,64 * (4+2) + (3+8+2)   
+0D37   3A 00 18               LD   A,(c_black)   
+0D3A   12                     LD   (DE),A   
+0D3B                          ;*Macro unroll: 	letter_p	3+12,	4,	c_black
+0D3B                          ;*Macro unroll: 	v_poke	3+12,	4,	c_black
+0D3B   11 0F 01               LD   DE,64 * (4) + (3+12)   
+0D3E   3A 00 18               LD   A,(c_black)   
+0D41   12                     LD   (DE),A   
+0D42                          ;*Macro unroll: 	v_poke	3+12,	4+1,	c_black
+0D42   11 4F 01               LD   DE,64 * (4+1) + (3+12)   
+0D45   3A 00 18               LD   A,(c_black)   
+0D48   12                     LD   (DE),A   
+0D49                          ;*Macro unroll: 	v_poke	3+12,	4+2,	c_black
+0D49   11 8F 01               LD   DE,64 * (4+2) + (3+12)   
+0D4C   3A 00 18               LD   A,(c_black)   
+0D4F   12                     LD   (DE),A   
+0D50                          ;*Macro unroll: 	v_poke	3+12,	4+3,	c_black
+0D50   11 CF 01               LD   DE,64 * (4+3) + (3+12)   
+0D53   3A 00 18               LD   A,(c_black)   
+0D56   12                     LD   (DE),A   
+0D57                          ;*Macro unroll: 	v_poke	3+12,	4+4,	c_black
+0D57   11 0F 02               LD   DE,64 * (4+4) + (3+12)   
+0D5A   3A 00 18               LD   A,(c_black)   
+0D5D   12                     LD   (DE),A   
+0D5E                          ;*Macro unroll: 	v_poke	3+12+1,	4,	c_black
+0D5E   11 10 01               LD   DE,64 * (4) + (3+12+1)   
+0D61   3A 00 18               LD   A,(c_black)   
+0D64   12                     LD   (DE),A   
+0D65                          ;*Macro unroll: 	v_poke	3+12+1,	4+2,	c_black
+0D65   11 90 01               LD   DE,64 * (4+2) + (3+12+1)   
+0D68   3A 00 18               LD   A,(c_black)   
+0D6B   12                     LD   (DE),A   
+0D6C                          ;*Macro unroll: 	v_poke	3+12+2,	4,	c_black
+0D6C   11 11 01               LD   DE,64 * (4) + (3+12+2)   
+0D6F   3A 00 18               LD   A,(c_black)   
+0D72   12                     LD   (DE),A   
+0D73                          ;*Macro unroll: 	v_poke	3+12+2,	4+1,	c_black
+0D73   11 51 01               LD   DE,64 * (4+1) + (3+12+2)   
+0D76   3A 00 18               LD   A,(c_black)   
+0D79   12                     LD   (DE),A   
+0D7A                          ;*Macro unroll: 	v_poke	3+12+2,	4+2,	c_black
+0D7A   11 91 01               LD   DE,64 * (4+2) + (3+12+2)   
+0D7D   3A 00 18               LD   A,(c_black)   
+0D80   12                     LD   (DE),A   
+0D81                          ;*Macro unroll: 	letter_y	3+16,	4,	c_black
+0D81                          ;*Macro unroll: 	v_poke	3+16,	4,	c_black
+0D81   11 13 01               LD   DE,64 * (4) + (3+16)   
+0D84   3A 00 18               LD   A,(c_black)   
+0D87   12                     LD   (DE),A   
+0D88                          ;*Macro unroll: 	v_poke	3+16,	4+1,	c_black
+0D88   11 53 01               LD   DE,64 * (4+1) + (3+16)   
+0D8B   3A 00 18               LD   A,(c_black)   
+0D8E   12                     LD   (DE),A   
+0D8F                          ;*Macro unroll: 	v_poke	3+16,	4+2,	c_black
+0D8F   11 93 01               LD   DE,64 * (4+2) + (3+16)   
+0D92   3A 00 18               LD   A,(c_black)   
+0D95   12                     LD   (DE),A   
+0D96                          ;*Macro unroll: 	v_poke	3+16+1,	4+2,	c_black
+0D96   11 94 01               LD   DE,64 * (4+2) + (3+16+1)   
+0D99   3A 00 18               LD   A,(c_black)   
+0D9C   12                     LD   (DE),A   
+0D9D                          ;*Macro unroll: 	v_poke	3+16+1,	4+3,	c_black
+0D9D   11 D4 01               LD   DE,64 * (4+3) + (3+16+1)   
+0DA0   3A 00 18               LD   A,(c_black)   
+0DA3   12                     LD   (DE),A   
+0DA4                          ;*Macro unroll: 	v_poke	3+16+1,	4+4,	c_black
+0DA4   11 14 02               LD   DE,64 * (4+4) + (3+16+1)   
+0DA7   3A 00 18               LD   A,(c_black)   
+0DAA   12                     LD   (DE),A   
+0DAB                          ;*Macro unroll: 	v_poke	3+16+2,	4,	c_black
+0DAB   11 15 01               LD   DE,64 * (4) + (3+16+2)   
+0DAE   3A 00 18               LD   A,(c_black)   
+0DB1   12                     LD   (DE),A   
+0DB2                          ;*Macro unroll: 	v_poke	3+16+2,	4+1,	c_black
+0DB2   11 55 01               LD   DE,64 * (4+1) + (3+16+2)   
+0DB5   3A 00 18               LD   A,(c_black)   
+0DB8   12                     LD   (DE),A   
+0DB9                          ;*Macro unroll: 	v_poke	3+16+2,	4+2,	c_black
+0DB9   11 95 01               LD   DE,64 * (4+2) + (3+16+2)   
+0DBC   3A 00 18               LD   A,(c_black)   
+0DBF   12                     LD   (DE),A   
+0DC0                          ;*Macro unroll: 	letter_h	3+24,	4,	c_black
+0DC0                          ;*Macro unroll: 	v_poke	3+24,	4,	c_black
+0DC0   11 1B 01               LD   DE,64 * (4) + (3+24)   
+0DC3   3A 00 18               LD   A,(c_black)   
+0DC6   12                     LD   (DE),A   
+0DC7                          ;*Macro unroll: 	v_poke	3+24,	4+1,	c_black
+0DC7   11 5B 01               LD   DE,64 * (4+1) + (3+24)   
+0DCA   3A 00 18               LD   A,(c_black)   
+0DCD   12                     LD   (DE),A   
+0DCE                          ;*Macro unroll: 	v_poke	3+24,	4+2,	c_black
+0DCE   11 9B 01               LD   DE,64 * (4+2) + (3+24)   
+0DD1   3A 00 18               LD   A,(c_black)   
+0DD4   12                     LD   (DE),A   
+0DD5                          ;*Macro unroll: 	v_poke	3+24,	4+3,	c_black
+0DD5   11 DB 01               LD   DE,64 * (4+3) + (3+24)   
+0DD8   3A 00 18               LD   A,(c_black)   
+0DDB   12                     LD   (DE),A   
+0DDC                          ;*Macro unroll: 	v_poke	3+24,	4+4,	c_black
+0DDC   11 1B 02               LD   DE,64 * (4+4) + (3+24)   
+0DDF   3A 00 18               LD   A,(c_black)   
+0DE2   12                     LD   (DE),A   
+0DE3                          ;*Macro unroll: 	v_poke	3+24+1,	4+2,	c_black
+0DE3   11 9C 01               LD   DE,64 * (4+2) + (3+24+1)   
+0DE6   3A 00 18               LD   A,(c_black)   
+0DE9   12                     LD   (DE),A   
+0DEA                          ;*Macro unroll: 	v_poke	3+24+2,	4,	c_black
+0DEA   11 1D 01               LD   DE,64 * (4) + (3+24+2)   
+0DED   3A 00 18               LD   A,(c_black)   
+0DF0   12                     LD   (DE),A   
+0DF1                          ;*Macro unroll: 	v_poke	3+24+2,	4+1,	c_black
+0DF1   11 5D 01               LD   DE,64 * (4+1) + (3+24+2)   
+0DF4   3A 00 18               LD   A,(c_black)   
+0DF7   12                     LD   (DE),A   
+0DF8                          ;*Macro unroll: 	v_poke	3+24+2,	4+2,	c_black
+0DF8   11 9D 01               LD   DE,64 * (4+2) + (3+24+2)   
+0DFB   3A 00 18               LD   A,(c_black)   
+0DFE   12                     LD   (DE),A   
+0DFF                          ;*Macro unroll: 	v_poke	3+24+2,	4+3,	c_black
+0DFF   11 DD 01               LD   DE,64 * (4+3) + (3+24+2)   
+0E02   3A 00 18               LD   A,(c_black)   
+0E05   12                     LD   (DE),A   
+0E06                          ;*Macro unroll: 	v_poke	3+24+2,	4+4,	c_black
+0E06   11 1D 02               LD   DE,64 * (4+4) + (3+24+2)   
+0E09   3A 00 18               LD   A,(c_black)   
+0E0C   12                     LD   (DE),A   
+0E0D                          ;*Macro unroll: 	letter_o	3+28,	4,	c_black
+0E0D                          ;*Macro unroll: 	v_poke	3+28,	4,	c_black
+0E0D   11 1F 01               LD   DE,64 * (4) + (3+28)   
+0E10   3A 00 18               LD   A,(c_black)   
+0E13   12                     LD   (DE),A   
+0E14                          ;*Macro unroll: 	v_poke	3+28,	4+1,	c_black
+0E14   11 5F 01               LD   DE,64 * (4+1) + (3+28)   
+0E17   3A 00 18               LD   A,(c_black)   
+0E1A   12                     LD   (DE),A   
+0E1B                          ;*Macro unroll: 	v_poke	3+28,	4+2,	c_black
+0E1B   11 9F 01               LD   DE,64 * (4+2) + (3+28)   
+0E1E   3A 00 18               LD   A,(c_black)   
+0E21   12                     LD   (DE),A   
+0E22                          ;*Macro unroll: 	v_poke	3+28,	4+3,	c_black
+0E22   11 DF 01               LD   DE,64 * (4+3) + (3+28)   
+0E25   3A 00 18               LD   A,(c_black)   
+0E28   12                     LD   (DE),A   
+0E29                          ;*Macro unroll: 	v_poke	3+28,	4+4,	c_black
+0E29   11 1F 02               LD   DE,64 * (4+4) + (3+28)   
+0E2C   3A 00 18               LD   A,(c_black)   
+0E2F   12                     LD   (DE),A   
+0E30                          ;*Macro unroll: 	v_poke	3+28+1,	4,	c_black
+0E30   11 20 01               LD   DE,64 * (4) + (3+28+1)   
+0E33   3A 00 18               LD   A,(c_black)   
+0E36   12                     LD   (DE),A   
+0E37                          ;*Macro unroll: 	v_poke	3+28+1,	4+4,	c_black
+0E37   11 20 02               LD   DE,64 * (4+4) + (3+28+1)   
+0E3A   3A 00 18               LD   A,(c_black)   
+0E3D   12                     LD   (DE),A   
+0E3E                          ;*Macro unroll: 	v_poke	3+28+2,	4,	c_black
+0E3E   11 21 01               LD   DE,64 * (4) + (3+28+2)   
+0E41   3A 00 18               LD   A,(c_black)   
+0E44   12                     LD   (DE),A   
+0E45                          ;*Macro unroll: 	v_poke	3+28+2,	4+1,	c_black
+0E45   11 61 01               LD   DE,64 * (4+1) + (3+28+2)   
+0E48   3A 00 18               LD   A,(c_black)   
+0E4B   12                     LD   (DE),A   
+0E4C                          ;*Macro unroll: 	v_poke	3+28+2,	4+2,	c_black
+0E4C   11 A1 01               LD   DE,64 * (4+2) + (3+28+2)   
+0E4F   3A 00 18               LD   A,(c_black)   
+0E52   12                     LD   (DE),A   
+0E53                          ;*Macro unroll: 	v_poke	3+28+2,	4+3,	c_black
+0E53   11 E1 01               LD   DE,64 * (4+3) + (3+28+2)   
+0E56   3A 00 18               LD   A,(c_black)   
+0E59   12                     LD   (DE),A   
+0E5A                          ;*Macro unroll: 	v_poke	3+28+2,	4+4,	c_black
+0E5A   11 21 02               LD   DE,64 * (4+4) + (3+28+2)   
+0E5D   3A 00 18               LD   A,(c_black)   
+0E60   12                     LD   (DE),A   
+0E61                          ;*Macro unroll: 	letter_l	3+32,	4,	c_black
+0E61                          ;*Macro unroll: 	v_poke	3+32,	4,	c_black
+0E61   11 23 01               LD   DE,64 * (4) + (3+32)   
+0E64   3A 00 18               LD   A,(c_black)   
+0E67   12                     LD   (DE),A   
+0E68                          ;*Macro unroll: 	v_poke	3+32,	4+1,	c_black
+0E68   11 63 01               LD   DE,64 * (4+1) + (3+32)   
+0E6B   3A 00 18               LD   A,(c_black)   
+0E6E   12                     LD   (DE),A   
+0E6F                          ;*Macro unroll: 	v_poke	3+32,	4+2,	c_black
+0E6F   11 A3 01               LD   DE,64 * (4+2) + (3+32)   
+0E72   3A 00 18               LD   A,(c_black)   
+0E75   12                     LD   (DE),A   
+0E76                          ;*Macro unroll: 	v_poke	3+32,	4+3,	c_black
+0E76   11 E3 01               LD   DE,64 * (4+3) + (3+32)   
+0E79   3A 00 18               LD   A,(c_black)   
+0E7C   12                     LD   (DE),A   
+0E7D                          ;*Macro unroll: 	v_poke	3+32,	4+4,	c_black
+0E7D   11 23 02               LD   DE,64 * (4+4) + (3+32)   
+0E80   3A 00 18               LD   A,(c_black)   
+0E83   12                     LD   (DE),A   
+0E84                          ;*Macro unroll: 	v_poke	3+32+1,	4+4,	c_black
+0E84   11 24 02               LD   DE,64 * (4+4) + (3+32+1)   
+0E87   3A 00 18               LD   A,(c_black)   
+0E8A   12                     LD   (DE),A   
+0E8B                          ;*Macro unroll: 	v_poke	3+32+2,	4+4,	c_black
+0E8B   11 25 02               LD   DE,64 * (4+4) + (3+32+2)   
+0E8E   3A 00 18               LD   A,(c_black)   
+0E91   12                     LD   (DE),A   
+0E92                          ;*Macro unroll: 	letter_i	3+36,	4,	c_black
+0E92                          ;*Macro unroll: 	v_poke	3+36,	4,	c_black
+0E92   11 27 01               LD   DE,64 * (4) + (3+36)   
+0E95   3A 00 18               LD   A,(c_black)   
+0E98   12                     LD   (DE),A   
+0E99                          ;*Macro unroll: 	v_poke	3+36,	4+4,	c_black
+0E99   11 27 02               LD   DE,64 * (4+4) + (3+36)   
+0E9C   3A 00 18               LD   A,(c_black)   
+0E9F   12                     LD   (DE),A   
+0EA0                          ;*Macro unroll: 	v_poke	3+36+1,	4,	c_black
+0EA0   11 28 01               LD   DE,64 * (4) + (3+36+1)   
+0EA3   3A 00 18               LD   A,(c_black)   
+0EA6   12                     LD   (DE),A   
+0EA7                          ;*Macro unroll: 	v_poke	3+36+1,	4+1,	c_black
+0EA7   11 68 01               LD   DE,64 * (4+1) + (3+36+1)   
+0EAA   3A 00 18               LD   A,(c_black)   
+0EAD   12                     LD   (DE),A   
+0EAE                          ;*Macro unroll: 	v_poke	3+36+1,	4+2,	c_black
+0EAE   11 A8 01               LD   DE,64 * (4+2) + (3+36+1)   
+0EB1   3A 00 18               LD   A,(c_black)   
+0EB4   12                     LD   (DE),A   
+0EB5                          ;*Macro unroll: 	v_poke	3+36+1,	4+3,	c_black
+0EB5   11 E8 01               LD   DE,64 * (4+3) + (3+36+1)   
+0EB8   3A 00 18               LD   A,(c_black)   
+0EBB   12                     LD   (DE),A   
+0EBC                          ;*Macro unroll: 	v_poke	3+36+1,	4+4,	c_black
+0EBC   11 28 02               LD   DE,64 * (4+4) + (3+36+1)   
+0EBF   3A 00 18               LD   A,(c_black)   
+0EC2   12                     LD   (DE),A   
+0EC3                          ;*Macro unroll: 	v_poke	3+36+2,	4,	c_black
+0EC3   11 29 01               LD   DE,64 * (4) + (3+36+2)   
+0EC6   3A 00 18               LD   A,(c_black)   
+0EC9   12                     LD   (DE),A   
+0ECA                          ;*Macro unroll: 	v_poke	3+36+2,	4+4,	c_black
+0ECA   11 29 02               LD   DE,64 * (4+4) + (3+36+2)   
+0ECD   3A 00 18               LD   A,(c_black)   
+0ED0   12                     LD   (DE),A   
+0ED1                          ;*Macro unroll: 	letter_d	3+40,	4,	c_black
+0ED1                          ;*Macro unroll: 	v_poke	3+40,	4,	c_black
+0ED1   11 2B 01               LD   DE,64 * (4) + (3+40)   
+0ED4   3A 00 18               LD   A,(c_black)   
+0ED7   12                     LD   (DE),A   
+0ED8                          ;*Macro unroll: 	v_poke	3+40,	4+1,	c_black
+0ED8   11 6B 01               LD   DE,64 * (4+1) + (3+40)   
+0EDB   3A 00 18               LD   A,(c_black)   
+0EDE   12                     LD   (DE),A   
+0EDF                          ;*Macro unroll: 	v_poke	3+40,	4+2,	c_black
+0EDF   11 AB 01               LD   DE,64 * (4+2) + (3+40)   
+0EE2   3A 00 18               LD   A,(c_black)   
+0EE5   12                     LD   (DE),A   
+0EE6                          ;*Macro unroll: 	v_poke	3+40,	4+3,	c_black
+0EE6   11 EB 01               LD   DE,64 * (4+3) + (3+40)   
+0EE9   3A 00 18               LD   A,(c_black)   
+0EEC   12                     LD   (DE),A   
+0EED                          ;*Macro unroll: 	v_poke	3+40,	4+4,	c_black
+0EED   11 2B 02               LD   DE,64 * (4+4) + (3+40)   
+0EF0   3A 00 18               LD   A,(c_black)   
+0EF3   12                     LD   (DE),A   
+0EF4                          ;*Macro unroll: 	v_poke	3+40+1,	4,	c_black
+0EF4   11 2C 01               LD   DE,64 * (4) + (3+40+1)   
+0EF7   3A 00 18               LD   A,(c_black)   
+0EFA   12                     LD   (DE),A   
+0EFB                          ;*Macro unroll: 	v_poke	3+40+1,	4+4,	c_black
+0EFB   11 2C 02               LD   DE,64 * (4+4) + (3+40+1)   
+0EFE   3A 00 18               LD   A,(c_black)   
+0F01   12                     LD   (DE),A   
+0F02                          ;*Macro unroll: 	v_poke	3+40+2,	4+1,	c_black
+0F02   11 6D 01               LD   DE,64 * (4+1) + (3+40+2)   
+0F05   3A 00 18               LD   A,(c_black)   
+0F08   12                     LD   (DE),A   
+0F09                          ;*Macro unroll: 	v_poke	3+40+2,	4+2,	c_black
+0F09   11 AD 01               LD   DE,64 * (4+2) + (3+40+2)   
+0F0C   3A 00 18               LD   A,(c_black)   
+0F0F   12                     LD   (DE),A   
+0F10                          ;*Macro unroll: 	v_poke	3+40+2,	4+3,	c_black
+0F10   11 ED 01               LD   DE,64 * (4+3) + (3+40+2)   
+0F13   3A 00 18               LD   A,(c_black)   
+0F16   12                     LD   (DE),A   
+0F17                          ;*Macro unroll: 	v_poke	3+40+2,	4+4,	c_black
+0F17   11 2D 02               LD   DE,64 * (4+4) + (3+40+2)   
+0F1A   3A 00 18               LD   A,(c_black)   
+0F1D   12                     LD   (DE),A   
+0F1E                          ;*Macro unroll: 	letter_a	3+44,	4,	c_black
+0F1E                          ;*Macro unroll: 	v_poke	3+44,	4,	c_black
+0F1E   11 2F 01               LD   DE,64 * (4) + (3+44)   
+0F21   3A 00 18               LD   A,(c_black)   
+0F24   12                     LD   (DE),A   
+0F25                          ;*Macro unroll: 	v_poke	3+44,	4+1,	c_black
+0F25   11 6F 01               LD   DE,64 * (4+1) + (3+44)   
+0F28   3A 00 18               LD   A,(c_black)   
+0F2B   12                     LD   (DE),A   
+0F2C                          ;*Macro unroll: 	v_poke	3+44,	4+2,	c_black
+0F2C   11 AF 01               LD   DE,64 * (4+2) + (3+44)   
+0F2F   3A 00 18               LD   A,(c_black)   
+0F32   12                     LD   (DE),A   
+0F33                          ;*Macro unroll: 	v_poke	3+44,	4+3,	c_black
+0F33   11 EF 01               LD   DE,64 * (4+3) + (3+44)   
+0F36   3A 00 18               LD   A,(c_black)   
+0F39   12                     LD   (DE),A   
+0F3A                          ;*Macro unroll: 	v_poke	3+44,	4+4,	c_black
+0F3A   11 2F 02               LD   DE,64 * (4+4) + (3+44)   
+0F3D   3A 00 18               LD   A,(c_black)   
+0F40   12                     LD   (DE),A   
+0F41                          ;*Macro unroll: 	v_poke	3+44+1,	4,	c_black
+0F41   11 30 01               LD   DE,64 * (4) + (3+44+1)   
+0F44   3A 00 18               LD   A,(c_black)   
+0F47   12                     LD   (DE),A   
+0F48                          ;*Macro unroll: 	v_poke	3+44+1,	4+2,	c_black
+0F48   11 B0 01               LD   DE,64 * (4+2) + (3+44+1)   
+0F4B   3A 00 18               LD   A,(c_black)   
+0F4E   12                     LD   (DE),A   
+0F4F                          ;*Macro unroll: 	v_poke	3+44+2,	4,	c_black
+0F4F   11 31 01               LD   DE,64 * (4) + (3+44+2)   
+0F52   3A 00 18               LD   A,(c_black)   
+0F55   12                     LD   (DE),A   
+0F56                          ;*Macro unroll: 	v_poke	3+44+2,	4+1,	c_black
+0F56   11 71 01               LD   DE,64 * (4+1) + (3+44+2)   
+0F59   3A 00 18               LD   A,(c_black)   
+0F5C   12                     LD   (DE),A   
+0F5D                          ;*Macro unroll: 	v_poke	3+44+2,	4+2,	c_black
+0F5D   11 B1 01               LD   DE,64 * (4+2) + (3+44+2)   
+0F60   3A 00 18               LD   A,(c_black)   
+0F63   12                     LD   (DE),A   
+0F64                          ;*Macro unroll: 	v_poke	3+44+2,	4+3,	c_black
+0F64   11 F1 01               LD   DE,64 * (4+3) + (3+44+2)   
+0F67   3A 00 18               LD   A,(c_black)   
+0F6A   12                     LD   (DE),A   
+0F6B                          ;*Macro unroll: 	v_poke	3+44+2,	4+4,	c_black
+0F6B   11 31 02               LD   DE,64 * (4+4) + (3+44+2)   
+0F6E   3A 00 18               LD   A,(c_black)   
+0F71   12                     LD   (DE),A   
+0F72                          ;*Macro unroll: 	letter_y	3+48,	4,	c_black
+0F72                          ;*Macro unroll: 	v_poke	3+48,	4,	c_black
+0F72   11 33 01               LD   DE,64 * (4) + (3+48)   
+0F75   3A 00 18               LD   A,(c_black)   
+0F78   12                     LD   (DE),A   
+0F79                          ;*Macro unroll: 	v_poke	3+48,	4+1,	c_black
+0F79   11 73 01               LD   DE,64 * (4+1) + (3+48)   
+0F7C   3A 00 18               LD   A,(c_black)   
+0F7F   12                     LD   (DE),A   
+0F80                          ;*Macro unroll: 	v_poke	3+48,	4+2,	c_black
+0F80   11 B3 01               LD   DE,64 * (4+2) + (3+48)   
+0F83   3A 00 18               LD   A,(c_black)   
+0F86   12                     LD   (DE),A   
+0F87                          ;*Macro unroll: 	v_poke	3+48+1,	4+2,	c_black
+0F87   11 B4 01               LD   DE,64 * (4+2) + (3+48+1)   
+0F8A   3A 00 18               LD   A,(c_black)   
+0F8D   12                     LD   (DE),A   
+0F8E                          ;*Macro unroll: 	v_poke	3+48+1,	4+3,	c_black
+0F8E   11 F4 01               LD   DE,64 * (4+3) + (3+48+1)   
+0F91   3A 00 18               LD   A,(c_black)   
+0F94   12                     LD   (DE),A   
+0F95                          ;*Macro unroll: 	v_poke	3+48+1,	4+4,	c_black
+0F95   11 34 02               LD   DE,64 * (4+4) + (3+48+1)   
+0F98   3A 00 18               LD   A,(c_black)   
+0F9B   12                     LD   (DE),A   
+0F9C                          ;*Macro unroll: 	v_poke	3+48+2,	4,	c_black
+0F9C   11 35 01               LD   DE,64 * (4) + (3+48+2)   
+0F9F   3A 00 18               LD   A,(c_black)   
+0FA2   12                     LD   (DE),A   
+0FA3                          ;*Macro unroll: 	v_poke	3+48+2,	4+1,	c_black
+0FA3   11 75 01               LD   DE,64 * (4+1) + (3+48+2)   
+0FA6   3A 00 18               LD   A,(c_black)   
+0FA9   12                     LD   (DE),A   
+0FAA                          ;*Macro unroll: 	v_poke	3+48+2,	4+2,	c_black
+0FAA   11 B5 01               LD   DE,64 * (4+2) + (3+48+2)   
+0FAD   3A 00 18               LD   A,(c_black)   
+0FB0   12                     LD   (DE),A   
+0FB1                          ;*Macro unroll: 	letter_s	3+52,	4,	c_black
+0FB1                          ;*Macro unroll: 	v_poke	3+52,	4,	c_black
+0FB1   11 37 01               LD   DE,64 * (4) + (3+52)   
+0FB4   3A 00 18               LD   A,(c_black)   
+0FB7   12                     LD   (DE),A   
+0FB8                          ;*Macro unroll: 	v_poke	3+52,	4+1,	c_black
+0FB8   11 77 01               LD   DE,64 * (4+1) + (3+52)   
+0FBB   3A 00 18               LD   A,(c_black)   
+0FBE   12                     LD   (DE),A   
+0FBF                          ;*Macro unroll: 	v_poke	3+52,	4+2,	c_black
+0FBF   11 B7 01               LD   DE,64 * (4+2) + (3+52)   
+0FC2   3A 00 18               LD   A,(c_black)   
+0FC5   12                     LD   (DE),A   
+0FC6                          ;*Macro unroll: 	v_poke	3+52,	4+4,	c_black
+0FC6   11 37 02               LD   DE,64 * (4+4) + (3+52)   
+0FC9   3A 00 18               LD   A,(c_black)   
+0FCC   12                     LD   (DE),A   
+0FCD                          ;*Macro unroll: 	v_poke	3+52+1,	4,	c_black
+0FCD   11 38 01               LD   DE,64 * (4) + (3+52+1)   
+0FD0   3A 00 18               LD   A,(c_black)   
+0FD3   12                     LD   (DE),A   
+0FD4                          ;*Macro unroll: 	v_poke	3+52+1,	4+2,	c_black
+0FD4   11 B8 01               LD   DE,64 * (4+2) + (3+52+1)   
+0FD7   3A 00 18               LD   A,(c_black)   
+0FDA   12                     LD   (DE),A   
+0FDB                          ;*Macro unroll: 	v_poke	3+52+1,	4+4,	c_black
+0FDB   11 38 02               LD   DE,64 * (4+4) + (3+52+1)   
+0FDE   3A 00 18               LD   A,(c_black)   
+0FE1   12                     LD   (DE),A   
+0FE2                          ;*Macro unroll: 	v_poke	3+52+2,	4,	c_black
+0FE2   11 39 01               LD   DE,64 * (4) + (3+52+2)   
+0FE5   3A 00 18               LD   A,(c_black)   
+0FE8   12                     LD   (DE),A   
+0FE9                          ;*Macro unroll: 	v_poke	3+52+2,	4+2,	c_black
+0FE9   11 B9 01               LD   DE,64 * (4+2) + (3+52+2)   
+0FEC   3A 00 18               LD   A,(c_black)   
+0FEF   12                     LD   (DE),A   
+0FF0                          ;*Macro unroll: 	v_poke	3+52+2,	4+3,	c_black
+0FF0   11 F9 01               LD   DE,64 * (4+3) + (3+52+2)   
+0FF3   3A 00 18               LD   A,(c_black)   
+0FF6   12                     LD   (DE),A   
+0FF7                          ;*Macro unroll: 	v_poke	3+52+2,	4+4,	c_black
+0FF7   11 39 02               LD   DE,64 * (4+4) + (3+52+2)   
+0FFA   3A 00 18               LD   A,(c_black)   
+0FFD   12                     LD   (DE),A   
+0FFE                          ;*Macro unroll: 	letter_exc	3+56,	4,	c_black
+0FFE                          ;*Macro unroll: 	v_poke	3+56,	4,	c_black
+0FFE   11 3B 01               LD   DE,64 * (4) + (3+56)   
+1001   3A 00 18               LD   A,(c_black)   
+1004   12                     LD   (DE),A   
+1005                          ;*Macro unroll: 	v_poke	3+56,	4+1,	c_black
+1005   11 7B 01               LD   DE,64 * (4+1) + (3+56)   
+1008   3A 00 18               LD   A,(c_black)   
+100B   12                     LD   (DE),A   
+100C                          ;*Macro unroll: 	v_poke	3+56,	4+2,	c_black
+100C   11 BB 01               LD   DE,64 * (4+2) + (3+56)   
+100F   3A 00 18               LD   A,(c_black)   
+1012   12                     LD   (DE),A   
+1013                          ;*Macro unroll: 	v_poke	3+56,	4+4,	c_black
+1013   11 3B 02               LD   DE,64 * (4+4) + (3+56)   
+1016   3A 00 18               LD   A,(c_black)   
+1019   12                     LD   (DE),A   
+101A                          ;*Macro unroll: 	happy_holidays	4,	3,	c_red
+101A                          ;*Macro unroll: 	letter_h	4,	3,	c_red
+101A                          ;*Macro unroll: 	v_poke	4,	3,	c_red
+101A   11 C4 00               LD   DE,64 * (3) + (4)   
+101D   3A F9 17               LD   A,(c_red)   
+1020   12                     LD   (DE),A   
+1021                          ;*Macro unroll: 	v_poke	4,	3+1,	c_red
+1021   11 04 01               LD   DE,64 * (3+1) + (4)   
+1024   3A F9 17               LD   A,(c_red)   
+1027   12                     LD   (DE),A   
+1028                          ;*Macro unroll: 	v_poke	4,	3+2,	c_red
+1028   11 44 01               LD   DE,64 * (3+2) + (4)   
+102B   3A F9 17               LD   A,(c_red)   
+102E   12                     LD   (DE),A   
+102F                          ;*Macro unroll: 	v_poke	4,	3+3,	c_red
+102F   11 84 01               LD   DE,64 * (3+3) + (4)   
+1032   3A F9 17               LD   A,(c_red)   
+1035   12                     LD   (DE),A   
+1036                          ;*Macro unroll: 	v_poke	4,	3+4,	c_red
+1036   11 C4 01               LD   DE,64 * (3+4) + (4)   
+1039   3A F9 17               LD   A,(c_red)   
+103C   12                     LD   (DE),A   
+103D                          ;*Macro unroll: 	v_poke	4+1,	3+2,	c_red
+103D   11 45 01               LD   DE,64 * (3+2) + (4+1)   
+1040   3A F9 17               LD   A,(c_red)   
+1043   12                     LD   (DE),A   
+1044                          ;*Macro unroll: 	v_poke	4+2,	3,	c_red
+1044   11 C6 00               LD   DE,64 * (3) + (4+2)   
+1047   3A F9 17               LD   A,(c_red)   
+104A   12                     LD   (DE),A   
+104B                          ;*Macro unroll: 	v_poke	4+2,	3+1,	c_red
+104B   11 06 01               LD   DE,64 * (3+1) + (4+2)   
+104E   3A F9 17               LD   A,(c_red)   
+1051   12                     LD   (DE),A   
+1052                          ;*Macro unroll: 	v_poke	4+2,	3+2,	c_red
+1052   11 46 01               LD   DE,64 * (3+2) + (4+2)   
+1055   3A F9 17               LD   A,(c_red)   
+1058   12                     LD   (DE),A   
+1059                          ;*Macro unroll: 	v_poke	4+2,	3+3,	c_red
+1059   11 86 01               LD   DE,64 * (3+3) + (4+2)   
+105C   3A F9 17               LD   A,(c_red)   
+105F   12                     LD   (DE),A   
+1060                          ;*Macro unroll: 	v_poke	4+2,	3+4,	c_red
+1060   11 C6 01               LD   DE,64 * (3+4) + (4+2)   
+1063   3A F9 17               LD   A,(c_red)   
+1066   12                     LD   (DE),A   
+1067                          ;*Macro unroll: 	letter_a	4+4,	3,	c_red
+1067                          ;*Macro unroll: 	v_poke	4+4,	3,	c_red
+1067   11 C8 00               LD   DE,64 * (3) + (4+4)   
+106A   3A F9 17               LD   A,(c_red)   
+106D   12                     LD   (DE),A   
+106E                          ;*Macro unroll: 	v_poke	4+4,	3+1,	c_red
+106E   11 08 01               LD   DE,64 * (3+1) + (4+4)   
+1071   3A F9 17               LD   A,(c_red)   
+1074   12                     LD   (DE),A   
+1075                          ;*Macro unroll: 	v_poke	4+4,	3+2,	c_red
+1075   11 48 01               LD   DE,64 * (3+2) + (4+4)   
+1078   3A F9 17               LD   A,(c_red)   
+107B   12                     LD   (DE),A   
+107C                          ;*Macro unroll: 	v_poke	4+4,	3+3,	c_red
+107C   11 88 01               LD   DE,64 * (3+3) + (4+4)   
+107F   3A F9 17               LD   A,(c_red)   
+1082   12                     LD   (DE),A   
+1083                          ;*Macro unroll: 	v_poke	4+4,	3+4,	c_red
+1083   11 C8 01               LD   DE,64 * (3+4) + (4+4)   
+1086   3A F9 17               LD   A,(c_red)   
+1089   12                     LD   (DE),A   
+108A                          ;*Macro unroll: 	v_poke	4+4+1,	3,	c_red
+108A   11 C9 00               LD   DE,64 * (3) + (4+4+1)   
+108D   3A F9 17               LD   A,(c_red)   
+1090   12                     LD   (DE),A   
+1091                          ;*Macro unroll: 	v_poke	4+4+1,	3+2,	c_red
+1091   11 49 01               LD   DE,64 * (3+2) + (4+4+1)   
+1094   3A F9 17               LD   A,(c_red)   
+1097   12                     LD   (DE),A   
+1098                          ;*Macro unroll: 	v_poke	4+4+2,	3,	c_red
+1098   11 CA 00               LD   DE,64 * (3) + (4+4+2)   
+109B   3A F9 17               LD   A,(c_red)   
+109E   12                     LD   (DE),A   
+109F                          ;*Macro unroll: 	v_poke	4+4+2,	3+1,	c_red
+109F   11 0A 01               LD   DE,64 * (3+1) + (4+4+2)   
+10A2   3A F9 17               LD   A,(c_red)   
+10A5   12                     LD   (DE),A   
+10A6                          ;*Macro unroll: 	v_poke	4+4+2,	3+2,	c_red
+10A6   11 4A 01               LD   DE,64 * (3+2) + (4+4+2)   
+10A9   3A F9 17               LD   A,(c_red)   
+10AC   12                     LD   (DE),A   
+10AD                          ;*Macro unroll: 	v_poke	4+4+2,	3+3,	c_red
+10AD   11 8A 01               LD   DE,64 * (3+3) + (4+4+2)   
+10B0   3A F9 17               LD   A,(c_red)   
+10B3   12                     LD   (DE),A   
+10B4                          ;*Macro unroll: 	v_poke	4+4+2,	3+4,	c_red
+10B4   11 CA 01               LD   DE,64 * (3+4) + (4+4+2)   
+10B7   3A F9 17               LD   A,(c_red)   
+10BA   12                     LD   (DE),A   
+10BB                          ;*Macro unroll: 	letter_p	4+8,	3,	c_red
+10BB                          ;*Macro unroll: 	v_poke	4+8,	3,	c_red
+10BB   11 CC 00               LD   DE,64 * (3) + (4+8)   
+10BE   3A F9 17               LD   A,(c_red)   
+10C1   12                     LD   (DE),A   
+10C2                          ;*Macro unroll: 	v_poke	4+8,	3+1,	c_red
+10C2   11 0C 01               LD   DE,64 * (3+1) + (4+8)   
+10C5   3A F9 17               LD   A,(c_red)   
+10C8   12                     LD   (DE),A   
+10C9                          ;*Macro unroll: 	v_poke	4+8,	3+2,	c_red
+10C9   11 4C 01               LD   DE,64 * (3+2) + (4+8)   
+10CC   3A F9 17               LD   A,(c_red)   
+10CF   12                     LD   (DE),A   
+10D0                          ;*Macro unroll: 	v_poke	4+8,	3+3,	c_red
+10D0   11 8C 01               LD   DE,64 * (3+3) + (4+8)   
+10D3   3A F9 17               LD   A,(c_red)   
+10D6   12                     LD   (DE),A   
+10D7                          ;*Macro unroll: 	v_poke	4+8,	3+4,	c_red
+10D7   11 CC 01               LD   DE,64 * (3+4) + (4+8)   
+10DA   3A F9 17               LD   A,(c_red)   
+10DD   12                     LD   (DE),A   
+10DE                          ;*Macro unroll: 	v_poke	4+8+1,	3,	c_red
+10DE   11 CD 00               LD   DE,64 * (3) + (4+8+1)   
+10E1   3A F9 17               LD   A,(c_red)   
+10E4   12                     LD   (DE),A   
+10E5                          ;*Macro unroll: 	v_poke	4+8+1,	3+2,	c_red
+10E5   11 4D 01               LD   DE,64 * (3+2) + (4+8+1)   
+10E8   3A F9 17               LD   A,(c_red)   
+10EB   12                     LD   (DE),A   
+10EC                          ;*Macro unroll: 	v_poke	4+8+2,	3,	c_red
+10EC   11 CE 00               LD   DE,64 * (3) + (4+8+2)   
+10EF   3A F9 17               LD   A,(c_red)   
+10F2   12                     LD   (DE),A   
+10F3                          ;*Macro unroll: 	v_poke	4+8+2,	3+1,	c_red
+10F3   11 0E 01               LD   DE,64 * (3+1) + (4+8+2)   
+10F6   3A F9 17               LD   A,(c_red)   
+10F9   12                     LD   (DE),A   
+10FA                          ;*Macro unroll: 	v_poke	4+8+2,	3+2,	c_red
+10FA   11 4E 01               LD   DE,64 * (3+2) + (4+8+2)   
+10FD   3A F9 17               LD   A,(c_red)   
+1100   12                     LD   (DE),A   
+1101                          ;*Macro unroll: 	letter_p	4+12,	3,	c_red
+1101                          ;*Macro unroll: 	v_poke	4+12,	3,	c_red
+1101   11 D0 00               LD   DE,64 * (3) + (4+12)   
+1104   3A F9 17               LD   A,(c_red)   
+1107   12                     LD   (DE),A   
+1108                          ;*Macro unroll: 	v_poke	4+12,	3+1,	c_red
+1108   11 10 01               LD   DE,64 * (3+1) + (4+12)   
+110B   3A F9 17               LD   A,(c_red)   
+110E   12                     LD   (DE),A   
+110F                          ;*Macro unroll: 	v_poke	4+12,	3+2,	c_red
+110F   11 50 01               LD   DE,64 * (3+2) + (4+12)   
+1112   3A F9 17               LD   A,(c_red)   
+1115   12                     LD   (DE),A   
+1116                          ;*Macro unroll: 	v_poke	4+12,	3+3,	c_red
+1116   11 90 01               LD   DE,64 * (3+3) + (4+12)   
+1119   3A F9 17               LD   A,(c_red)   
+111C   12                     LD   (DE),A   
+111D                          ;*Macro unroll: 	v_poke	4+12,	3+4,	c_red
+111D   11 D0 01               LD   DE,64 * (3+4) + (4+12)   
+1120   3A F9 17               LD   A,(c_red)   
+1123   12                     LD   (DE),A   
+1124                          ;*Macro unroll: 	v_poke	4+12+1,	3,	c_red
+1124   11 D1 00               LD   DE,64 * (3) + (4+12+1)   
+1127   3A F9 17               LD   A,(c_red)   
+112A   12                     LD   (DE),A   
+112B                          ;*Macro unroll: 	v_poke	4+12+1,	3+2,	c_red
+112B   11 51 01               LD   DE,64 * (3+2) + (4+12+1)   
+112E   3A F9 17               LD   A,(c_red)   
+1131   12                     LD   (DE),A   
+1132                          ;*Macro unroll: 	v_poke	4+12+2,	3,	c_red
+1132   11 D2 00               LD   DE,64 * (3) + (4+12+2)   
+1135   3A F9 17               LD   A,(c_red)   
+1138   12                     LD   (DE),A   
+1139                          ;*Macro unroll: 	v_poke	4+12+2,	3+1,	c_red
+1139   11 12 01               LD   DE,64 * (3+1) + (4+12+2)   
+113C   3A F9 17               LD   A,(c_red)   
+113F   12                     LD   (DE),A   
+1140                          ;*Macro unroll: 	v_poke	4+12+2,	3+2,	c_red
+1140   11 52 01               LD   DE,64 * (3+2) + (4+12+2)   
+1143   3A F9 17               LD   A,(c_red)   
+1146   12                     LD   (DE),A   
+1147                          ;*Macro unroll: 	letter_y	4+16,	3,	c_red
+1147                          ;*Macro unroll: 	v_poke	4+16,	3,	c_red
+1147   11 D4 00               LD   DE,64 * (3) + (4+16)   
+114A   3A F9 17               LD   A,(c_red)   
+114D   12                     LD   (DE),A   
+114E                          ;*Macro unroll: 	v_poke	4+16,	3+1,	c_red
+114E   11 14 01               LD   DE,64 * (3+1) + (4+16)   
+1151   3A F9 17               LD   A,(c_red)   
+1154   12                     LD   (DE),A   
+1155                          ;*Macro unroll: 	v_poke	4+16,	3+2,	c_red
+1155   11 54 01               LD   DE,64 * (3+2) + (4+16)   
+1158   3A F9 17               LD   A,(c_red)   
+115B   12                     LD   (DE),A   
+115C                          ;*Macro unroll: 	v_poke	4+16+1,	3+2,	c_red
+115C   11 55 01               LD   DE,64 * (3+2) + (4+16+1)   
+115F   3A F9 17               LD   A,(c_red)   
+1162   12                     LD   (DE),A   
+1163                          ;*Macro unroll: 	v_poke	4+16+1,	3+3,	c_red
+1163   11 95 01               LD   DE,64 * (3+3) + (4+16+1)   
+1166   3A F9 17               LD   A,(c_red)   
+1169   12                     LD   (DE),A   
+116A                          ;*Macro unroll: 	v_poke	4+16+1,	3+4,	c_red
+116A   11 D5 01               LD   DE,64 * (3+4) + (4+16+1)   
+116D   3A F9 17               LD   A,(c_red)   
+1170   12                     LD   (DE),A   
+1171                          ;*Macro unroll: 	v_poke	4+16+2,	3,	c_red
+1171   11 D6 00               LD   DE,64 * (3) + (4+16+2)   
+1174   3A F9 17               LD   A,(c_red)   
+1177   12                     LD   (DE),A   
+1178                          ;*Macro unroll: 	v_poke	4+16+2,	3+1,	c_red
+1178   11 16 01               LD   DE,64 * (3+1) + (4+16+2)   
+117B   3A F9 17               LD   A,(c_red)   
+117E   12                     LD   (DE),A   
+117F                          ;*Macro unroll: 	v_poke	4+16+2,	3+2,	c_red
+117F   11 56 01               LD   DE,64 * (3+2) + (4+16+2)   
+1182   3A F9 17               LD   A,(c_red)   
+1185   12                     LD   (DE),A   
+1186                          ;*Macro unroll: 	letter_h	4+24,	3,	c_red
+1186                          ;*Macro unroll: 	v_poke	4+24,	3,	c_red
+1186   11 DC 00               LD   DE,64 * (3) + (4+24)   
+1189   3A F9 17               LD   A,(c_red)   
+118C   12                     LD   (DE),A   
+118D                          ;*Macro unroll: 	v_poke	4+24,	3+1,	c_red
+118D   11 1C 01               LD   DE,64 * (3+1) + (4+24)   
+1190   3A F9 17               LD   A,(c_red)   
+1193   12                     LD   (DE),A   
+1194                          ;*Macro unroll: 	v_poke	4+24,	3+2,	c_red
+1194   11 5C 01               LD   DE,64 * (3+2) + (4+24)   
+1197   3A F9 17               LD   A,(c_red)   
+119A   12                     LD   (DE),A   
+119B                          ;*Macro unroll: 	v_poke	4+24,	3+3,	c_red
+119B   11 9C 01               LD   DE,64 * (3+3) + (4+24)   
+119E   3A F9 17               LD   A,(c_red)   
+11A1   12                     LD   (DE),A   
+11A2                          ;*Macro unroll: 	v_poke	4+24,	3+4,	c_red
+11A2   11 DC 01               LD   DE,64 * (3+4) + (4+24)   
+11A5   3A F9 17               LD   A,(c_red)   
+11A8   12                     LD   (DE),A   
+11A9                          ;*Macro unroll: 	v_poke	4+24+1,	3+2,	c_red
+11A9   11 5D 01               LD   DE,64 * (3+2) + (4+24+1)   
+11AC   3A F9 17               LD   A,(c_red)   
+11AF   12                     LD   (DE),A   
+11B0                          ;*Macro unroll: 	v_poke	4+24+2,	3,	c_red
+11B0   11 DE 00               LD   DE,64 * (3) + (4+24+2)   
+11B3   3A F9 17               LD   A,(c_red)   
+11B6   12                     LD   (DE),A   
+11B7                          ;*Macro unroll: 	v_poke	4+24+2,	3+1,	c_red
+11B7   11 1E 01               LD   DE,64 * (3+1) + (4+24+2)   
+11BA   3A F9 17               LD   A,(c_red)   
+11BD   12                     LD   (DE),A   
+11BE                          ;*Macro unroll: 	v_poke	4+24+2,	3+2,	c_red
+11BE   11 5E 01               LD   DE,64 * (3+2) + (4+24+2)   
+11C1   3A F9 17               LD   A,(c_red)   
+11C4   12                     LD   (DE),A   
+11C5                          ;*Macro unroll: 	v_poke	4+24+2,	3+3,	c_red
+11C5   11 9E 01               LD   DE,64 * (3+3) + (4+24+2)   
+11C8   3A F9 17               LD   A,(c_red)   
+11CB   12                     LD   (DE),A   
+11CC                          ;*Macro unroll: 	v_poke	4+24+2,	3+4,	c_red
+11CC   11 DE 01               LD   DE,64 * (3+4) + (4+24+2)   
+11CF   3A F9 17               LD   A,(c_red)   
+11D2   12                     LD   (DE),A   
+11D3                          ;*Macro unroll: 	letter_o	4+28,	3,	c_red
+11D3                          ;*Macro unroll: 	v_poke	4+28,	3,	c_red
+11D3   11 E0 00               LD   DE,64 * (3) + (4+28)   
+11D6   3A F9 17               LD   A,(c_red)   
+11D9   12                     LD   (DE),A   
+11DA                          ;*Macro unroll: 	v_poke	4+28,	3+1,	c_red
+11DA   11 20 01               LD   DE,64 * (3+1) + (4+28)   
+11DD   3A F9 17               LD   A,(c_red)   
+11E0   12                     LD   (DE),A   
+11E1                          ;*Macro unroll: 	v_poke	4+28,	3+2,	c_red
+11E1   11 60 01               LD   DE,64 * (3+2) + (4+28)   
+11E4   3A F9 17               LD   A,(c_red)   
+11E7   12                     LD   (DE),A   
+11E8                          ;*Macro unroll: 	v_poke	4+28,	3+3,	c_red
+11E8   11 A0 01               LD   DE,64 * (3+3) + (4+28)   
+11EB   3A F9 17               LD   A,(c_red)   
+11EE   12                     LD   (DE),A   
+11EF                          ;*Macro unroll: 	v_poke	4+28,	3+4,	c_red
+11EF   11 E0 01               LD   DE,64 * (3+4) + (4+28)   
+11F2   3A F9 17               LD   A,(c_red)   
+11F5   12                     LD   (DE),A   
+11F6                          ;*Macro unroll: 	v_poke	4+28+1,	3,	c_red
+11F6   11 E1 00               LD   DE,64 * (3) + (4+28+1)   
+11F9   3A F9 17               LD   A,(c_red)   
+11FC   12                     LD   (DE),A   
+11FD                          ;*Macro unroll: 	v_poke	4+28+1,	3+4,	c_red
+11FD   11 E1 01               LD   DE,64 * (3+4) + (4+28+1)   
+1200   3A F9 17               LD   A,(c_red)   
+1203   12                     LD   (DE),A   
+1204                          ;*Macro unroll: 	v_poke	4+28+2,	3,	c_red
+1204   11 E2 00               LD   DE,64 * (3) + (4+28+2)   
+1207   3A F9 17               LD   A,(c_red)   
+120A   12                     LD   (DE),A   
+120B                          ;*Macro unroll: 	v_poke	4+28+2,	3+1,	c_red
+120B   11 22 01               LD   DE,64 * (3+1) + (4+28+2)   
+120E   3A F9 17               LD   A,(c_red)   
+1211   12                     LD   (DE),A   
+1212                          ;*Macro unroll: 	v_poke	4+28+2,	3+2,	c_red
+1212   11 62 01               LD   DE,64 * (3+2) + (4+28+2)   
+1215   3A F9 17               LD   A,(c_red)   
+1218   12                     LD   (DE),A   
+1219                          ;*Macro unroll: 	v_poke	4+28+2,	3+3,	c_red
+1219   11 A2 01               LD   DE,64 * (3+3) + (4+28+2)   
+121C   3A F9 17               LD   A,(c_red)   
+121F   12                     LD   (DE),A   
+1220                          ;*Macro unroll: 	v_poke	4+28+2,	3+4,	c_red
+1220   11 E2 01               LD   DE,64 * (3+4) + (4+28+2)   
+1223   3A F9 17               LD   A,(c_red)   
+1226   12                     LD   (DE),A   
+1227                          ;*Macro unroll: 	letter_l	4+32,	3,	c_red
+1227                          ;*Macro unroll: 	v_poke	4+32,	3,	c_red
+1227   11 E4 00               LD   DE,64 * (3) + (4+32)   
+122A   3A F9 17               LD   A,(c_red)   
+122D   12                     LD   (DE),A   
+122E                          ;*Macro unroll: 	v_poke	4+32,	3+1,	c_red
+122E   11 24 01               LD   DE,64 * (3+1) + (4+32)   
+1231   3A F9 17               LD   A,(c_red)   
+1234   12                     LD   (DE),A   
+1235                          ;*Macro unroll: 	v_poke	4+32,	3+2,	c_red
+1235   11 64 01               LD   DE,64 * (3+2) + (4+32)   
+1238   3A F9 17               LD   A,(c_red)   
+123B   12                     LD   (DE),A   
+123C                          ;*Macro unroll: 	v_poke	4+32,	3+3,	c_red
+123C   11 A4 01               LD   DE,64 * (3+3) + (4+32)   
+123F   3A F9 17               LD   A,(c_red)   
+1242   12                     LD   (DE),A   
+1243                          ;*Macro unroll: 	v_poke	4+32,	3+4,	c_red
+1243   11 E4 01               LD   DE,64 * (3+4) + (4+32)   
+1246   3A F9 17               LD   A,(c_red)   
+1249   12                     LD   (DE),A   
+124A                          ;*Macro unroll: 	v_poke	4+32+1,	3+4,	c_red
+124A   11 E5 01               LD   DE,64 * (3+4) + (4+32+1)   
+124D   3A F9 17               LD   A,(c_red)   
+1250   12                     LD   (DE),A   
+1251                          ;*Macro unroll: 	v_poke	4+32+2,	3+4,	c_red
+1251   11 E6 01               LD   DE,64 * (3+4) + (4+32+2)   
+1254   3A F9 17               LD   A,(c_red)   
+1257   12                     LD   (DE),A   
+1258                          ;*Macro unroll: 	letter_i	4+36,	3,	c_red
+1258                          ;*Macro unroll: 	v_poke	4+36,	3,	c_red
+1258   11 E8 00               LD   DE,64 * (3) + (4+36)   
+125B   3A F9 17               LD   A,(c_red)   
+125E   12                     LD   (DE),A   
+125F                          ;*Macro unroll: 	v_poke	4+36,	3+4,	c_red
+125F   11 E8 01               LD   DE,64 * (3+4) + (4+36)   
+1262   3A F9 17               LD   A,(c_red)   
+1265   12                     LD   (DE),A   
+1266                          ;*Macro unroll: 	v_poke	4+36+1,	3,	c_red
+1266   11 E9 00               LD   DE,64 * (3) + (4+36+1)   
+1269   3A F9 17               LD   A,(c_red)   
+126C   12                     LD   (DE),A   
+126D                          ;*Macro unroll: 	v_poke	4+36+1,	3+1,	c_red
+126D   11 29 01               LD   DE,64 * (3+1) + (4+36+1)   
+1270   3A F9 17               LD   A,(c_red)   
+1273   12                     LD   (DE),A   
+1274                          ;*Macro unroll: 	v_poke	4+36+1,	3+2,	c_red
+1274   11 69 01               LD   DE,64 * (3+2) + (4+36+1)   
+1277   3A F9 17               LD   A,(c_red)   
+127A   12                     LD   (DE),A   
+127B                          ;*Macro unroll: 	v_poke	4+36+1,	3+3,	c_red
+127B   11 A9 01               LD   DE,64 * (3+3) + (4+36+1)   
+127E   3A F9 17               LD   A,(c_red)   
+1281   12                     LD   (DE),A   
+1282                          ;*Macro unroll: 	v_poke	4+36+1,	3+4,	c_red
+1282   11 E9 01               LD   DE,64 * (3+4) + (4+36+1)   
+1285   3A F9 17               LD   A,(c_red)   
+1288   12                     LD   (DE),A   
+1289                          ;*Macro unroll: 	v_poke	4+36+2,	3,	c_red
+1289   11 EA 00               LD   DE,64 * (3) + (4+36+2)   
+128C   3A F9 17               LD   A,(c_red)   
+128F   12                     LD   (DE),A   
+1290                          ;*Macro unroll: 	v_poke	4+36+2,	3+4,	c_red
+1290   11 EA 01               LD   DE,64 * (3+4) + (4+36+2)   
+1293   3A F9 17               LD   A,(c_red)   
+1296   12                     LD   (DE),A   
+1297                          ;*Macro unroll: 	letter_d	4+40,	3,	c_red
+1297                          ;*Macro unroll: 	v_poke	4+40,	3,	c_red
+1297   11 EC 00               LD   DE,64 * (3) + (4+40)   
+129A   3A F9 17               LD   A,(c_red)   
+129D   12                     LD   (DE),A   
+129E                          ;*Macro unroll: 	v_poke	4+40,	3+1,	c_red
+129E   11 2C 01               LD   DE,64 * (3+1) + (4+40)   
+12A1   3A F9 17               LD   A,(c_red)   
+12A4   12                     LD   (DE),A   
+12A5                          ;*Macro unroll: 	v_poke	4+40,	3+2,	c_red
+12A5   11 6C 01               LD   DE,64 * (3+2) + (4+40)   
+12A8   3A F9 17               LD   A,(c_red)   
+12AB   12                     LD   (DE),A   
+12AC                          ;*Macro unroll: 	v_poke	4+40,	3+3,	c_red
+12AC   11 AC 01               LD   DE,64 * (3+3) + (4+40)   
+12AF   3A F9 17               LD   A,(c_red)   
+12B2   12                     LD   (DE),A   
+12B3                          ;*Macro unroll: 	v_poke	4+40,	3+4,	c_red
+12B3   11 EC 01               LD   DE,64 * (3+4) + (4+40)   
+12B6   3A F9 17               LD   A,(c_red)   
+12B9   12                     LD   (DE),A   
+12BA                          ;*Macro unroll: 	v_poke	4+40+1,	3,	c_red
+12BA   11 ED 00               LD   DE,64 * (3) + (4+40+1)   
+12BD   3A F9 17               LD   A,(c_red)   
+12C0   12                     LD   (DE),A   
+12C1                          ;*Macro unroll: 	v_poke	4+40+1,	3+4,	c_red
+12C1   11 ED 01               LD   DE,64 * (3+4) + (4+40+1)   
+12C4   3A F9 17               LD   A,(c_red)   
+12C7   12                     LD   (DE),A   
+12C8                          ;*Macro unroll: 	v_poke	4+40+2,	3+1,	c_red
+12C8   11 2E 01               LD   DE,64 * (3+1) + (4+40+2)   
+12CB   3A F9 17               LD   A,(c_red)   
+12CE   12                     LD   (DE),A   
+12CF                          ;*Macro unroll: 	v_poke	4+40+2,	3+2,	c_red
+12CF   11 6E 01               LD   DE,64 * (3+2) + (4+40+2)   
+12D2   3A F9 17               LD   A,(c_red)   
+12D5   12                     LD   (DE),A   
+12D6                          ;*Macro unroll: 	v_poke	4+40+2,	3+3,	c_red
+12D6   11 AE 01               LD   DE,64 * (3+3) + (4+40+2)   
+12D9   3A F9 17               LD   A,(c_red)   
+12DC   12                     LD   (DE),A   
+12DD                          ;*Macro unroll: 	v_poke	4+40+2,	3+4,	c_red
+12DD   11 EE 01               LD   DE,64 * (3+4) + (4+40+2)   
+12E0   3A F9 17               LD   A,(c_red)   
+12E3   12                     LD   (DE),A   
+12E4                          ;*Macro unroll: 	letter_a	4+44,	3,	c_red
+12E4                          ;*Macro unroll: 	v_poke	4+44,	3,	c_red
+12E4   11 F0 00               LD   DE,64 * (3) + (4+44)   
+12E7   3A F9 17               LD   A,(c_red)   
+12EA   12                     LD   (DE),A   
+12EB                          ;*Macro unroll: 	v_poke	4+44,	3+1,	c_red
+12EB   11 30 01               LD   DE,64 * (3+1) + (4+44)   
+12EE   3A F9 17               LD   A,(c_red)   
+12F1   12                     LD   (DE),A   
+12F2                          ;*Macro unroll: 	v_poke	4+44,	3+2,	c_red
+12F2   11 70 01               LD   DE,64 * (3+2) + (4+44)   
+12F5   3A F9 17               LD   A,(c_red)   
+12F8   12                     LD   (DE),A   
+12F9                          ;*Macro unroll: 	v_poke	4+44,	3+3,	c_red
+12F9   11 B0 01               LD   DE,64 * (3+3) + (4+44)   
+12FC   3A F9 17               LD   A,(c_red)   
+12FF   12                     LD   (DE),A   
+1300                          ;*Macro unroll: 	v_poke	4+44,	3+4,	c_red
+1300   11 F0 01               LD   DE,64 * (3+4) + (4+44)   
+1303   3A F9 17               LD   A,(c_red)   
+1306   12                     LD   (DE),A   
+1307                          ;*Macro unroll: 	v_poke	4+44+1,	3,	c_red
+1307   11 F1 00               LD   DE,64 * (3) + (4+44+1)   
+130A   3A F9 17               LD   A,(c_red)   
+130D   12                     LD   (DE),A   
+130E                          ;*Macro unroll: 	v_poke	4+44+1,	3+2,	c_red
+130E   11 71 01               LD   DE,64 * (3+2) + (4+44+1)   
+1311   3A F9 17               LD   A,(c_red)   
+1314   12                     LD   (DE),A   
+1315                          ;*Macro unroll: 	v_poke	4+44+2,	3,	c_red
+1315   11 F2 00               LD   DE,64 * (3) + (4+44+2)   
+1318   3A F9 17               LD   A,(c_red)   
+131B   12                     LD   (DE),A   
+131C                          ;*Macro unroll: 	v_poke	4+44+2,	3+1,	c_red
+131C   11 32 01               LD   DE,64 * (3+1) + (4+44+2)   
+131F   3A F9 17               LD   A,(c_red)   
+1322   12                     LD   (DE),A   
+1323                          ;*Macro unroll: 	v_poke	4+44+2,	3+2,	c_red
+1323   11 72 01               LD   DE,64 * (3+2) + (4+44+2)   
+1326   3A F9 17               LD   A,(c_red)   
+1329   12                     LD   (DE),A   
+132A                          ;*Macro unroll: 	v_poke	4+44+2,	3+3,	c_red
+132A   11 B2 01               LD   DE,64 * (3+3) + (4+44+2)   
+132D   3A F9 17               LD   A,(c_red)   
+1330   12                     LD   (DE),A   
+1331                          ;*Macro unroll: 	v_poke	4+44+2,	3+4,	c_red
+1331   11 F2 01               LD   DE,64 * (3+4) + (4+44+2)   
+1334   3A F9 17               LD   A,(c_red)   
+1337   12                     LD   (DE),A   
+1338                          ;*Macro unroll: 	letter_y	4+48,	3,	c_red
+1338                          ;*Macro unroll: 	v_poke	4+48,	3,	c_red
+1338   11 F4 00               LD   DE,64 * (3) + (4+48)   
+133B   3A F9 17               LD   A,(c_red)   
+133E   12                     LD   (DE),A   
+133F                          ;*Macro unroll: 	v_poke	4+48,	3+1,	c_red
+133F   11 34 01               LD   DE,64 * (3+1) + (4+48)   
+1342   3A F9 17               LD   A,(c_red)   
+1345   12                     LD   (DE),A   
+1346                          ;*Macro unroll: 	v_poke	4+48,	3+2,	c_red
+1346   11 74 01               LD   DE,64 * (3+2) + (4+48)   
+1349   3A F9 17               LD   A,(c_red)   
+134C   12                     LD   (DE),A   
+134D                          ;*Macro unroll: 	v_poke	4+48+1,	3+2,	c_red
+134D   11 75 01               LD   DE,64 * (3+2) + (4+48+1)   
+1350   3A F9 17               LD   A,(c_red)   
+1353   12                     LD   (DE),A   
+1354                          ;*Macro unroll: 	v_poke	4+48+1,	3+3,	c_red
+1354   11 B5 01               LD   DE,64 * (3+3) + (4+48+1)   
+1357   3A F9 17               LD   A,(c_red)   
+135A   12                     LD   (DE),A   
+135B                          ;*Macro unroll: 	v_poke	4+48+1,	3+4,	c_red
+135B   11 F5 01               LD   DE,64 * (3+4) + (4+48+1)   
+135E   3A F9 17               LD   A,(c_red)   
+1361   12                     LD   (DE),A   
+1362                          ;*Macro unroll: 	v_poke	4+48+2,	3,	c_red
+1362   11 F6 00               LD   DE,64 * (3) + (4+48+2)   
+1365   3A F9 17               LD   A,(c_red)   
+1368   12                     LD   (DE),A   
+1369                          ;*Macro unroll: 	v_poke	4+48+2,	3+1,	c_red
+1369   11 36 01               LD   DE,64 * (3+1) + (4+48+2)   
+136C   3A F9 17               LD   A,(c_red)   
+136F   12                     LD   (DE),A   
+1370                          ;*Macro unroll: 	v_poke	4+48+2,	3+2,	c_red
+1370   11 76 01               LD   DE,64 * (3+2) + (4+48+2)   
+1373   3A F9 17               LD   A,(c_red)   
+1376   12                     LD   (DE),A   
+1377                          ;*Macro unroll: 	letter_s	4+52,	3,	c_red
+1377                          ;*Macro unroll: 	v_poke	4+52,	3,	c_red
+1377   11 F8 00               LD   DE,64 * (3) + (4+52)   
+137A   3A F9 17               LD   A,(c_red)   
+137D   12                     LD   (DE),A   
+137E                          ;*Macro unroll: 	v_poke	4+52,	3+1,	c_red
+137E   11 38 01               LD   DE,64 * (3+1) + (4+52)   
+1381   3A F9 17               LD   A,(c_red)   
+1384   12                     LD   (DE),A   
+1385                          ;*Macro unroll: 	v_poke	4+52,	3+2,	c_red
+1385   11 78 01               LD   DE,64 * (3+2) + (4+52)   
+1388   3A F9 17               LD   A,(c_red)   
+138B   12                     LD   (DE),A   
+138C                          ;*Macro unroll: 	v_poke	4+52,	3+4,	c_red
+138C   11 F8 01               LD   DE,64 * (3+4) + (4+52)   
+138F   3A F9 17               LD   A,(c_red)   
+1392   12                     LD   (DE),A   
+1393                          ;*Macro unroll: 	v_poke	4+52+1,	3,	c_red
+1393   11 F9 00               LD   DE,64 * (3) + (4+52+1)   
+1396   3A F9 17               LD   A,(c_red)   
+1399   12                     LD   (DE),A   
+139A                          ;*Macro unroll: 	v_poke	4+52+1,	3+2,	c_red
+139A   11 79 01               LD   DE,64 * (3+2) + (4+52+1)   
+139D   3A F9 17               LD   A,(c_red)   
+13A0   12                     LD   (DE),A   
+13A1                          ;*Macro unroll: 	v_poke	4+52+1,	3+4,	c_red
+13A1   11 F9 01               LD   DE,64 * (3+4) + (4+52+1)   
+13A4   3A F9 17               LD   A,(c_red)   
+13A7   12                     LD   (DE),A   
+13A8                          ;*Macro unroll: 	v_poke	4+52+2,	3,	c_red
+13A8   11 FA 00               LD   DE,64 * (3) + (4+52+2)   
+13AB   3A F9 17               LD   A,(c_red)   
+13AE   12                     LD   (DE),A   
+13AF                          ;*Macro unroll: 	v_poke	4+52+2,	3+2,	c_red
+13AF   11 7A 01               LD   DE,64 * (3+2) + (4+52+2)   
+13B2   3A F9 17               LD   A,(c_red)   
+13B5   12                     LD   (DE),A   
+13B6                          ;*Macro unroll: 	v_poke	4+52+2,	3+3,	c_red
+13B6   11 BA 01               LD   DE,64 * (3+3) + (4+52+2)   
+13B9   3A F9 17               LD   A,(c_red)   
+13BC   12                     LD   (DE),A   
+13BD                          ;*Macro unroll: 	v_poke	4+52+2,	3+4,	c_red
+13BD   11 FA 01               LD   DE,64 * (3+4) + (4+52+2)   
+13C0   3A F9 17               LD   A,(c_red)   
+13C3   12                     LD   (DE),A   
+13C4                          ;*Macro unroll: 	letter_exc	4+56,	3,	c_red
+13C4                          ;*Macro unroll: 	v_poke	4+56,	3,	c_red
+13C4   11 FC 00               LD   DE,64 * (3) + (4+56)   
+13C7   3A F9 17               LD   A,(c_red)   
+13CA   12                     LD   (DE),A   
+13CB                          ;*Macro unroll: 	v_poke	4+56,	3+1,	c_red
+13CB   11 3C 01               LD   DE,64 * (3+1) + (4+56)   
+13CE   3A F9 17               LD   A,(c_red)   
+13D1   12                     LD   (DE),A   
+13D2                          ;*Macro unroll: 	v_poke	4+56,	3+2,	c_red
+13D2   11 7C 01               LD   DE,64 * (3+2) + (4+56)   
+13D5   3A F9 17               LD   A,(c_red)   
+13D8   12                     LD   (DE),A   
+13D9                          ;*Macro unroll: 	v_poke	4+56,	3+4,	c_red
+13D9   11 FC 01               LD   DE,64 * (3+4) + (4+56)   
+13DC   3A F9 17               LD   A,(c_red)   
+13DF   12                     LD   (DE),A   
+13E0                             ;rept unroll
+13E0                          ;*Macro unroll: 		spin
+13E0   06 FF                  LD   B,255   
+13E2                SPINM_6:      
+13E2   10 FE                  DJNZ   spinM_6   
+13E4                          ;*Macro unroll: 		spin
+13E4   06 FF                  LD   B,255   
+13E6                SPINM_7:      
+13E6   10 FE                  DJNZ   spinM_7   
+13E8                          ;*Macro unroll: 		spin
+13E8   06 FF                  LD   B,255   
+13EA                SPINM_8:      
+13EA   10 FE                  DJNZ   spinM_8   
+13EC                          ;*Macro unroll: 		spin
+13EC   06 FF                  LD   B,255   
+13EE                SPINM_9:      
+13EE   10 FE                  DJNZ   spinM_9   
+13F0                          ;*Macro unroll: 		spin
+13F0   06 FF                  LD   B,255   
+13F2                SPINM_10:      
+13F2   10 FE                  DJNZ   spinM_10   
+13F4                          ;*Macro unroll: 		spin
+13F4   06 FF                  LD   B,255   
+13F6                SPINM_11:      
+13F6   10 FE                  DJNZ   spinM_11   
+13F8                          ;*Macro unroll: 		spin
+13F8   06 FF                  LD   B,255   
+13FA                SPINM_12:      
+13FA   10 FE                  DJNZ   spinM_12   
+13FC                          ;*Macro unroll: 		spin
+13FC   06 FF                  LD   B,255   
+13FE                SPINM_13:      
+13FE   10 FE                  DJNZ   spinM_13   
+1400                          ;*Macro unroll: 		spin
+1400   06 FF                  LD   B,255   
+1402                SPINM_14:      
+1402   10 FE                  DJNZ   spinM_14   
+1404                          ;*Macro unroll: 		spin
+1404   06 FF                  LD   B,255   
+1406                SPINM_15:      
+1406   10 FE                  DJNZ   spinM_15   
+1408                          ;*Macro unroll: 	happy_holidays	3,	4,	c_green
+1408                          ;*Macro unroll: 	letter_h	3,	4,	c_green
+1408                          ;*Macro unroll: 	v_poke	3,	4,	c_green
+1408   11 03 01               LD   DE,64 * (4) + (3)   
+140B   3A FB 17               LD   A,(c_green)   
+140E   12                     LD   (DE),A   
+140F                          ;*Macro unroll: 	v_poke	3,	4+1,	c_green
+140F   11 43 01               LD   DE,64 * (4+1) + (3)   
+1412   3A FB 17               LD   A,(c_green)   
+1415   12                     LD   (DE),A   
+1416                          ;*Macro unroll: 	v_poke	3,	4+2,	c_green
+1416   11 83 01               LD   DE,64 * (4+2) + (3)   
+1419   3A FB 17               LD   A,(c_green)   
+141C   12                     LD   (DE),A   
+141D                          ;*Macro unroll: 	v_poke	3,	4+3,	c_green
+141D   11 C3 01               LD   DE,64 * (4+3) + (3)   
+1420   3A FB 17               LD   A,(c_green)   
+1423   12                     LD   (DE),A   
+1424                          ;*Macro unroll: 	v_poke	3,	4+4,	c_green
+1424   11 03 02               LD   DE,64 * (4+4) + (3)   
+1427   3A FB 17               LD   A,(c_green)   
+142A   12                     LD   (DE),A   
+142B                          ;*Macro unroll: 	v_poke	3+1,	4+2,	c_green
+142B   11 84 01               LD   DE,64 * (4+2) + (3+1)   
+142E   3A FB 17               LD   A,(c_green)   
+1431   12                     LD   (DE),A   
+1432                          ;*Macro unroll: 	v_poke	3+2,	4,	c_green
+1432   11 05 01               LD   DE,64 * (4) + (3+2)   
+1435   3A FB 17               LD   A,(c_green)   
+1438   12                     LD   (DE),A   
+1439                          ;*Macro unroll: 	v_poke	3+2,	4+1,	c_green
+1439   11 45 01               LD   DE,64 * (4+1) + (3+2)   
+143C   3A FB 17               LD   A,(c_green)   
+143F   12                     LD   (DE),A   
+1440                          ;*Macro unroll: 	v_poke	3+2,	4+2,	c_green
+1440   11 85 01               LD   DE,64 * (4+2) + (3+2)   
+1443   3A FB 17               LD   A,(c_green)   
+1446   12                     LD   (DE),A   
+1447                          ;*Macro unroll: 	v_poke	3+2,	4+3,	c_green
+1447   11 C5 01               LD   DE,64 * (4+3) + (3+2)   
+144A   3A FB 17               LD   A,(c_green)   
+144D   12                     LD   (DE),A   
+144E                          ;*Macro unroll: 	v_poke	3+2,	4+4,	c_green
+144E   11 05 02               LD   DE,64 * (4+4) + (3+2)   
+1451   3A FB 17               LD   A,(c_green)   
+1454   12                     LD   (DE),A   
+1455                          ;*Macro unroll: 	letter_a	3+4,	4,	c_green
+1455                          ;*Macro unroll: 	v_poke	3+4,	4,	c_green
+1455   11 07 01               LD   DE,64 * (4) + (3+4)   
+1458   3A FB 17               LD   A,(c_green)   
+145B   12                     LD   (DE),A   
+145C                          ;*Macro unroll: 	v_poke	3+4,	4+1,	c_green
+145C   11 47 01               LD   DE,64 * (4+1) + (3+4)   
+145F   3A FB 17               LD   A,(c_green)   
+1462   12                     LD   (DE),A   
+1463                          ;*Macro unroll: 	v_poke	3+4,	4+2,	c_green
+1463   11 87 01               LD   DE,64 * (4+2) + (3+4)   
+1466   3A FB 17               LD   A,(c_green)   
+1469   12                     LD   (DE),A   
+146A                          ;*Macro unroll: 	v_poke	3+4,	4+3,	c_green
+146A   11 C7 01               LD   DE,64 * (4+3) + (3+4)   
+146D   3A FB 17               LD   A,(c_green)   
+1470   12                     LD   (DE),A   
+1471                          ;*Macro unroll: 	v_poke	3+4,	4+4,	c_green
+1471   11 07 02               LD   DE,64 * (4+4) + (3+4)   
+1474   3A FB 17               LD   A,(c_green)   
+1477   12                     LD   (DE),A   
+1478                          ;*Macro unroll: 	v_poke	3+4+1,	4,	c_green
+1478   11 08 01               LD   DE,64 * (4) + (3+4+1)   
+147B   3A FB 17               LD   A,(c_green)   
+147E   12                     LD   (DE),A   
+147F                          ;*Macro unroll: 	v_poke	3+4+1,	4+2,	c_green
+147F   11 88 01               LD   DE,64 * (4+2) + (3+4+1)   
+1482   3A FB 17               LD   A,(c_green)   
+1485   12                     LD   (DE),A   
+1486                          ;*Macro unroll: 	v_poke	3+4+2,	4,	c_green
+1486   11 09 01               LD   DE,64 * (4) + (3+4+2)   
+1489   3A FB 17               LD   A,(c_green)   
+148C   12                     LD   (DE),A   
+148D                          ;*Macro unroll: 	v_poke	3+4+2,	4+1,	c_green
+148D   11 49 01               LD   DE,64 * (4+1) + (3+4+2)   
+1490   3A FB 17               LD   A,(c_green)   
+1493   12                     LD   (DE),A   
+1494                          ;*Macro unroll: 	v_poke	3+4+2,	4+2,	c_green
+1494   11 89 01               LD   DE,64 * (4+2) + (3+4+2)   
+1497   3A FB 17               LD   A,(c_green)   
+149A   12                     LD   (DE),A   
+149B                          ;*Macro unroll: 	v_poke	3+4+2,	4+3,	c_green
+149B   11 C9 01               LD   DE,64 * (4+3) + (3+4+2)   
+149E   3A FB 17               LD   A,(c_green)   
+14A1   12                     LD   (DE),A   
+14A2                          ;*Macro unroll: 	v_poke	3+4+2,	4+4,	c_green
+14A2   11 09 02               LD   DE,64 * (4+4) + (3+4+2)   
+14A5   3A FB 17               LD   A,(c_green)   
+14A8   12                     LD   (DE),A   
+14A9                          ;*Macro unroll: 	letter_p	3+8,	4,	c_green
+14A9                          ;*Macro unroll: 	v_poke	3+8,	4,	c_green
+14A9   11 0B 01               LD   DE,64 * (4) + (3+8)   
+14AC   3A FB 17               LD   A,(c_green)   
+14AF   12                     LD   (DE),A   
+14B0                          ;*Macro unroll: 	v_poke	3+8,	4+1,	c_green
+14B0   11 4B 01               LD   DE,64 * (4+1) + (3+8)   
+14B3   3A FB 17               LD   A,(c_green)   
+14B6   12                     LD   (DE),A   
+14B7                          ;*Macro unroll: 	v_poke	3+8,	4+2,	c_green
+14B7   11 8B 01               LD   DE,64 * (4+2) + (3+8)   
+14BA   3A FB 17               LD   A,(c_green)   
+14BD   12                     LD   (DE),A   
+14BE                          ;*Macro unroll: 	v_poke	3+8,	4+3,	c_green
+14BE   11 CB 01               LD   DE,64 * (4+3) + (3+8)   
+14C1   3A FB 17               LD   A,(c_green)   
+14C4   12                     LD   (DE),A   
+14C5                          ;*Macro unroll: 	v_poke	3+8,	4+4,	c_green
+14C5   11 0B 02               LD   DE,64 * (4+4) + (3+8)   
+14C8   3A FB 17               LD   A,(c_green)   
+14CB   12                     LD   (DE),A   
+14CC                          ;*Macro unroll: 	v_poke	3+8+1,	4,	c_green
+14CC   11 0C 01               LD   DE,64 * (4) + (3+8+1)   
+14CF   3A FB 17               LD   A,(c_green)   
+14D2   12                     LD   (DE),A   
+14D3                          ;*Macro unroll: 	v_poke	3+8+1,	4+2,	c_green
+14D3   11 8C 01               LD   DE,64 * (4+2) + (3+8+1)   
+14D6   3A FB 17               LD   A,(c_green)   
+14D9   12                     LD   (DE),A   
+14DA                          ;*Macro unroll: 	v_poke	3+8+2,	4,	c_green
+14DA   11 0D 01               LD   DE,64 * (4) + (3+8+2)   
+14DD   3A FB 17               LD   A,(c_green)   
+14E0   12                     LD   (DE),A   
+14E1                          ;*Macro unroll: 	v_poke	3+8+2,	4+1,	c_green
+14E1   11 4D 01               LD   DE,64 * (4+1) + (3+8+2)   
+14E4   3A FB 17               LD   A,(c_green)   
+14E7   12                     LD   (DE),A   
+14E8                          ;*Macro unroll: 	v_poke	3+8+2,	4+2,	c_green
+14E8   11 8D 01               LD   DE,64 * (4+2) + (3+8+2)   
+14EB   3A FB 17               LD   A,(c_green)   
+14EE   12                     LD   (DE),A   
+14EF                          ;*Macro unroll: 	letter_p	3+12,	4,	c_green
+14EF                          ;*Macro unroll: 	v_poke	3+12,	4,	c_green
+14EF   11 0F 01               LD   DE,64 * (4) + (3+12)   
+14F2   3A FB 17               LD   A,(c_green)   
+14F5   12                     LD   (DE),A   
+14F6                          ;*Macro unroll: 	v_poke	3+12,	4+1,	c_green
+14F6   11 4F 01               LD   DE,64 * (4+1) + (3+12)   
+14F9   3A FB 17               LD   A,(c_green)   
+14FC   12                     LD   (DE),A   
+14FD                          ;*Macro unroll: 	v_poke	3+12,	4+2,	c_green
+14FD   11 8F 01               LD   DE,64 * (4+2) + (3+12)   
+1500   3A FB 17               LD   A,(c_green)   
+1503   12                     LD   (DE),A   
+1504                          ;*Macro unroll: 	v_poke	3+12,	4+3,	c_green
+1504   11 CF 01               LD   DE,64 * (4+3) + (3+12)   
+1507   3A FB 17               LD   A,(c_green)   
+150A   12                     LD   (DE),A   
+150B                          ;*Macro unroll: 	v_poke	3+12,	4+4,	c_green
+150B   11 0F 02               LD   DE,64 * (4+4) + (3+12)   
+150E   3A FB 17               LD   A,(c_green)   
+1511   12                     LD   (DE),A   
+1512                          ;*Macro unroll: 	v_poke	3+12+1,	4,	c_green
+1512   11 10 01               LD   DE,64 * (4) + (3+12+1)   
+1515   3A FB 17               LD   A,(c_green)   
+1518   12                     LD   (DE),A   
+1519                          ;*Macro unroll: 	v_poke	3+12+1,	4+2,	c_green
+1519   11 90 01               LD   DE,64 * (4+2) + (3+12+1)   
+151C   3A FB 17               LD   A,(c_green)   
+151F   12                     LD   (DE),A   
+1520                          ;*Macro unroll: 	v_poke	3+12+2,	4,	c_green
+1520   11 11 01               LD   DE,64 * (4) + (3+12+2)   
+1523   3A FB 17               LD   A,(c_green)   
+1526   12                     LD   (DE),A   
+1527                          ;*Macro unroll: 	v_poke	3+12+2,	4+1,	c_green
+1527   11 51 01               LD   DE,64 * (4+1) + (3+12+2)   
+152A   3A FB 17               LD   A,(c_green)   
+152D   12                     LD   (DE),A   
+152E                          ;*Macro unroll: 	v_poke	3+12+2,	4+2,	c_green
+152E   11 91 01               LD   DE,64 * (4+2) + (3+12+2)   
+1531   3A FB 17               LD   A,(c_green)   
+1534   12                     LD   (DE),A   
+1535                          ;*Macro unroll: 	letter_y	3+16,	4,	c_green
+1535                          ;*Macro unroll: 	v_poke	3+16,	4,	c_green
+1535   11 13 01               LD   DE,64 * (4) + (3+16)   
+1538   3A FB 17               LD   A,(c_green)   
+153B   12                     LD   (DE),A   
+153C                          ;*Macro unroll: 	v_poke	3+16,	4+1,	c_green
+153C   11 53 01               LD   DE,64 * (4+1) + (3+16)   
+153F   3A FB 17               LD   A,(c_green)   
+1542   12                     LD   (DE),A   
+1543                          ;*Macro unroll: 	v_poke	3+16,	4+2,	c_green
+1543   11 93 01               LD   DE,64 * (4+2) + (3+16)   
+1546   3A FB 17               LD   A,(c_green)   
+1549   12                     LD   (DE),A   
+154A                          ;*Macro unroll: 	v_poke	3+16+1,	4+2,	c_green
+154A   11 94 01               LD   DE,64 * (4+2) + (3+16+1)   
+154D   3A FB 17               LD   A,(c_green)   
+1550   12                     LD   (DE),A   
+1551                          ;*Macro unroll: 	v_poke	3+16+1,	4+3,	c_green
+1551   11 D4 01               LD   DE,64 * (4+3) + (3+16+1)   
+1554   3A FB 17               LD   A,(c_green)   
+1557   12                     LD   (DE),A   
+1558                          ;*Macro unroll: 	v_poke	3+16+1,	4+4,	c_green
+1558   11 14 02               LD   DE,64 * (4+4) + (3+16+1)   
+155B   3A FB 17               LD   A,(c_green)   
+155E   12                     LD   (DE),A   
+155F                          ;*Macro unroll: 	v_poke	3+16+2,	4,	c_green
+155F   11 15 01               LD   DE,64 * (4) + (3+16+2)   
+1562   3A FB 17               LD   A,(c_green)   
+1565   12                     LD   (DE),A   
+1566                          ;*Macro unroll: 	v_poke	3+16+2,	4+1,	c_green
+1566   11 55 01               LD   DE,64 * (4+1) + (3+16+2)   
+1569   3A FB 17               LD   A,(c_green)   
+156C   12                     LD   (DE),A   
+156D                          ;*Macro unroll: 	v_poke	3+16+2,	4+2,	c_green
+156D   11 95 01               LD   DE,64 * (4+2) + (3+16+2)   
+1570   3A FB 17               LD   A,(c_green)   
+1573   12                     LD   (DE),A   
+1574                          ;*Macro unroll: 	letter_h	3+24,	4,	c_green
+1574                          ;*Macro unroll: 	v_poke	3+24,	4,	c_green
+1574   11 1B 01               LD   DE,64 * (4) + (3+24)   
+1577   3A FB 17               LD   A,(c_green)   
+157A   12                     LD   (DE),A   
+157B                          ;*Macro unroll: 	v_poke	3+24,	4+1,	c_green
+157B   11 5B 01               LD   DE,64 * (4+1) + (3+24)   
+157E   3A FB 17               LD   A,(c_green)   
+1581   12                     LD   (DE),A   
+1582                          ;*Macro unroll: 	v_poke	3+24,	4+2,	c_green
+1582   11 9B 01               LD   DE,64 * (4+2) + (3+24)   
+1585   3A FB 17               LD   A,(c_green)   
+1588   12                     LD   (DE),A   
+1589                          ;*Macro unroll: 	v_poke	3+24,	4+3,	c_green
+1589   11 DB 01               LD   DE,64 * (4+3) + (3+24)   
+158C   3A FB 17               LD   A,(c_green)   
+158F   12                     LD   (DE),A   
+1590                          ;*Macro unroll: 	v_poke	3+24,	4+4,	c_green
+1590   11 1B 02               LD   DE,64 * (4+4) + (3+24)   
+1593   3A FB 17               LD   A,(c_green)   
+1596   12                     LD   (DE),A   
+1597                          ;*Macro unroll: 	v_poke	3+24+1,	4+2,	c_green
+1597   11 9C 01               LD   DE,64 * (4+2) + (3+24+1)   
+159A   3A FB 17               LD   A,(c_green)   
+159D   12                     LD   (DE),A   
+159E                          ;*Macro unroll: 	v_poke	3+24+2,	4,	c_green
+159E   11 1D 01               LD   DE,64 * (4) + (3+24+2)   
+15A1   3A FB 17               LD   A,(c_green)   
+15A4   12                     LD   (DE),A   
+15A5                          ;*Macro unroll: 	v_poke	3+24+2,	4+1,	c_green
+15A5   11 5D 01               LD   DE,64 * (4+1) + (3+24+2)   
+15A8   3A FB 17               LD   A,(c_green)   
+15AB   12                     LD   (DE),A   
+15AC                          ;*Macro unroll: 	v_poke	3+24+2,	4+2,	c_green
+15AC   11 9D 01               LD   DE,64 * (4+2) + (3+24+2)   
+15AF   3A FB 17               LD   A,(c_green)   
+15B2   12                     LD   (DE),A   
+15B3                          ;*Macro unroll: 	v_poke	3+24+2,	4+3,	c_green
+15B3   11 DD 01               LD   DE,64 * (4+3) + (3+24+2)   
+15B6   3A FB 17               LD   A,(c_green)   
+15B9   12                     LD   (DE),A   
+15BA                          ;*Macro unroll: 	v_poke	3+24+2,	4+4,	c_green
+15BA   11 1D 02               LD   DE,64 * (4+4) + (3+24+2)   
+15BD   3A FB 17               LD   A,(c_green)   
+15C0   12                     LD   (DE),A   
+15C1                          ;*Macro unroll: 	letter_o	3+28,	4,	c_green
+15C1                          ;*Macro unroll: 	v_poke	3+28,	4,	c_green
+15C1   11 1F 01               LD   DE,64 * (4) + (3+28)   
+15C4   3A FB 17               LD   A,(c_green)   
+15C7   12                     LD   (DE),A   
+15C8                          ;*Macro unroll: 	v_poke	3+28,	4+1,	c_green
+15C8   11 5F 01               LD   DE,64 * (4+1) + (3+28)   
+15CB   3A FB 17               LD   A,(c_green)   
+15CE   12                     LD   (DE),A   
+15CF                          ;*Macro unroll: 	v_poke	3+28,	4+2,	c_green
+15CF   11 9F 01               LD   DE,64 * (4+2) + (3+28)   
+15D2   3A FB 17               LD   A,(c_green)   
+15D5   12                     LD   (DE),A   
+15D6                          ;*Macro unroll: 	v_poke	3+28,	4+3,	c_green
+15D6   11 DF 01               LD   DE,64 * (4+3) + (3+28)   
+15D9   3A FB 17               LD   A,(c_green)   
+15DC   12                     LD   (DE),A   
+15DD                          ;*Macro unroll: 	v_poke	3+28,	4+4,	c_green
+15DD   11 1F 02               LD   DE,64 * (4+4) + (3+28)   
+15E0   3A FB 17               LD   A,(c_green)   
+15E3   12                     LD   (DE),A   
+15E4                          ;*Macro unroll: 	v_poke	3+28+1,	4,	c_green
+15E4   11 20 01               LD   DE,64 * (4) + (3+28+1)   
+15E7   3A FB 17               LD   A,(c_green)   
+15EA   12                     LD   (DE),A   
+15EB                          ;*Macro unroll: 	v_poke	3+28+1,	4+4,	c_green
+15EB   11 20 02               LD   DE,64 * (4+4) + (3+28+1)   
+15EE   3A FB 17               LD   A,(c_green)   
+15F1   12                     LD   (DE),A   
+15F2                          ;*Macro unroll: 	v_poke	3+28+2,	4,	c_green
+15F2   11 21 01               LD   DE,64 * (4) + (3+28+2)   
+15F5   3A FB 17               LD   A,(c_green)   
+15F8   12                     LD   (DE),A   
+15F9                          ;*Macro unroll: 	v_poke	3+28+2,	4+1,	c_green
+15F9   11 61 01               LD   DE,64 * (4+1) + (3+28+2)   
+15FC   3A FB 17               LD   A,(c_green)   
+15FF   12                     LD   (DE),A   
+1600                          ;*Macro unroll: 	v_poke	3+28+2,	4+2,	c_green
+1600   11 A1 01               LD   DE,64 * (4+2) + (3+28+2)   
+1603   3A FB 17               LD   A,(c_green)   
+1606   12                     LD   (DE),A   
+1607                          ;*Macro unroll: 	v_poke	3+28+2,	4+3,	c_green
+1607   11 E1 01               LD   DE,64 * (4+3) + (3+28+2)   
+160A   3A FB 17               LD   A,(c_green)   
+160D   12                     LD   (DE),A   
+160E                          ;*Macro unroll: 	v_poke	3+28+2,	4+4,	c_green
+160E   11 21 02               LD   DE,64 * (4+4) + (3+28+2)   
+1611   3A FB 17               LD   A,(c_green)   
+1614   12                     LD   (DE),A   
+1615                          ;*Macro unroll: 	letter_l	3+32,	4,	c_green
+1615                          ;*Macro unroll: 	v_poke	3+32,	4,	c_green
+1615   11 23 01               LD   DE,64 * (4) + (3+32)   
+1618   3A FB 17               LD   A,(c_green)   
+161B   12                     LD   (DE),A   
+161C                          ;*Macro unroll: 	v_poke	3+32,	4+1,	c_green
+161C   11 63 01               LD   DE,64 * (4+1) + (3+32)   
+161F   3A FB 17               LD   A,(c_green)   
+1622   12                     LD   (DE),A   
+1623                          ;*Macro unroll: 	v_poke	3+32,	4+2,	c_green
+1623   11 A3 01               LD   DE,64 * (4+2) + (3+32)   
+1626   3A FB 17               LD   A,(c_green)   
+1629   12                     LD   (DE),A   
+162A                          ;*Macro unroll: 	v_poke	3+32,	4+3,	c_green
+162A   11 E3 01               LD   DE,64 * (4+3) + (3+32)   
+162D   3A FB 17               LD   A,(c_green)   
+1630   12                     LD   (DE),A   
+1631                          ;*Macro unroll: 	v_poke	3+32,	4+4,	c_green
+1631   11 23 02               LD   DE,64 * (4+4) + (3+32)   
+1634   3A FB 17               LD   A,(c_green)   
+1637   12                     LD   (DE),A   
+1638                          ;*Macro unroll: 	v_poke	3+32+1,	4+4,	c_green
+1638   11 24 02               LD   DE,64 * (4+4) + (3+32+1)   
+163B   3A FB 17               LD   A,(c_green)   
+163E   12                     LD   (DE),A   
+163F                          ;*Macro unroll: 	v_poke	3+32+2,	4+4,	c_green
+163F   11 25 02               LD   DE,64 * (4+4) + (3+32+2)   
+1642   3A FB 17               LD   A,(c_green)   
+1645   12                     LD   (DE),A   
+1646                          ;*Macro unroll: 	letter_i	3+36,	4,	c_green
+1646                          ;*Macro unroll: 	v_poke	3+36,	4,	c_green
+1646   11 27 01               LD   DE,64 * (4) + (3+36)   
+1649   3A FB 17               LD   A,(c_green)   
+164C   12                     LD   (DE),A   
+164D                          ;*Macro unroll: 	v_poke	3+36,	4+4,	c_green
+164D   11 27 02               LD   DE,64 * (4+4) + (3+36)   
+1650   3A FB 17               LD   A,(c_green)   
+1653   12                     LD   (DE),A   
+1654                          ;*Macro unroll: 	v_poke	3+36+1,	4,	c_green
+1654   11 28 01               LD   DE,64 * (4) + (3+36+1)   
+1657   3A FB 17               LD   A,(c_green)   
+165A   12                     LD   (DE),A   
+165B                          ;*Macro unroll: 	v_poke	3+36+1,	4+1,	c_green
+165B   11 68 01               LD   DE,64 * (4+1) + (3+36+1)   
+165E   3A FB 17               LD   A,(c_green)   
+1661   12                     LD   (DE),A   
+1662                          ;*Macro unroll: 	v_poke	3+36+1,	4+2,	c_green
+1662   11 A8 01               LD   DE,64 * (4+2) + (3+36+1)   
+1665   3A FB 17               LD   A,(c_green)   
+1668   12                     LD   (DE),A   
+1669                          ;*Macro unroll: 	v_poke	3+36+1,	4+3,	c_green
+1669   11 E8 01               LD   DE,64 * (4+3) + (3+36+1)   
+166C   3A FB 17               LD   A,(c_green)   
+166F   12                     LD   (DE),A   
+1670                          ;*Macro unroll: 	v_poke	3+36+1,	4+4,	c_green
+1670   11 28 02               LD   DE,64 * (4+4) + (3+36+1)   
+1673   3A FB 17               LD   A,(c_green)   
+1676   12                     LD   (DE),A   
+1677                          ;*Macro unroll: 	v_poke	3+36+2,	4,	c_green
+1677   11 29 01               LD   DE,64 * (4) + (3+36+2)   
+167A   3A FB 17               LD   A,(c_green)   
+167D   12                     LD   (DE),A   
+167E                          ;*Macro unroll: 	v_poke	3+36+2,	4+4,	c_green
+167E   11 29 02               LD   DE,64 * (4+4) + (3+36+2)   
+1681   3A FB 17               LD   A,(c_green)   
+1684   12                     LD   (DE),A   
+1685                          ;*Macro unroll: 	letter_d	3+40,	4,	c_green
+1685                          ;*Macro unroll: 	v_poke	3+40,	4,	c_green
+1685   11 2B 01               LD   DE,64 * (4) + (3+40)   
+1688   3A FB 17               LD   A,(c_green)   
+168B   12                     LD   (DE),A   
+168C                          ;*Macro unroll: 	v_poke	3+40,	4+1,	c_green
+168C   11 6B 01               LD   DE,64 * (4+1) + (3+40)   
+168F   3A FB 17               LD   A,(c_green)   
+1692   12                     LD   (DE),A   
+1693                          ;*Macro unroll: 	v_poke	3+40,	4+2,	c_green
+1693   11 AB 01               LD   DE,64 * (4+2) + (3+40)   
+1696   3A FB 17               LD   A,(c_green)   
+1699   12                     LD   (DE),A   
+169A                          ;*Macro unroll: 	v_poke	3+40,	4+3,	c_green
+169A   11 EB 01               LD   DE,64 * (4+3) + (3+40)   
+169D   3A FB 17               LD   A,(c_green)   
+16A0   12                     LD   (DE),A   
+16A1                          ;*Macro unroll: 	v_poke	3+40,	4+4,	c_green
+16A1   11 2B 02               LD   DE,64 * (4+4) + (3+40)   
+16A4   3A FB 17               LD   A,(c_green)   
+16A7   12                     LD   (DE),A   
+16A8                          ;*Macro unroll: 	v_poke	3+40+1,	4,	c_green
+16A8   11 2C 01               LD   DE,64 * (4) + (3+40+1)   
+16AB   3A FB 17               LD   A,(c_green)   
+16AE   12                     LD   (DE),A   
+16AF                          ;*Macro unroll: 	v_poke	3+40+1,	4+4,	c_green
+16AF   11 2C 02               LD   DE,64 * (4+4) + (3+40+1)   
+16B2   3A FB 17               LD   A,(c_green)   
+16B5   12                     LD   (DE),A   
+16B6                          ;*Macro unroll: 	v_poke	3+40+2,	4+1,	c_green
+16B6   11 6D 01               LD   DE,64 * (4+1) + (3+40+2)   
+16B9   3A FB 17               LD   A,(c_green)   
+16BC   12                     LD   (DE),A   
+16BD                          ;*Macro unroll: 	v_poke	3+40+2,	4+2,	c_green
+16BD   11 AD 01               LD   DE,64 * (4+2) + (3+40+2)   
+16C0   3A FB 17               LD   A,(c_green)   
+16C3   12                     LD   (DE),A   
+16C4                          ;*Macro unroll: 	v_poke	3+40+2,	4+3,	c_green
+16C4   11 ED 01               LD   DE,64 * (4+3) + (3+40+2)   
+16C7   3A FB 17               LD   A,(c_green)   
+16CA   12                     LD   (DE),A   
+16CB                          ;*Macro unroll: 	v_poke	3+40+2,	4+4,	c_green
+16CB   11 2D 02               LD   DE,64 * (4+4) + (3+40+2)   
+16CE   3A FB 17               LD   A,(c_green)   
+16D1   12                     LD   (DE),A   
+16D2                          ;*Macro unroll: 	letter_a	3+44,	4,	c_green
+16D2                          ;*Macro unroll: 	v_poke	3+44,	4,	c_green
+16D2   11 2F 01               LD   DE,64 * (4) + (3+44)   
+16D5   3A FB 17               LD   A,(c_green)   
+16D8   12                     LD   (DE),A   
+16D9                          ;*Macro unroll: 	v_poke	3+44,	4+1,	c_green
+16D9   11 6F 01               LD   DE,64 * (4+1) + (3+44)   
+16DC   3A FB 17               LD   A,(c_green)   
+16DF   12                     LD   (DE),A   
+16E0                          ;*Macro unroll: 	v_poke	3+44,	4+2,	c_green
+16E0   11 AF 01               LD   DE,64 * (4+2) + (3+44)   
+16E3   3A FB 17               LD   A,(c_green)   
+16E6   12                     LD   (DE),A   
+16E7                          ;*Macro unroll: 	v_poke	3+44,	4+3,	c_green
+16E7   11 EF 01               LD   DE,64 * (4+3) + (3+44)   
+16EA   3A FB 17               LD   A,(c_green)   
+16ED   12                     LD   (DE),A   
+16EE                          ;*Macro unroll: 	v_poke	3+44,	4+4,	c_green
+16EE   11 2F 02               LD   DE,64 * (4+4) + (3+44)   
+16F1   3A FB 17               LD   A,(c_green)   
+16F4   12                     LD   (DE),A   
+16F5                          ;*Macro unroll: 	v_poke	3+44+1,	4,	c_green
+16F5   11 30 01               LD   DE,64 * (4) + (3+44+1)   
+16F8   3A FB 17               LD   A,(c_green)   
+16FB   12                     LD   (DE),A   
+16FC                          ;*Macro unroll: 	v_poke	3+44+1,	4+2,	c_green
+16FC   11 B0 01               LD   DE,64 * (4+2) + (3+44+1)   
+16FF   3A FB 17               LD   A,(c_green)   
+1702   12                     LD   (DE),A   
+1703                          ;*Macro unroll: 	v_poke	3+44+2,	4,	c_green
+1703   11 31 01               LD   DE,64 * (4) + (3+44+2)   
+1706   3A FB 17               LD   A,(c_green)   
+1709   12                     LD   (DE),A   
+170A                          ;*Macro unroll: 	v_poke	3+44+2,	4+1,	c_green
+170A   11 71 01               LD   DE,64 * (4+1) + (3+44+2)   
+170D   3A FB 17               LD   A,(c_green)   
+1710   12                     LD   (DE),A   
+1711                          ;*Macro unroll: 	v_poke	3+44+2,	4+2,	c_green
+1711   11 B1 01               LD   DE,64 * (4+2) + (3+44+2)   
+1714   3A FB 17               LD   A,(c_green)   
+1717   12                     LD   (DE),A   
+1718                          ;*Macro unroll: 	v_poke	3+44+2,	4+3,	c_green
+1718   11 F1 01               LD   DE,64 * (4+3) + (3+44+2)   
+171B   3A FB 17               LD   A,(c_green)   
+171E   12                     LD   (DE),A   
+171F                          ;*Macro unroll: 	v_poke	3+44+2,	4+4,	c_green
+171F   11 31 02               LD   DE,64 * (4+4) + (3+44+2)   
+1722   3A FB 17               LD   A,(c_green)   
+1725   12                     LD   (DE),A   
+1726                          ;*Macro unroll: 	letter_y	3+48,	4,	c_green
+1726                          ;*Macro unroll: 	v_poke	3+48,	4,	c_green
+1726   11 33 01               LD   DE,64 * (4) + (3+48)   
+1729   3A FB 17               LD   A,(c_green)   
+172C   12                     LD   (DE),A   
+172D                          ;*Macro unroll: 	v_poke	3+48,	4+1,	c_green
+172D   11 73 01               LD   DE,64 * (4+1) + (3+48)   
+1730   3A FB 17               LD   A,(c_green)   
+1733   12                     LD   (DE),A   
+1734                          ;*Macro unroll: 	v_poke	3+48,	4+2,	c_green
+1734   11 B3 01               LD   DE,64 * (4+2) + (3+48)   
+1737   3A FB 17               LD   A,(c_green)   
+173A   12                     LD   (DE),A   
+173B                          ;*Macro unroll: 	v_poke	3+48+1,	4+2,	c_green
+173B   11 B4 01               LD   DE,64 * (4+2) + (3+48+1)   
+173E   3A FB 17               LD   A,(c_green)   
+1741   12                     LD   (DE),A   
+1742                          ;*Macro unroll: 	v_poke	3+48+1,	4+3,	c_green
+1742   11 F4 01               LD   DE,64 * (4+3) + (3+48+1)   
+1745   3A FB 17               LD   A,(c_green)   
+1748   12                     LD   (DE),A   
+1749                          ;*Macro unroll: 	v_poke	3+48+1,	4+4,	c_green
+1749   11 34 02               LD   DE,64 * (4+4) + (3+48+1)   
+174C   3A FB 17               LD   A,(c_green)   
+174F   12                     LD   (DE),A   
+1750                          ;*Macro unroll: 	v_poke	3+48+2,	4,	c_green
+1750   11 35 01               LD   DE,64 * (4) + (3+48+2)   
+1753   3A FB 17               LD   A,(c_green)   
+1756   12                     LD   (DE),A   
+1757                          ;*Macro unroll: 	v_poke	3+48+2,	4+1,	c_green
+1757   11 75 01               LD   DE,64 * (4+1) + (3+48+2)   
+175A   3A FB 17               LD   A,(c_green)   
+175D   12                     LD   (DE),A   
+175E                          ;*Macro unroll: 	v_poke	3+48+2,	4+2,	c_green
+175E   11 B5 01               LD   DE,64 * (4+2) + (3+48+2)   
+1761   3A FB 17               LD   A,(c_green)   
+1764   12                     LD   (DE),A   
+1765                          ;*Macro unroll: 	letter_s	3+52,	4,	c_green
+1765                          ;*Macro unroll: 	v_poke	3+52,	4,	c_green
+1765   11 37 01               LD   DE,64 * (4) + (3+52)   
+1768   3A FB 17               LD   A,(c_green)   
+176B   12                     LD   (DE),A   
+176C                          ;*Macro unroll: 	v_poke	3+52,	4+1,	c_green
+176C   11 77 01               LD   DE,64 * (4+1) + (3+52)   
+176F   3A FB 17               LD   A,(c_green)   
+1772   12                     LD   (DE),A   
+1773                          ;*Macro unroll: 	v_poke	3+52,	4+2,	c_green
+1773   11 B7 01               LD   DE,64 * (4+2) + (3+52)   
+1776   3A FB 17               LD   A,(c_green)   
+1779   12                     LD   (DE),A   
+177A                          ;*Macro unroll: 	v_poke	3+52,	4+4,	c_green
+177A   11 37 02               LD   DE,64 * (4+4) + (3+52)   
+177D   3A FB 17               LD   A,(c_green)   
+1780   12                     LD   (DE),A   
+1781                          ;*Macro unroll: 	v_poke	3+52+1,	4,	c_green
+1781   11 38 01               LD   DE,64 * (4) + (3+52+1)   
+1784   3A FB 17               LD   A,(c_green)   
+1787   12                     LD   (DE),A   
+1788                          ;*Macro unroll: 	v_poke	3+52+1,	4+2,	c_green
+1788   11 B8 01               LD   DE,64 * (4+2) + (3+52+1)   
+178B   3A FB 17               LD   A,(c_green)   
+178E   12                     LD   (DE),A   
+178F                          ;*Macro unroll: 	v_poke	3+52+1,	4+4,	c_green
+178F   11 38 02               LD   DE,64 * (4+4) + (3+52+1)   
+1792   3A FB 17               LD   A,(c_green)   
+1795   12                     LD   (DE),A   
+1796                          ;*Macro unroll: 	v_poke	3+52+2,	4,	c_green
+1796   11 39 01               LD   DE,64 * (4) + (3+52+2)   
+1799   3A FB 17               LD   A,(c_green)   
+179C   12                     LD   (DE),A   
+179D                          ;*Macro unroll: 	v_poke	3+52+2,	4+2,	c_green
+179D   11 B9 01               LD   DE,64 * (4+2) + (3+52+2)   
+17A0   3A FB 17               LD   A,(c_green)   
+17A3   12                     LD   (DE),A   
+17A4                          ;*Macro unroll: 	v_poke	3+52+2,	4+3,	c_green
+17A4   11 F9 01               LD   DE,64 * (4+3) + (3+52+2)   
+17A7   3A FB 17               LD   A,(c_green)   
+17AA   12                     LD   (DE),A   
+17AB                          ;*Macro unroll: 	v_poke	3+52+2,	4+4,	c_green
+17AB   11 39 02               LD   DE,64 * (4+4) + (3+52+2)   
+17AE   3A FB 17               LD   A,(c_green)   
+17B1   12                     LD   (DE),A   
+17B2                          ;*Macro unroll: 	letter_exc	3+56,	4,	c_green
+17B2                          ;*Macro unroll: 	v_poke	3+56,	4,	c_green
+17B2   11 3B 01               LD   DE,64 * (4) + (3+56)   
+17B5   3A FB 17               LD   A,(c_green)   
+17B8   12                     LD   (DE),A   
+17B9                          ;*Macro unroll: 	v_poke	3+56,	4+1,	c_green
+17B9   11 7B 01               LD   DE,64 * (4+1) + (3+56)   
+17BC   3A FB 17               LD   A,(c_green)   
+17BF   12                     LD   (DE),A   
+17C0                          ;*Macro unroll: 	v_poke	3+56,	4+2,	c_green
+17C0   11 BB 01               LD   DE,64 * (4+2) + (3+56)   
+17C3   3A FB 17               LD   A,(c_green)   
+17C6   12                     LD   (DE),A   
+17C7                          ;*Macro unroll: 	v_poke	3+56,	4+4,	c_green
+17C7   11 3B 02               LD   DE,64 * (4+4) + (3+56)   
+17CA   3A FB 17               LD   A,(c_green)   
+17CD   12                     LD   (DE),A   
+17CE                             ;rept unroll
+17CE                          ;*Macro unroll: 		spin
+17CE   06 FF                  LD   B,255   
+17D0                SPINM_18:      
+17D0   10 FE                  DJNZ   spinM_18   
+17D2                          ;*Macro unroll: 		spin
+17D2   06 FF                  LD   B,255   
+17D4                SPINM_19:      
+17D4   10 FE                  DJNZ   spinM_19   
+17D6                          ;*Macro unroll: 		spin
+17D6   06 FF                  LD   B,255   
+17D8                SPINM_20:      
+17D8   10 FE                  DJNZ   spinM_20   
+17DA                          ;*Macro unroll: 		spin
+17DA   06 FF                  LD   B,255   
+17DC                SPINM_21:      
+17DC   10 FE                  DJNZ   spinM_21   
+17DE                          ;*Macro unroll: 		spin
+17DE   06 FF                  LD   B,255   
+17E0                SPINM_22:      
+17E0   10 FE                  DJNZ   spinM_22   
+17E2                          ;*Macro unroll: 		spin
+17E2   06 FF                  LD   B,255   
+17E4                SPINM_23:      
+17E4   10 FE                  DJNZ   spinM_23   
+17E6                          ;*Macro unroll: 		spin
+17E6   06 FF                  LD   B,255   
+17E8                SPINM_24:      
+17E8   10 FE                  DJNZ   spinM_24   
+17EA                          ;*Macro unroll: 		spin
+17EA   06 FF                  LD   B,255   
+17EC                SPINM_25:      
+17EC   10 FE                  DJNZ   spinM_25   
+17EE                          ;*Macro unroll: 		spin
+17EE   06 FF                  LD   B,255   
+17F0                SPINM_26:      
+17F0   10 FE                  DJNZ   spinM_26   
+17F2                          ;*Macro unroll: 		spin
+17F2   06 FF                  LD   B,255   
+17F4                SPINM_27:      
+17F4   10 FE                  DJNZ   spinM_27   
+17F6   C3 00 0C               JP   loop1   
+17F9                             ; x, y
+17F9                             ; x, y, *color
+17F9                .macro HAPPY_HOLIDAYS,
+17F9                	letter_h	%%1,	%%2,	%%3
+17F9                	letter_a	%%1+4,	%%2,	%%3
+17F9                	letter_p	%%1+8,	%%2,	%%3
+17F9                	letter_p	%%1+12,	%%2,	%%3
+17F9                	letter_y	%%1+16,	%%2,	%%3
+17F9                	letter_h	%%1+24,	%%2,	%%3
+17F9                	letter_o	%%1+28,	%%2,	%%3
+17F9                	letter_l	%%1+32,	%%2,	%%3
+17F9                	letter_i	%%1+36,	%%2,	%%3
+17F9                	letter_d	%%1+40,	%%2,	%%3
+17F9                	letter_a	%%1+44,	%%2,	%%3
+17F9                	letter_y	%%1+48,	%%2,	%%3
+17F9                	letter_s	%%1+52,	%%2,	%%3
+17F9                	letter_exc	%%1+56,	%%2,	%%3
+17F9                .endm
+17F9                 
+17F9                             ; x, y, *color
+17F9                             ;	v_poke	%%1+1,	%%2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
+17F9                .macro LETTER_H,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2+3,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
+17F9                .macro LETTER_A,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2+3,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_P,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1,	%%2+4,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_Y,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+1,	%%2+3,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                .macro LETTER_O,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2+3,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1+1,	%%2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
+17F9                .macro LETTER_L,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
+17F9                .macro LETTER_I,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+1,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+1,	%%2+3,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2,	%%3
+17F9                .macro LETTER_D,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+3,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2+1,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2+3,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
+17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
+17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
+17F9                .macro LETTER_S,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                	v_poke	%%1+1,	%%2,	%%3
+17F9                	v_poke	%%1+1,	%%2+2,	%%3
+17F9                	v_poke	%%1+1,	%%2+4,	%%3
+17F9                	v_poke	%%1+2,	%%2,	%%3
+17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                	v_poke	%%1+2,	%%2+3,	%%3
+17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ;	v_poke	%%1,	%%2+3,	%%3
+17F9                .macro LETTER_EXC,
+17F9                	v_poke	%%1,	%%2,	%%3
+17F9                	v_poke	%%1,	%%2+1,	%%3
+17F9                	v_poke	%%1,	%%2+2,	%%3
+17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                .endm
+17F9                 
+17F9                             ; spin for delays
+17F9                .macro SPIN,
+17F9                	LD	B,	255
+17F9                	spin%%M:
+17F9                		DJNZ	spin%%M
+17F9                .endm
+17F9                 
+17F9                             ; write single pixel
+17F9                             ; x, y, *color
+17F9                .macro V_POKE,
+17F9                	LD	DE,	64 * (%%2) + (%%1)
+17F9                	LD	A,	(%%3)
+17F9                	LD	(DE),	A
+17F9                .endm
+17F9                 
+17F9                             ; flip display
+17F9                .macro V_FLIP,
+17F9                	LD A, 0xDE
+17F9                	OUT (0), A
+17F9                	LD A, 0xAD
+17F9                	OUT (0), A
+17F9                	LD A, 0xBE
+17F9                	OUT (0), A
+17F9                	LD A, 0xEF
+17F9                	OUT (0), A
+17F9                .endm
+17F9                 
+17F9                DATA:        
+17F9                             ; colors
+17F9   30           C_RED:    DB   0x30   
+17FA   3C           C_YELLOW:   DB   0x3C   
+17FB   0C           C_GREEN:   DB   0x0C   
+17FC   08           C_FOREST:   DB   0x08   
+17FD   0F           C_CYAN:   DB   0x0F   
+17FE   03           C_BLUE:   DB   0x03   
+17FF   33           C_MAGENTA:   DB   0x33   
+1800   00           C_BLACK:   DB   0x00   
+1801   3F           C_WHITE:   DB   0x3F   
+1802                             ; keys
+1802   00           K_UP:     DB   0b10000000   
+1803   00           K_DOWN:   DB   0b01000000   
+1804   00           K_LEFT:   DB   0b00100000   
+1805   00           K_RIGHT:   DB   0b00010000   
+1806   00           K_A:      DB   0b00001000   
+1807   00           K_B:      DB   0b00000100   
+1808   00           K_C:      DB   0b00000010   
+1809   00           K_MENU:   DB   0b00000001   
+180A   00           K_ANY:    DB   0b11111111   
+
+
+LOOP1:              0C00 DEFINED AT LINE 3
+                    > USED AT LINE 17
+SPINM_6:            13E2 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_7:            13E6 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_8:            13EA DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_9:            13EE DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_10:           13F2 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_11:           13F6 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_12:           13FA DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_13:           13FE DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_14:           1402 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_15:           1406 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_18:           17D0 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_19:           17D4 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_20:           17D8 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_21:           17DC DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_22:           17E0 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_23:           17E4 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_24:           17E8 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_25:           17EC DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_26:           17F0 DEFINED AT LINE 248
+                    > USED AT LINE 249
+SPINM_27:           17F4 DEFINED AT LINE 248
+                    > USED AT LINE 249
+DATA:               17F9 DEFINED AT LINE 272
+C_RED:              17F9 DEFINED AT LINE 274
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+C_YELLOW:           17FA DEFINED AT LINE 275
+C_GREEN:            17FB DEFINED AT LINE 276
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+C_FOREST:           17FC DEFINED AT LINE 277
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+C_CYAN:             17FD DEFINED AT LINE 278
+C_BLUE:             17FE DEFINED AT LINE 279
+C_MAGENTA:          17FF DEFINED AT LINE 280
+C_BLACK:            1800 DEFINED AT LINE 281
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+                    > USED AT LINE 256
+C_WHITE:            1801 DEFINED AT LINE 282
+K_UP:               1802 DEFINED AT LINE 285
+K_DOWN:             1803 DEFINED AT LINE 286
+K_LEFT:             1804 DEFINED AT LINE 287
+K_RIGHT:            1805 DEFINED AT LINE 288
+K_A:                1806 DEFINED AT LINE 289
+K_B:                1807 DEFINED AT LINE 290
+K_C:                1808 DEFINED AT LINE 291
+K_MENU:             1809 DEFINED AT LINE 292
+K_ANY:              180A DEFINED AT LINE 293
