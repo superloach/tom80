@@ -18,7 +18,7 @@ func (m *MEM) LoadROMFile(name string) error {
 		return err
 	}
 
-	data := [ROMSize]byte{}
+	data := make([]byte, ROMSize)
 
 	_, err = f.Read(data[:])
 	if err != nil {

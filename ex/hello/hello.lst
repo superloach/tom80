@@ -1,16 +1,63 @@
 0C00                          .ORG   0xC00   
-0C00   0E 00                  LD   C,0   
-0C02   06 0E                  LD   B,14   
-0C04   21 10 0C               LD   HL,text   
-0C07   ED B3                  OTIR      
-0C09   3E 01                  LD   A,1   
-0C0B   D3 40                  OUT   (64),A   
-0C0D                LOOP:        
-0C0D   C3 0D 0C               JP   loop   
-0C10   68 65 6C 6C 6F 2C 20 77 6F 72 6C 64 21 0A TEXT:   DB   "hello, world!\n"   
+0C00   3E 01                  LD   A,1   
+0C02   D3 00                  OUT   (0),A   
+0C04   3E 68                  LD   A,"h"   
+0C06   D3 00                  OUT   (0),A   
+0C08   3E 01                  LD   A,1   
+0C0A   D3 00                  OUT   (0),A   
+0C0C   3E 65                  LD   A,"e"   
+0C0E   D3 00                  OUT   (0),A   
+0C10   3E 01                  LD   A,1   
+0C12   D3 00                  OUT   (0),A   
+0C14   3E 6C                  LD   A,"l"   
+0C16   D3 00                  OUT   (0),A   
+0C18   3E 01                  LD   A,1   
+0C1A   D3 00                  OUT   (0),A   
+0C1C   3E 6C                  LD   A,"l"   
+0C1E   D3 00                  OUT   (0),A   
+0C20   3E 01                  LD   A,1   
+0C22   D3 00                  OUT   (0),A   
+0C24   3E 6F                  LD   A,"o"   
+0C26   D3 00                  OUT   (0),A   
+0C28   3E 01                  LD   A,1   
+0C2A   D3 00                  OUT   (0),A   
+0C2C   3E 2C                  LD   A,","   
+0C2E   D3 00                  OUT   (0),A   
+0C30   3E 01                  LD   A,1   
+0C32   D3 00                  OUT   (0),A   
+0C34   3E 20                  LD   A," "   
+0C36   D3 00                  OUT   (0),A   
+0C38   3E 01                  LD   A,1   
+0C3A   D3 00                  OUT   (0),A   
+0C3C   3E 77                  LD   A,"w"   
+0C3E   D3 00                  OUT   (0),A   
+0C40   3E 01                  LD   A,1   
+0C42   D3 00                  OUT   (0),A   
+0C44   3E 6F                  LD   A,"o"   
+0C46   D3 00                  OUT   (0),A   
+0C48   3E 01                  LD   A,1   
+0C4A   D3 00                  OUT   (0),A   
+0C4C   3E 72                  LD   A,"r"   
+0C4E   D3 00                  OUT   (0),A   
+0C50   3E 01                  LD   A,1   
+0C52   D3 00                  OUT   (0),A   
+0C54   3E 6C                  LD   A,"l"   
+0C56   D3 00                  OUT   (0),A   
+0C58   3E 01                  LD   A,1   
+0C5A   D3 00                  OUT   (0),A   
+0C5C   3E 64                  LD   A,"d"   
+0C5E   D3 00                  OUT   (0),A   
+0C60   3E 01                  LD   A,1   
+0C62   D3 00                  OUT   (0),A   
+0C64   3E 21                  LD   A,"!"   
+0C66   D3 00                  OUT   (0),A   
+0C68   3E 01                  LD   A,1   
+0C6A   D3 00                  OUT   (0),A   
+0C6C   3E 0A                  LD   A,"\n"   
+0C6E   D3 00                  OUT   (0),A   
+0C70                LOOP:        
+0C70   C3 70 0C               JP   loop   
 
 
-LOOP:               0C0D DEFINED AT LINE 11
-                    > USED AT LINE 12
-TEXT:               0C10 DEFINED AT LINE 14
-                    > USED AT LINE 5
+LOOP:               0C70 DEFINED AT LINE 60
+                    > USED AT LINE 61

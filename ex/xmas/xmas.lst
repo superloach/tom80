@@ -1833,225 +1833,173 @@
 17F4                SPINM_27:      
 17F4   10 FE                  DJNZ   spinM_27   
 17F6   C3 00 0C               JP   loop1   
-17F9                             ; x, y
-17F9                             ; x, y, *color
-17F9                .macro HAPPY_HOLIDAYS,
-17F9                	letter_h	%%1,	%%2,	%%3
-17F9                	letter_a	%%1+4,	%%2,	%%3
-17F9                	letter_p	%%1+8,	%%2,	%%3
-17F9                	letter_p	%%1+12,	%%2,	%%3
-17F9                	letter_y	%%1+16,	%%2,	%%3
-17F9                	letter_h	%%1+24,	%%2,	%%3
-17F9                	letter_o	%%1+28,	%%2,	%%3
-17F9                	letter_l	%%1+32,	%%2,	%%3
-17F9                	letter_i	%%1+36,	%%2,	%%3
-17F9                	letter_d	%%1+40,	%%2,	%%3
-17F9                	letter_a	%%1+44,	%%2,	%%3
-17F9                	letter_y	%%1+48,	%%2,	%%3
-17F9                	letter_s	%%1+52,	%%2,	%%3
-17F9                	letter_exc	%%1+56,	%%2,	%%3
+17F9                .macro HAPPY_HOLIDAYS,x_,y_,c_
+17F9                             ; 
+17F9                	letter_h	x_,	y_,	c_
+17F9                	letter_a	x_+4,	y_,	c_
+17F9                	letter_p	x_+8,	y_,	c_
+17F9                	letter_p	x_+12,	y_,	c_
+17F9                	letter_y	x_+16,	y_,	c_
+17F9                	letter_h	x_+24,	y_,	c_
+17F9                	letter_o	x_+28,	y_,	c_
+17F9                	letter_l	x_+32,	y_,	c_
+17F9                	letter_i	x_+36,	y_,	c_
+17F9                	letter_d	x_+40,	y_,	c_
+17F9                	letter_a	x_+44,	y_,	c_
+17F9                	letter_y	x_+48,	y_,	c_
+17F9                	letter_s	x_+52,	y_,	c_
+17F9                	letter_exc	x_+56,	y_,	c_
 17F9                .endm
 17F9                 
-17F9                             ; x, y, *color
-17F9                             ;	v_poke	%%1+1,	%%2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
-17F9                .macro LETTER_H,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2+3,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_H,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
+17F9                	v_poke	x+2,	y+3,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
-17F9                .macro LETTER_A,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2+3,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_A,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
+17F9                	v_poke	x+2,	y+3,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+4,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+4,	%%3
-17F9                .macro LETTER_P,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                .macro LETTER_P,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1,	%%2+4,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+4,	%%3
-17F9                .macro LETTER_Y,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+1,	%%2+3,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
+17F9                .macro LETTER_Y,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+1,	y+3,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                .macro LETTER_O,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2+3,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_O,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
+17F9                	v_poke	x+2,	y+3,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1+1,	%%2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
-17F9                .macro LETTER_L,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_L,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+3,	%%3
-17F9                .macro LETTER_I,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+1,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+1,	%%2+3,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_I,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+1,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+1,	y+3,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+2,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2,	%%3
-17F9                .macro LETTER_D,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+3,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2+1,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2+3,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_D,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+3,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y+1,	c
+17F9                	v_poke	x+2,	y+2,	c
+17F9                	v_poke	x+2,	y+3,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+1,	%%3
-17F9                             ;	v_poke	%%1+1,	%%2+3,	%%3
-17F9                             ;	v_poke	%%1+2,	%%2+1,	%%3
-17F9                .macro LETTER_S,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
-17F9                	v_poke	%%1+1,	%%2,	%%3
-17F9                	v_poke	%%1+1,	%%2+2,	%%3
-17F9                	v_poke	%%1+1,	%%2+4,	%%3
-17F9                	v_poke	%%1+2,	%%2,	%%3
-17F9                	v_poke	%%1+2,	%%2+2,	%%3
-17F9                	v_poke	%%1+2,	%%2+3,	%%3
-17F9                	v_poke	%%1+2,	%%2+4,	%%3
+17F9                .macro LETTER_S,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+4,	c
+17F9                	v_poke	x+1,	y,	c
+17F9                	v_poke	x+1,	y+2,	c
+17F9                	v_poke	x+1,	y+4,	c
+17F9                	v_poke	x+2,	y,	c
+17F9                	v_poke	x+2,	y+2,	c
+17F9                	v_poke	x+2,	y+3,	c
+17F9                	v_poke	x+2,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ;	v_poke	%%1,	%%2+3,	%%3
-17F9                .macro LETTER_EXC,
-17F9                	v_poke	%%1,	%%2,	%%3
-17F9                	v_poke	%%1,	%%2+1,	%%3
-17F9                	v_poke	%%1,	%%2+2,	%%3
-17F9                	v_poke	%%1,	%%2+4,	%%3
+17F9                .macro LETTER_EXC,x,y,c
+17F9                             ; 
+17F9                	v_poke	x,	y,	c
+17F9                	v_poke	x,	y+1,	c
+17F9                	v_poke	x,	y+2,	c
+17F9                	v_poke	x,	y+4,	c
 17F9                .endm
 17F9                 
-17F9                             ; spin for delays
 17F9                .macro SPIN,
 17F9                	LD	B,	255
 17F9                	spin%%M:
 17F9                		DJNZ	spin%%M
 17F9                .endm
 17F9                 
-17F9                             ; write single pixel
-17F9                             ; x, y, *color
-17F9                .macro V_POKE,
-17F9                	LD	DE,	64 * (%%2) + (%%1)
-17F9                	LD	A,	(%%3)
+17F9                .macro V_POKE,x,y,c
+17F9                             ; 
+17F9                	LD	DE,	64 * (y) + (x)
+17F9                	LD	A,	(c)
 17F9                	LD	(DE),	A
 17F9                .endm
 17F9                 
-17F9                             ; flip display
-17F9                .macro V_FLIP,
-17F9                	LD A, 0xDE
-17F9                	OUT (0), A
-17F9                	LD A, 0xAD
-17F9                	OUT (0), A
-17F9                	LD A, 0xBE
-17F9                	OUT (0), A
-17F9                	LD A, 0xEF
-17F9                	OUT (0), A
-17F9                .endm
-17F9                 
-17F9                DATA:        
-17F9                             ; colors
 17F9   30           C_RED:    DB   0x30   
 17FA   3C           C_YELLOW:   DB   0x3C   
 17FB   0C           C_GREEN:   DB   0x0C   
@@ -2061,7 +2009,6 @@
 17FF   33           C_MAGENTA:   DB   0x33   
 1800   00           C_BLACK:   DB   0x00   
 1801   3F           C_WHITE:   DB   0x3F   
-1802                             ; keys
 1802   00           K_UP:     DB   0b10000000   
 1803   00           K_DOWN:   DB   0b01000000   
 1804   00           K_LEFT:   DB   0b00100000   
@@ -2070,493 +2017,490 @@
 1807   00           K_B:      DB   0b00000100   
 1808   00           K_C:      DB   0b00000010   
 1809   00           K_MENU:   DB   0b00000001   
-180A   00           K_ANY:    DB   0b11111111   
 
 
 LOOP1:              0C00 DEFINED AT LINE 3
                     > USED AT LINE 17
-SPINM_6:            13E2 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_7:            13E6 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_8:            13EA DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_9:            13EE DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_10:           13F2 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_11:           13F6 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_12:           13FA DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_13:           13FE DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_14:           1402 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_15:           1406 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_18:           17D0 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_19:           17D4 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_20:           17D8 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_21:           17DC DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_22:           17E0 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_23:           17E4 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_24:           17E8 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_25:           17EC DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_26:           17F0 DEFINED AT LINE 248
-                    > USED AT LINE 249
-SPINM_27:           17F4 DEFINED AT LINE 248
-                    > USED AT LINE 249
-DATA:               17F9 DEFINED AT LINE 272
-C_RED:              17F9 DEFINED AT LINE 274
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-C_YELLOW:           17FA DEFINED AT LINE 275
-C_GREEN:            17FB DEFINED AT LINE 276
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-C_FOREST:           17FC DEFINED AT LINE 277
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-C_CYAN:             17FD DEFINED AT LINE 278
-C_BLUE:             17FE DEFINED AT LINE 279
-C_MAGENTA:          17FF DEFINED AT LINE 280
-C_BLACK:            1800 DEFINED AT LINE 281
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-                    > USED AT LINE 256
-C_WHITE:            1801 DEFINED AT LINE 282
-K_UP:               1802 DEFINED AT LINE 285
-K_DOWN:             1803 DEFINED AT LINE 286
-K_LEFT:             1804 DEFINED AT LINE 287
-K_RIGHT:            1805 DEFINED AT LINE 288
-K_A:                1806 DEFINED AT LINE 289
-K_B:                1807 DEFINED AT LINE 290
-K_C:                1808 DEFINED AT LINE 291
-K_MENU:             1809 DEFINED AT LINE 292
-K_ANY:              180A DEFINED AT LINE 293
+SPINM_6:            13E2 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_7:            13E6 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_8:            13EA DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_9:            13EE DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_10:           13F2 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_11:           13F6 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_12:           13FA DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_13:           13FE DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_14:           1402 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_15:           1406 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_18:           17D0 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_19:           17D4 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_20:           17D8 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_21:           17DC DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_22:           17E0 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_23:           17E4 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_24:           17E8 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_25:           17EC DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_26:           17F0 DEFINED AT LINE 200
+                    > USED AT LINE 201
+SPINM_27:           17F4 DEFINED AT LINE 200
+                    > USED AT LINE 201
+C_RED:              17F9 DEFINED AT LINE 210
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+C_YELLOW:           17FA DEFINED AT LINE 211
+C_GREEN:            17FB DEFINED AT LINE 212
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+C_FOREST:           17FC DEFINED AT LINE 213
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+C_CYAN:             17FD DEFINED AT LINE 214
+C_BLUE:             17FE DEFINED AT LINE 215
+C_MAGENTA:          17FF DEFINED AT LINE 216
+C_BLACK:            1800 DEFINED AT LINE 217
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+                    > USED AT LINE 206
+C_WHITE:            1801 DEFINED AT LINE 218
+K_UP:               1802 DEFINED AT LINE 220
+K_DOWN:             1803 DEFINED AT LINE 221
+K_LEFT:             1804 DEFINED AT LINE 222
+K_RIGHT:            1805 DEFINED AT LINE 223
+K_A:                1806 DEFINED AT LINE 224
+K_B:                1807 DEFINED AT LINE 225
+K_C:                1808 DEFINED AT LINE 226
+K_MENU:             1809 DEFINED AT LINE 227

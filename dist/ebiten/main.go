@@ -41,10 +41,6 @@ func MkDist() *Dist {
 
 	d.audios = append(d.audios, audioPlayer)
 
-	d.tom80.IO.Devices[0] = 0
-	d.tom80.IO.Devices[1] = 0
-	d.tom80.IO.Devices[64] = 0
-
 	if len(os.Args) > 1 {
 		err := d.tom80.MEM.LoadROMFile(os.Args[1])
 		if err != nil {
@@ -57,11 +53,16 @@ func MkDist() *Dist {
 	return &d
 }
 
-func (d *Dist) Loop() {
+func (d *Dist) OpLoop() {
 	for range time.Tick(time.Second / time.Duration(tom80.Cycles)) {
 		d.tom80.CPU.DoOpcode()
+	}
+}
 
-		b := byte(0)
+func (d *Dist) KeyLoop() {
+	var b byte
+	for {
+		b = 0x00
 
 		switch {
 		case ebiten.IsKeyPressed(ebiten.KeyW):
@@ -82,15 +83,19 @@ func (d *Dist) Loop() {
 			b |= 1<<0
 		}
 
-		d.tom80.IO.Devices[1] = b
+		d.tom80.IO.Controls[1].Write(b)
+	}
+}
 
-		v := d.tom80.IO.ReadPortInternal(0, false)
-		if v != 0 {
-			print(string([]byte{v}))
-		}
+func (d *Dist) DebugLoop() {
+	for v := range d.tom80.IO.Debug.Text {
+		print(string([]byte{v}))
+	}
+}
 
-		a1 := d.tom80.IO.ReadPortInternal(64, false)
-		if a1 != 0 {
+func (d *Dist) AudioLoop() {
+	for a1 := range *d.tom80.IO.Audios[0] {
+		if a1 != 0x00 {
 			d.audios[0].Rewind()
 			d.audios[0].Play()
 		}
@@ -98,7 +103,10 @@ func (d *Dist) Loop() {
 }
 
 func (d *Dist) Run() error {
-	go d.Loop()
+	go d.OpLoop()
+	go d.KeyLoop()
+	go d.DebugLoop()
+	go d.AudioLoop()
 	return ebiten.RunGame(d)
 }
 

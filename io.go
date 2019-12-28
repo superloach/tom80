@@ -2,36 +2,55 @@ package tom80
 
 type IO struct {
 	tom80    *Tom80
-	Devices map[uint16]byte
+	Debug    *Debug
+	Controls [ControlCount]*Control
+	Audios   [AudioCount]*Audio
 }
 
 func MkIO(tom80 *Tom80) *IO {
-	i := IO{}
+	i := &IO{}
 	i.tom80 = tom80
-	i.Devices = make(map[uint16]byte)
-	return &i
+	i.Debug = MkDebug()
+	for n, _ := range i.Controls {
+		i.Controls[n] = MkControl()
+	}
+	for n, _ := range i.Audios {
+		i.Audios[n] = MkAudio()
+	}
+	return i
 }
 
 func (i *IO) ReadPort(address uint16) byte {
-	address &= 0xFF
 	return i.ReadPortInternal(address, false)
 }
 
 func (i *IO) WritePort(address uint16, value byte) {
-	address &= 0xFF
 	i.WritePortInternal(address, value, false)
 }
 
 func (i *IO) ReadPortInternal(address uint16, contend bool) byte {
 	address &= 0xFF
-	value := i.Devices[address]
-	i.Devices[address] = 0
-	return value
+	switch {
+	case address == 0x00:
+		return i.Debug.Read()
+	case address >= 0x01 && address < 0x01 + ControlCount:
+		return i.Controls[address - 0x01].Read()
+	case address >= 0x01 + ControlCount && address < 0x01 + ControlCount + AudioCount:
+		return i.Audios[address - (0x01 + ControlCount)].Read()
+	}
+	return 0x00
 }
 
 func (i *IO) WritePortInternal(address uint16, value byte, contend bool) {
 	address &= 0xFF
-	i.Devices[address] = value
+	switch {
+	case address == 0x00:
+		i.Debug.Write(value)
+	case address >= 0x01 && address < 0x01 + ControlCount:
+		i.Controls[address - 0x01].Write(value)
+	case address >= 0x01 + ControlCount && address < 0x01 + ControlCount + AudioCount:
+		i.Audios[address - (0x01 + ControlCount)].Write(value)
+	}
 }
 
 func (i *IO) ContendPortPreio(address uint16)  { return }
