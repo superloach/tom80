@@ -5,15 +5,15 @@ const AudioBuf uint16 = 8
 
 type Audio chan byte
 
-func MkAudio() *Audio {
+func MkAudio() Audio {
 	a := make(Audio, AudioBuf)
-	return &a
+	return a
 }
 
-func (a *Audio) Read() byte {
-	return <-*a
+func (a Audio) Read() byte {
+	return <-a
 }
 
-func (a *Audio) Write(data byte) {
-	*a <- data
+func (a Audio) Write(data byte) {
+	a <- data
 }

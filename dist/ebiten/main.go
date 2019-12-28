@@ -1,8 +1,8 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/hajimehoshi/ebiten"
@@ -14,7 +14,7 @@ import (
 )
 
 type Dist struct {
-	tom80 *tom80.Tom80
+	tom80  *tom80.Tom80
 	audios []*audio.Player
 }
 
@@ -59,42 +59,27 @@ func (d *Dist) OpLoop() {
 	}
 }
 
-func (d *Dist) KeyLoop() {
-	var b byte
+func (d *Dist) ControlsLoop() {
 	for {
-		b = 0x00
-
-		switch {
-		case ebiten.IsKeyPressed(ebiten.KeyW):
-			b |= 1<<7
-		case ebiten.IsKeyPressed(ebiten.KeyA):
-			b |= 1<<6
-		case ebiten.IsKeyPressed(ebiten.KeyS):
-			b |= 1<<5
-		case ebiten.IsKeyPressed(ebiten.KeyD):
-			b |= 1<<4
-		case ebiten.IsKeyPressed(ebiten.KeyComma):
-			b |= 1<<3
-		case ebiten.IsKeyPressed(ebiten.KeyPeriod):
-			b |= 1<<2
-		case ebiten.IsKeyPressed(ebiten.KeySlash):
-			b |= 1<<1
-		case ebiten.IsKeyPressed(ebiten.KeyEscape):
-			b |= 1<<0
-		}
-
-		d.tom80.IO.Controls[1].Write(b)
+		d.tom80.IO.Controls[0].Up = ebiten.IsKeyPressed(ebiten.KeyW)
+		d.tom80.IO.Controls[0].Down = ebiten.IsKeyPressed(ebiten.KeyA)
+		d.tom80.IO.Controls[0].Left = ebiten.IsKeyPressed(ebiten.KeyS)
+		d.tom80.IO.Controls[0].Right = ebiten.IsKeyPressed(ebiten.KeyD)
+		d.tom80.IO.Controls[0].A = ebiten.IsKeyPressed(ebiten.KeyComma)
+		d.tom80.IO.Controls[0].B = ebiten.IsKeyPressed(ebiten.KeyPeriod)
+		d.tom80.IO.Controls[0].C = ebiten.IsKeyPressed(ebiten.KeySlash)
+		d.tom80.IO.Controls[0].Menu = ebiten.IsKeyPressed(ebiten.KeyEscape)
 	}
 }
 
-func (d *Dist) DebugLoop() {
+func (d *Dist) DebugTextLoop() {
 	for v := range d.tom80.IO.Debug.Text {
 		print(string([]byte{v}))
 	}
 }
 
-func (d *Dist) AudioLoop() {
-	for a1 := range *d.tom80.IO.Audios[0] {
+func (d *Dist) AudiosLoop() {
+	for a1 := range d.tom80.IO.Audios[0] {
 		if a1 != 0x00 {
 			d.audios[0].Rewind()
 			d.audios[0].Play()
@@ -104,9 +89,9 @@ func (d *Dist) AudioLoop() {
 
 func (d *Dist) Run() error {
 	go d.OpLoop()
-	go d.KeyLoop()
-	go d.DebugLoop()
-	go d.AudioLoop()
+	go d.ControlsLoop()
+	go d.DebugTextLoop()
+	go d.AudiosLoop()
 	return ebiten.RunGame(d)
 }
 
@@ -118,8 +103,8 @@ func (d *Dist) Update(screen *ebiten.Image) error {
 		// display video memory
 		for i, b := range v {
 			screen.Set(
-				i % int(tom80.VIDWidth),
-				i / int(tom80.VIDWidth),
+				i%int(tom80.VIDWidth),
+				i/int(tom80.VIDWidth),
 				tom80.Pixel(b),
 			)
 		}
