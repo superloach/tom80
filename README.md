@@ -33,7 +33,7 @@ if you know what you're doing, you may add `.cstr "clear:false"`, and VRAM will 
   - 64 x 48 pixels
   - 6-bit colour (`0x[__RRGGBB]`)
   - VRAM 0x0000 - 0x0BFF
-- Controllers
+- Controls
   - ports 0x01-0x08
   - Up, Down, Left, Right, A, B, C, Menu (1<<7 - 1<<0)
 
@@ -43,8 +43,8 @@ order of unfinished items is mostly arbitrary
   - [x] rom info in vram area on load
 - [x] screen working
   - [x] use screen in asm
-- [x] controllers working
-  - [ ] use controllers in asm
+- [x] controls working
+  - [ ] use controls in asm
 - [ ] add simple way to pause cpu
 - [ ] standard prgm folder
   - [ ] move from ex to prgm
@@ -58,4 +58,8 @@ order of unfinished items is mostly arbitrary
 - [ ] audio working
   - [ ] use audio in asm
 - [ ] standard library for asm
-- [ ] port asm80 to go and integrate
+  - [ ] simplify control keys
+- [ ] port asm80 to go-asm80
+- [ ] integrate go-asm80
+  - [ ] compile from asm if bin is missing
+  - [ ] attempt recompile if asm is newer
