@@ -17,8 +17,7 @@ make sure you have [asm80](https://github.com/maly/asm80-node) installed
 asm80 -m Z80 -t bin -o <name>.bin <path>/<name>.asm
 # <name>.bin will be output in <path>
 ```
-or use [asm80.com](https://www.asm80.com/)
-[asm80 docs](https://maly.gitbooks.io/asm80/)
+or use [asm80.com](https://www.asm80.com/) ([asm80 docs](https://maly.gitbooks.io/asm80/))
 ### writing
 programs should start like:
 ```as
