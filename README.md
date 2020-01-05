@@ -2,12 +2,52 @@
 a Z80-based fantasy console.
 
 ## running emulator
+currently, the only distribution is ebiten, which should run fine on desktops.
 ```bash
 go run ./dist/ebiten ./ex/<name>/<name>.bin
 ```
+web and mobile support is untested and thus likely incomplete.
 
-## compiling programs
-make sure you have https://github.com/maly/asm80-node installed
+## making programs
+### compiling
+make sure you have [asm80](https://github.com/maly/asm80-node) installed
 ```bash
-asm80 -m Z80 -t bin -o <name>.bin ./ex/<name>/<name>.asm
+asm80 -m Z80 -t bin -o <name>.bin <path>/<name>.asm
+# <name>.bin will be output in <path>
 ```
+or use [asm80.com](https://www.asm80.com/)
+[asm80 docs](https://maly.gitbooks.io/asm80/)
+### writing
+programs should start like:
+```as
+.cstr	"name:program name"
+.cstr	"author:your name"
+.cstr	"version:0.0"
+.org	0x0C00
+```
+if you know what you're doing, you may add `.cstr "clear:false"`, and VRAM will not be cleared after loading the ROM.
+
+## basic specs
+- Screen
+  - 64 x 48 pixels
+  - 6-bit colour (`0x[__RRGGBB]`)
+  - VRAM 0x0000 - 0x0BFF
+- Controllers
+  - ports 0x01-0x08
+  - Up, Down, Left, Right, A, B, C, Menu (1<<7 - 1<<0)
+
+## todo
+- [x] rom loading
+- [x] rom info in vram on load
+- [x] screen working
+- [x] use screen in asm
+- [x] controllers working
+- [x] use port 0x00 for system commands
+  - [x] debug printing
+  - [ ] file listing
+  - [ ] file loading
+- [ ] use controllers in asm
+- [ ] audio working
+- [ ] use audio in asm
+- [ ] standard library for asm
+- [ ] port asm80 to go and integrate
