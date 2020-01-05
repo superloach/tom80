@@ -46,10 +46,14 @@ order of unfinished items is mostly arbitrary
 - [x] controllers working
   - [ ] use controllers in asm
 - [ ] standard prgm folder
+  - [ ] move from ex to prgm
 - [x] use port 0x00 for system commands
   - [x] debug printing
   - [ ] file listing
   - [ ] file loading
+- [ ] "loader" program
+  - loaded into rom by default
+  - uses file listing/loading
 - [ ] audio working
   - [ ] use audio in asm
 - [ ] standard library for asm
