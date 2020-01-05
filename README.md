@@ -1,6 +1,8 @@
 # tom80
 a Z80-based fantasy console.
 
+![pixel pattern](https://media.discordapp.net/attachments/314487938949971980/663244487438630922/2020-01-04-235619_514x386_scrot.png)
+
 ## running emulator
 currently, the only distribution is ebiten, which should run fine on desktops.
 ```bash
@@ -37,17 +39,19 @@ if you know what you're doing, you may add `.cstr "clear:false"`, and VRAM will 
   - Up, Down, Left, Right, A, B, C, Menu (1<<7 - 1<<0)
 
 ## todo
+order of unfinished items is mostly arbitrary
 - [x] rom loading
-- [x] rom info in vram on load
+  - [x] rom info in vram area on load
 - [x] screen working
-- [x] use screen in asm
+  - [x] use screen in asm
 - [x] controllers working
+  - [ ] use controllers in asm
+- [ ] standard prgm folder
 - [x] use port 0x00 for system commands
   - [x] debug printing
   - [ ] file listing
   - [ ] file loading
-- [ ] use controllers in asm
 - [ ] audio working
-- [ ] use audio in asm
+  - [ ] use audio in asm
 - [ ] standard library for asm
 - [ ] port asm80 to go and integrate
