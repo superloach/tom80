@@ -8,8 +8,14 @@ const VIDEnd uint16 = VIDStart + VIDSize
 
 func (m *MEM) DumpVID() []byte {
 	v := make([]byte, VIDSize)
-	for i := uint16(0); i < VIDSize; i++ {
+	for i := uint16(0x00); i < VIDSize; i++ {
 		v[i] = m.ReadByte(VIDStart + i)
 	}
 	return v
+}
+
+func (m *MEM) ClearVID() {
+	for i := uint16(0x00); i < VIDSize; i++ {
+		m.WriteByte(VIDStart + i, 0x00)
+	}
 }

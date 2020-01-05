@@ -1,9 +1,8 @@
 .org 0x0C00
 
-loop1:
-	tree 32, 16
+tree 32, 16
 
-	happy_holidays	3,	4,	c_black
+loop1:
 	happy_holidays	4,	3,	c_red
 	.rept 10
 		spin
@@ -13,6 +12,8 @@ loop1:
 	.rept 10
 		spin
 	.endm
+
+	happy_holidays	3,	4,	c_black
 
 	JP	loop1
 

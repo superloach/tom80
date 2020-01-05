@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/hajimehoshi/ebiten"
+	"github.com/hajimehoshi/ebiten/ebitenutil"
 	"github.com/hajimehoshi/ebiten/audio"
 	"github.com/hajimehoshi/ebiten/audio/wav"
 	raudio "github.com/hajimehoshi/ebiten/examples/resources/audio"
@@ -13,92 +14,72 @@ import (
 	"github.com/superloach/tom80"
 )
 
-type Dist struct {
-	tom80  *tom80.Tom80
-	audios []*audio.Player
-}
+var cons *tom80.Tom80
+var auds  []*audio.Player
 
-func MkDist() *Dist {
-	d := Dist{}
-
-	t := tom80.MkTom80()
-	d.tom80 = t
+func init() {
+	cons = tom80.MkTom80()
 
 	audioContext, err := audio.NewContext(44100)
-	if err != nil {
-		panic(err)
-	}
+	if err != nil { panic(err) }
 
 	aud, err := wav.Decode(audioContext, audio.BytesReadSeekCloser(raudio.Jab_wav))
-	if err != nil {
-		panic(err)
-	}
+	if err != nil { panic(err) }
 
 	audioPlayer, err := audio.NewPlayer(audioContext, aud)
-	if err != nil {
-		panic(err)
-	}
+	if err != nil { panic(err) }
 
-	d.audios = append(d.audios, audioPlayer)
+	auds = append(auds, audioPlayer)
 
 	if len(os.Args) > 1 {
-		err := d.tom80.MEM.LoadROMFile(os.Args[1])
+		err := cons.MEM.LoadROMFile(os.Args[1])
 		if err != nil {
 			fmt.Println("unable to load rom", os.Args[1])
+			os.Exit(1)
 		} else {
 			fmt.Println("loaded rom", os.Args[1])
 		}
 	}
-
-	return &d
 }
 
-func (d *Dist) OpLoop() {
+func opLoop() {
 	for range time.Tick(time.Second / time.Duration(tom80.Cycles)) {
-		d.tom80.CPU.DoOpcode()
+		cons.CPU.DoOpcode()
 	}
 }
 
-func (d *Dist) ControlsLoop() {
+func controlsLoop() {
 	for {
-		d.tom80.IO.Controls[0].Up = ebiten.IsKeyPressed(ebiten.KeyW)
-		d.tom80.IO.Controls[0].Down = ebiten.IsKeyPressed(ebiten.KeyA)
-		d.tom80.IO.Controls[0].Left = ebiten.IsKeyPressed(ebiten.KeyS)
-		d.tom80.IO.Controls[0].Right = ebiten.IsKeyPressed(ebiten.KeyD)
-		d.tom80.IO.Controls[0].A = ebiten.IsKeyPressed(ebiten.KeyComma)
-		d.tom80.IO.Controls[0].B = ebiten.IsKeyPressed(ebiten.KeyPeriod)
-		d.tom80.IO.Controls[0].C = ebiten.IsKeyPressed(ebiten.KeySlash)
-		d.tom80.IO.Controls[0].Menu = ebiten.IsKeyPressed(ebiten.KeyEscape)
+		cons.IO.Controls[0].Up = ebiten.IsKeyPressed(ebiten.KeyW)
+		cons.IO.Controls[0].Left = ebiten.IsKeyPressed(ebiten.KeyA)
+		cons.IO.Controls[0].Down = ebiten.IsKeyPressed(ebiten.KeyS)
+		cons.IO.Controls[0].Right = ebiten.IsKeyPressed(ebiten.KeyD)
+		cons.IO.Controls[0].A = ebiten.IsKeyPressed(ebiten.KeyComma)
+		cons.IO.Controls[0].B = ebiten.IsKeyPressed(ebiten.KeyPeriod)
+		cons.IO.Controls[0].C = ebiten.IsKeyPressed(ebiten.KeySlash)
+		cons.IO.Controls[0].Menu = ebiten.IsKeyPressed(ebiten.KeyEscape)
 	}
 }
 
-func (d *Dist) DebugTextLoop() {
-	for v := range d.tom80.IO.Debug.Text {
+func debugTextLoop() {
+	for v := range cons.IO.Debug.Text {
 		print(string([]byte{v}))
 	}
 }
 
-func (d *Dist) AudiosLoop() {
-	for a1 := range d.tom80.IO.Audios[0] {
+func audsLoop() {
+	for a1 := range cons.IO.Audios[0] {
 		if a1 != 0x00 {
-			d.audios[0].Rewind()
-			d.audios[0].Play()
+			auds[0].Rewind()
+			auds[0].Play()
 		}
 	}
 }
 
-func (d *Dist) Run() error {
-	go d.OpLoop()
-	go d.ControlsLoop()
-	go d.DebugTextLoop()
-	go d.AudiosLoop()
-	return ebiten.RunGame(d)
-}
-
-func (d *Dist) Update(screen *ebiten.Image) error {
+func update(screen *ebiten.Image) error {
 	if !ebiten.IsDrawingSkipped() {
 		// dump video memory
-		v := d.tom80.MEM.DumpVID()
+		v := cons.MEM.DumpVID()
 
 		// display video memory
 		for i, b := range v {
@@ -110,17 +91,25 @@ func (d *Dist) Update(screen *ebiten.Image) error {
 		}
 	}
 
+	name, ok := cons.MEM.ROMInfo["name"]
+	if ok {
+		ebitenutil.DebugPrint(screen, name)
+	}
+
 	return nil
 }
 
-func (d *Dist) Layout(ow, oh int) (int, int) {
-	return int(tom80.VIDWidth), int(tom80.VIDHeight)
-}
-
 func main() {
-	d := MkDist()
-	err := d.Run()
-	if err != nil {
-		panic(err)
-	}
+	go opLoop()
+	go controlsLoop()
+	go debugTextLoop()
+	go audsLoop()
+	err := ebiten.Run(
+		update,
+		int(tom80.VIDWidth),
+		int(tom80.VIDHeight),
+		8,
+		"Tom80",
+	)
+	if err != nil { panic(err) }
 }

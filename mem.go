@@ -3,8 +3,9 @@ package tom80
 const MEMSize uint16 = VIDSize + ROMSize
 
 type MEM struct {
-	tom80 *Tom80
-	data  [MEMSize]byte
+	tom80   *Tom80
+	data    [MEMSize]byte
+	ROMInfo map[string]string
 }
 
 func MkMEM(tom80 *Tom80) *MEM {

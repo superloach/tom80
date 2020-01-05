@@ -1,6 +1,6 @@
 package tom80
 
-import "fmt"
+//import "fmt"
 
 type IO struct {
 	tom80    *Tom80
@@ -38,7 +38,6 @@ func (i *IO) ReadPortInternal(address uint16, contend bool) byte {
 	case address >= 0x01 && address < 0x01+ControlCount:
 		p := address - 0x01
 		v := i.Controls[p].Read()
-		fmt.Printf("%0#x: %0#b\n", p, v)
 		return v
 	case address >= 0x01+ControlCount && address < 0x01+ControlCount+AudioCount:
 		return i.Audios[address-(0x01+ControlCount)].Read()

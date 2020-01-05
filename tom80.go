@@ -2,8 +2,8 @@ package tom80
 
 import "github.com/remogatto/z80"
 
-//const Cycles int = 2500000 // 2.5 MHz
-const Cycles int = 25 // 25 Hz
+const Cycles int = 2500000 // 2.5 MHz
+//const Cycles int = 25 // 25 Hz
 
 type Tom80 struct {
 	MEM *MEM
