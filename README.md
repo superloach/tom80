@@ -45,6 +45,7 @@ order of unfinished items is mostly arbitrary
   - [x] use screen in asm
 - [x] controllers working
   - [ ] use controllers in asm
+- [ ] add simple way to pause cpu
 - [ ] standard prgm folder
   - [ ] move from ex to prgm
 - [x] use port 0x00 for system commands
