@@ -31,10 +31,10 @@ if you know what you're doing, you may add `.cstr "clear:false"`, and VRAM will 
 ## basic specs
 - Screen
   - 64 x 48 pixels
-  - 6-bit colour (`0x[__RRGGBB]`)
+  - 6-bit colour (`0b[__RRGGBB]`)
   - VRAM 0x0000 - 0x0BFF
 - Controls
-  - ports 0x01-0x08
+  - ports 0x01 - 0x08
   - Up, Down, Left, Right, A, B, C, Menu (1<<7 - 1<<0)
 
 ## todo
@@ -56,9 +56,14 @@ order of unfinished items is mostly arbitrary
   - loaded into rom by default
   - uses file listing/loading
 - [ ] audio working
-  - [ ] use audio in asm
+  - planned 16 sounds
+  - use ports 0x09 - 0x18
+  - write volume/pitch values (`0bVVVPPPPP`)
+  - [ ] use audio in asm.
 - [ ] standard library for asm
   - [ ] simplify control keys
+  - [ ] shape drawing macros
+  - [ ] fonts?
 - [ ] port asm80 to go-asm80
 - [ ] integrate go-asm80
   - [ ] compile from asm if bin is missing
