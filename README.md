@@ -45,23 +45,25 @@ order of unfinished items is mostly arbitrary
   - [x] use screen in asm
 - [x] controls working
   - [x] use controls in asm
-- [ ] COMPLETE DOCS
-- [ ] add simple way to pause cpu
-- [x] standard prgm folder
-  - [x] move from ex to prgm
+- [x] COMPLETE DOCS
+- [x] add simple way to pause cpu ([hajimehoshi/ebiten#1037](https://github.com/hajimehoshi/ebiten/issues/1037))
+- [x] folder layout
+  - [x] move programs from /ex to /prgm
+  - [x] move system from / to /lib
+  - [x] move frontend from /dist/ebiten to /
 - [x] use port 0x00 for system commands
   - [x] mode setting
-  - [x] debug printing
-  - [ ] file listing
-  - [ ] file loading
+  - [ ] debug print mode
+  - [ ] file list mode
+  - [ ] file load mode
 - [ ] "loader" program
   - loaded into rom by default
   - uses file listing/loading
 - [ ] audio working
-  - planned 16 sounds
-  - use ports 0x09 - 0x18
-  - write volume/pitch values (`0bVVVPPPPP`)
-  - [ ] use audio in asm.
+  - [ ] gather 16 sounds
+  - [x] use ports 0x09 - 0x18
+  - [ ] define event type (`0bVVVPPPPP`)
+  - [ ] use audio in asm
 - [ ] standard library for asm
   - [ ] simplify control keys
   - [ ] shape drawing macros

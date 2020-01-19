@@ -1,17 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"flag"
 	"os"
 	"time"
 
 	"github.com/hajimehoshi/ebiten"
 	"github.com/hajimehoshi/ebiten/audio"
-	"github.com/hajimehoshi/ebiten/audio/wav"
-//	"github.com/hajimehoshi/ebiten/ebitenutil"
-	raudio "github.com/hajimehoshi/ebiten/examples/resources/audio"
 
-	"github.com/superloach/tom80"
+	tom80 "github.com/superloach/tom80/lib"
 )
 
 var cons *tom80.Tom80
@@ -21,39 +18,32 @@ var info tom80.ROMInfo
 func init() {
 	cons = tom80.MkTom80()
 
-	audioContext, err := audio.NewContext(44100)
-	if err != nil {
-		panic(err)
+	game := flag.String("game", "", "`file` to load game from")
+	flag.Parse()
+
+	if *game == "" {
+		println("please specify a game to load (-game file)")
+		os.Exit(1)
 	}
 
-	aud, err := wav.Decode(audioContext, audio.BytesReadSeekCloser(raudio.Jab_wav))
+	err, info := cons.MEM.LoadROMFile(*game)
 	if err != nil {
-		panic(err)
-	}
-
-	audioPlayer, err := audio.NewPlayer(audioContext, aud)
-	if err != nil {
-		panic(err)
-	}
-
-	auds = append(auds, audioPlayer)
-
-	if len(os.Args) > 1 {
-		err, info := cons.MEM.LoadROMFile(os.Args[1])
-		if err != nil {
-			fmt.Println("unable to load rom", os.Args[1])
-			os.Exit(1)
-		} else {
-			fmt.Println("loaded", info.Name())
-		}
+		print("unable to load rom ")
+		println(*game)
+		print("error: ")
+		println(err.Error())
+		os.Exit(1)
 	} else {
-		fmt.Println("missing filename")
+		print("loaded ")
+		println(info.Name())
 	}
 }
 
 func opLoop() {
 	for range time.Tick(time.Second / time.Duration(tom80.Cycles)) {
-		cons.CPU.DoOpcode()
+		if ebiten.IsForeground() {
+			cons.CPU.DoOpcode()
+		}
 	}
 }
 

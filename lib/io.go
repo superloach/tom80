@@ -64,7 +64,7 @@ func (i *IO) WritePortInternal(address uint16, value byte, contend bool) {
 }
 
 // implements z80.PortAccessor
-func (i *IO) ContendPortPreio(address uint16)  { return }
+func (i *IO) ContendPortPreio(address uint16) { return }
 
 // implements z80.PortAccessor
 func (i *IO) ContendPortPostio(address uint16) { return }

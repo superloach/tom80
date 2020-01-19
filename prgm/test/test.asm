@@ -34,11 +34,11 @@ upunset:
 	JP	updone
 
 downset:
-	v_poke	2,	2,	c_red
+	v_poke	2,	3,	c_red
 	JP	downdone
 
 downunset:
-	v_poke	2,	2,	c_black
+	v_poke	2,	3,	c_black
 	JP	downdone
 
 leftset:

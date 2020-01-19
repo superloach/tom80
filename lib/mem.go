@@ -8,7 +8,7 @@ const (
 //
 // implements z80.MemoryAccessor
 type MEM struct {
-	data    [MEMSize]byte
+	data [MEMSize]byte
 }
 
 // Make system memory.
@@ -42,13 +42,13 @@ func (m *MEM) WriteByteInternal(address uint16, value byte) {
 func (m *MEM) ContendRead(address uint16, time int) { return }
 
 // implements z80.MemoryAccessor
-func (m *MEM) ContendReadNoMreq(address uint16, time int)                  { return }
+func (m *MEM) ContendReadNoMreq(address uint16, time int) { return }
 
 // implements z80.MemoryAccessor
 func (m *MEM) ContendReadNoMreq_loop(address uint16, time int, count uint) { return }
 
 // implements z80.MemoryAccessor
-func (m *MEM) ContendWriteNoMreq(address uint16, time int)                  { return }
+func (m *MEM) ContendWriteNoMreq(address uint16, time int) { return }
 
 // implements z80.MemoryAccessor
 func (m *MEM) ContendWriteNoMreq_loop(address uint16, time int, count uint) { return }
