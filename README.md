@@ -4,11 +4,10 @@ a Z80-based fantasy console.
 ![pixel pattern](https://media.discordapp.net/attachments/314487938949971980/663244487438630922/2020-01-04-235619_514x386_scrot.png)
 
 ## running emulator
-currently, the only distribution is ebiten, which should run fine on desktops.
 ```bash
-go run -game name
+go run -game <name>
 ```
-web and mobile support is untested and thus likely incomplete.
+where `name` is the name of a program (compiled program should be at `prgm/<name>/<name>.bin`)
 
 ## making programs
 ### compiling
