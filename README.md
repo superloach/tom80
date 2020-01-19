@@ -6,7 +6,7 @@ a Z80-based fantasy console.
 ## running emulator
 currently, the only distribution is ebiten, which should run fine on desktops.
 ```bash
-go run ./dist/ebiten ./ex/<name>/<name>.bin
+go run -game name
 ```
 web and mobile support is untested and thus likely incomplete.
 
