@@ -52,7 +52,6 @@ order of unfinished items is mostly arbitrary
 - [x] use port 0x00 for system commands
   - [x] mode setting
   - [x] debug printing
-  - [x] flip waiting
   - [ ] file listing
   - [ ] file loading
 - [ ] "loader" program

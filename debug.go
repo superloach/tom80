@@ -8,7 +8,6 @@ const (
 type Debug struct {
 	Mode int
 	Text chan byte
-	Flip chan byte
 }
 
 // Make debug info.
@@ -19,15 +18,11 @@ func MkDebug() *Debug {
 }
 
 // Read debug data.
-//
-// If mode is 2, return data from the flip buffer.
 func (d *Debug) Read() byte {
 	var mode int = d.Mode
 	d.Mode = 0
 
 	switch mode {
-	case 2:
-		return <-d.Flip
 	default:
 		return 0x00
 	}
