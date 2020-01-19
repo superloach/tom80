@@ -46,11 +46,13 @@ order of unfinished items is mostly arbitrary
 - [x] controls working
   - [x] use controls in asm
 - [x] COMPLETE DOCS
+- [x] use flag
 - [x] add simple way to pause cpu ([hajimehoshi/ebiten#1037](https://github.com/hajimehoshi/ebiten/issues/1037))
 - [x] folder layout
   - [x] move programs from /ex to /prgm
   - [x] move system from / to /lib
   - [x] move frontend from /dist/ebiten to /
+  - [x] use name in /prgm rather than path
 - [x] use port 0x00 for system commands
   - [x] mode setting
   - [ ] debug print mode

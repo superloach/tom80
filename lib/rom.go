@@ -2,6 +2,7 @@ package tom80
 
 import (
 	"os"
+	"path"
 	"strings"
 )
 
@@ -53,20 +54,22 @@ func (m *MEM) LoadROM(data []byte) ROMInfo {
 }
 
 // Load a ROM from a file.
-func (m *MEM) LoadROMFile(name string) (error, ROMInfo) {
+func (m *MEM) LoadROMFile(name string) (ROMInfo, error) {
+	name = path.Join(".", "prgm", name, name + ".bin")
+
 	f, err := os.Open(name)
 	if err != nil {
-		return err, map[string]string{}
+		return map[string]string{}, err
 	}
 
 	data := make([]byte, ROMSize)
 
 	_, err = f.Read(data[:])
 	if err != nil {
-		return err, map[string]string{}
+		return map[string]string{}, err
 	}
 
-	return nil, m.LoadROM(data[:])
+	return m.LoadROM(data[:]), nil
 }
 
 // Gather ROM info from the VRAM region.

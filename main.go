@@ -18,15 +18,15 @@ var info tom80.ROMInfo
 func init() {
 	cons = tom80.MkTom80()
 
-	game := flag.String("game", "", "`file` to load game from")
+	game := flag.String("game", "", "`name` of game to load")
 	flag.Parse()
 
 	if *game == "" {
-		println("please specify a game to load (-game file)")
+		println("please specify a game to load (-game name)")
 		os.Exit(1)
 	}
 
-	err, info := cons.MEM.LoadROMFile(*game)
+	info, err := cons.MEM.LoadROMFile(*game)
 	if err != nil {
 		print("unable to load rom ")
 		println(*game)
