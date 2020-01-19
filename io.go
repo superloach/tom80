@@ -2,16 +2,18 @@ package tom80
 
 //import "fmt"
 
+// Handler for port I/O.
+//
+// implements z80.PortAccessor
 type IO struct {
-	tom80    *Tom80
 	Debug    *Debug
 	Controls [ControlCount]*Control
 	Audios   [AudioCount]Audio
 }
 
-func MkIO(tom80 *Tom80) *IO {
+// Make a port I/O handler.
+func MkIO() *IO {
 	i := &IO{}
-	i.tom80 = tom80
 	i.Debug = MkDebug()
 	for n := range i.Controls {
 		i.Controls[n] = MkControl()
@@ -22,14 +24,17 @@ func MkIO(tom80 *Tom80) *IO {
 	return i
 }
 
+// implements z80.PortAccessor
 func (i *IO) ReadPort(address uint16) byte {
 	return i.ReadPortInternal(address, false)
 }
 
+// implements z80.PortAccessor
 func (i *IO) WritePort(address uint16, value byte) {
 	i.WritePortInternal(address, value, false)
 }
 
+// implements z80.PortAccessor
 func (i *IO) ReadPortInternal(address uint16, contend bool) byte {
 	address &= 0x00FF
 	switch {
@@ -45,6 +50,7 @@ func (i *IO) ReadPortInternal(address uint16, contend bool) byte {
 	return 0x00
 }
 
+// implements z80.PortAccessor
 func (i *IO) WritePortInternal(address uint16, value byte, contend bool) {
 	address &= 0x00FF
 	switch {
@@ -57,5 +63,8 @@ func (i *IO) WritePortInternal(address uint16, value byte, contend bool) {
 	}
 }
 
+// implements z80.PortAccessor
 func (i *IO) ContendPortPreio(address uint16)  { return }
+
+// implements z80.PortAccessor
 func (i *IO) ContendPortPostio(address uint16) { return }

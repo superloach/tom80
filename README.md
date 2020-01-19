@@ -44,12 +44,15 @@ order of unfinished items is mostly arbitrary
 - [x] screen working
   - [x] use screen in asm
 - [x] controls working
-  - [ ] use controls in asm
+  - [x] use controls in asm
+- [ ] COMPLETE DOCS
 - [ ] add simple way to pause cpu
-- [ ] standard prgm folder
-  - [ ] move from ex to prgm
+- [x] standard prgm folder
+  - [x] move from ex to prgm
 - [x] use port 0x00 for system commands
+  - [x] mode setting
   - [x] debug printing
+  - [x] flip waiting
   - [ ] file listing
   - [ ] file loading
 - [ ] "loader" program
