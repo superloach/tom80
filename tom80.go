@@ -2,6 +2,8 @@ package tom80
 
 import "github.com/remogatto/z80"
 
+const DefaultIPF int = 50
+
 // A wrapper for the system components.
 type Tom80 struct {
 	MEM    *MEM
@@ -19,7 +21,7 @@ func MkTom80() *Tom80 {
 	t.IO = MkIO()
 	t.CPU = z80.NewZ80(t.MEM, t.IO)
 	t.CPU.SetPC(ROMStart)
-	t.IPF = 50
+	t.IPF = DefaultIPF
 	t.Paused = false
 	return t
 }

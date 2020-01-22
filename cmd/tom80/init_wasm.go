@@ -5,7 +5,7 @@ package main
 import (
 	"syscall/js"
 
-	tom80 "github.com/superloach/tom80/lib"
+	"github.com/superloach/tom80"
 )
 
 func init() {

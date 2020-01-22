@@ -7,7 +7,7 @@ import (
 	"github.com/hajimehoshi/ebiten"
 	"github.com/hajimehoshi/ebiten/audio"
 
-	tom80 "github.com/superloach/tom80/lib"
+	"github.com/superloach/tom80"
 )
 
 var cons *tom80.Tom80
