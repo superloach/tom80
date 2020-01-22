@@ -2,7 +2,7 @@ package tom80
 
 import "github.com/remogatto/z80"
 
-const DefaultIPF int = 100
+const DefaultIPF int = 10000
 
 // A wrapper for the system components.
 type Tom80 struct {
