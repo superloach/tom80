@@ -55,7 +55,7 @@ func (m *MEM) LoadROM(data []byte) ROMInfo {
 
 // Load a ROM from a file.
 func (m *MEM) LoadROMFile(name string) (ROMInfo, error) {
-	name = path.Join(".", "prgm", name, name + ".bin")
+	name = path.Join(".", "prgm", name, name+".bin")
 
 	f, err := os.Open(name)
 	if err != nil {

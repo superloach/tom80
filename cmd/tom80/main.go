@@ -15,7 +15,7 @@ var auds []*audio.Player
 var info tom80.ROMInfo
 
 func opLoop() {
-	for range time.Tick(time.Second / time.Duration(cons.IPF * 60)) {
+	for range time.Tick(time.Second / time.Duration(cons.IPF*60)) {
 		if !cons.Paused {
 			cons.CPU.DoOpcode()
 		}
@@ -24,14 +24,14 @@ func opLoop() {
 
 func debugTextLoop() {
 	for b := range cons.IO.Debug.Text {
-		fmt.Printf("%q %d %X\n", string([]byte{ b }), b, b)
+		fmt.Printf("%q %d %X\n", string([]byte{b}), b, b)
 	}
 }
 
 func controlsLoop() {
 	con := cons.IO.Controls[0]
 
-	for range time.Tick(time.Second / time.Duration(cons.IPF * 5 * 60)) {
+	for range time.Tick(time.Second / time.Duration(cons.IPF*5*60)) {
 		con.Lock()
 
 		con.Up = ebiten.IsKeyPressed(ebiten.KeyW)

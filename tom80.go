@@ -6,9 +6,9 @@ const DefaultIPF int = 50
 
 // A wrapper for the system components.
 type Tom80 struct {
-	MEM    *MEM
-	IO     *IO
-	CPU    *z80.Z80
+	MEM *MEM
+	IO  *IO
+	CPU *z80.Z80
 
 	IPF    int
 	Paused bool

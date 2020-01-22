@@ -52,6 +52,6 @@ func init() {
 	select {
 	case v := <-ready:
 		info := cons.MEM.LoadROM(v)
-		window.Call("alert", "loaded " + info.Name())
+		window.Call("alert", "loaded "+info.Name())
 	}
 }

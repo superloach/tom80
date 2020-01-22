@@ -13,7 +13,13 @@ func init() {
 	cons = tom80.MkTom80()
 
 	game := flag.String("game", "", "`name` of game to load")
+	version := flag.Bool("version", false, "print version info")
 	flag.Parse()
+
+	if *version {
+		version_info()
+		os.Exit(0)
+	}
 
 	if *game == "" {
 		println("please specify a game to load (-game name)")
