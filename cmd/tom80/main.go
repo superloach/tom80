@@ -14,24 +14,11 @@ var cons *tom80.Tom80
 var auds []*audio.Player
 var info tom80.ROMInfo
 
-func opLoop() {
-	for range time.Tick(time.Second / time.Duration(cons.IPF*60)) {
-		if !cons.Paused {
-			cons.CPU.DoOpcode()
-		}
-	}
-}
-
-func debugTextLoop() {
-	for b := range cons.IO.Debug.Text {
-		fmt.Printf("%q %d %X\n", string([]byte{b}), b, b)
-	}
-}
-
 func controlsLoop() {
 	con := cons.IO.Controls[0]
 
-	for range time.Tick(time.Second / time.Duration(cons.IPF*5*60)) {
+	// update controls twice per frame
+	for range time.Tick(time.Second / time.Duration(60 * 2)) {
 		con.Lock()
 
 		con.Up = ebiten.IsKeyPressed(ebiten.KeyW)
@@ -47,17 +34,16 @@ func controlsLoop() {
 	}
 }
 
-func audsLoop() {
-	for a1 := range cons.IO.Audios[0] {
-		if a1 != 0x00 {
-			auds[0].Rewind()
-			auds[0].Play()
-		}
-	}
-}
-
 func update(screen *ebiten.Image) error {
 	cons.Paused = !ebiten.IsForeground()
+
+	select {
+	case b, ok := <-cons.IO.Debug.Text:
+		if ok {
+			fmt.Printf("%q %d %X\n", string([]byte{b}), b, b)
+		}
+	default:
+	}
 
 	if !ebiten.IsDrawingSkipped() {
 		// dump video memory
@@ -81,16 +67,19 @@ func update(screen *ebiten.Image) error {
 		screen.Set(2, 1, white)
 		screen.Set(0, 2, white)
 		screen.Set(2, 2, white)
+	} else {
+		i := 0
+		for i < cons.IPF {
+			cons.CPU.DoOpcode()
+			i++
+		}
 	}
 
 	return nil
 }
 
 func main() {
-	go opLoop()
-	go debugTextLoop()
 	go controlsLoop()
-	go audsLoop()
 	ebiten.SetRunnableInBackground(true)
 	err := ebiten.Run(update, int(tom80.VIDWidth), int(tom80.VIDHeight), 8, "Tom80")
 	if err != nil {

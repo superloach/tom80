@@ -3,6 +3,7 @@
 package main
 
 import (
+	"strconv"
 	"syscall/js"
 
 	"github.com/superloach/tom80"
@@ -11,15 +12,18 @@ import (
 func init() {
 	cons = tom80.MkTom80()
 
+	version_info()
+
 	window := js.Global()
 	document := window.Get("document")
 	body := document.Get("body")
 
 	ready := make(chan []byte)
 
-	input := document.Call("createElement", "input")
-	input.Set("type", "file")
-	input.Set("onchange", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
+	rom_select := document.Call("createElement", "input")
+	rom_select.Set("type", "file")
+//	rom_select.Set("value", "Choose ROM")
+	rom_select.Set("onchange", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		if len(args) < 1 {
 			return nil
 		}
@@ -47,7 +51,23 @@ func init() {
 		return nil
 	}))
 
-	body.Call("prepend", input)
+	set_ipf := document.Call("createElement", "input")
+	set_ipf.Set("type", "button")
+	set_ipf.Set("value", "Set IPF")
+	set_ipf.Set("onclick", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
+		cur_ipf := strconv.Itoa(cons.IPF)
+		prompt := window.Call("prompt", "enter new IPF (instructions per frame)", cur_ipf).String()
+		new_ipf, err := strconv.Atoi(prompt)
+		if err != nil {
+			window.Call("alert", "could not set IPF to " + prompt)
+		} else {
+			cons.IPF = new_ipf
+		}
+		return nil
+	}))
+
+	body.Call("prepend", set_ipf)
+	body.Call("prepend", rom_select)
 
 	select {
 	case v := <-ready:

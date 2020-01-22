@@ -14,17 +14,21 @@ func init() {
 
 	game := flag.String("game", "", "`name` of game to load")
 	version := flag.Bool("version", false, "print version info")
+	ipf := flag.Int("ipf", tom80.DefaultIPF, "`number` of instructions per frame")
 	flag.Parse()
+
+	if *game == "" {
+		version_info()
+		flag.PrintDefaults()
+		os.Exit(0)
+	}
 
 	if *version {
 		version_info()
 		os.Exit(0)
 	}
 
-	if *game == "" {
-		println("please specify a game to load (-game name)")
-		os.Exit(1)
-	}
+	cons.IPF = *ipf
 
 	info, err := cons.MEM.LoadROMFile(*game)
 	if err != nil {
