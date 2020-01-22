@@ -1,8 +1,7 @@
 package main
 
 import (
-	"flag"
-	"os"
+	"fmt"
 	"time"
 
 	"github.com/hajimehoshi/ebiten"
@@ -15,42 +14,24 @@ var cons *tom80.Tom80
 var auds []*audio.Player
 var info tom80.ROMInfo
 
-func init() {
-	cons = tom80.MkTom80()
-
-	game := flag.String("game", "", "`name` of game to load")
-	flag.Parse()
-
-	if *game == "" {
-		println("please specify a game to load (-game name)")
-		os.Exit(1)
-	}
-
-	info, err := cons.MEM.LoadROMFile(*game)
-	if err != nil {
-		print("unable to load rom ")
-		println(*game)
-		print("error: ")
-		println(err.Error())
-		os.Exit(1)
-	} else {
-		print("loaded ")
-		println(info.Name())
+func opLoop() {
+	for range time.Tick(time.Second / time.Duration(cons.IPF * 60)) {
+		if !cons.Paused {
+			cons.CPU.DoOpcode()
+		}
 	}
 }
 
-func opLoop() {
-	for range time.Tick(time.Second / time.Duration(tom80.Cycles)) {
-		if ebiten.IsForeground() {
-			cons.CPU.DoOpcode()
-		}
+func debugTextLoop() {
+	for b := range cons.IO.Debug.Text {
+		fmt.Printf("%q %d %X\n", string([]byte{ b }), b, b)
 	}
 }
 
 func controlsLoop() {
 	con := cons.IO.Controls[0]
 
-	for {
+	for range time.Tick(time.Second / time.Duration(cons.IPF * 5 * 60)) {
 		con.Lock()
 
 		con.Up = ebiten.IsKeyPressed(ebiten.KeyW)
@@ -76,6 +57,8 @@ func audsLoop() {
 }
 
 func update(screen *ebiten.Image) error {
+	cons.Paused = !ebiten.IsForeground()
+
 	if !ebiten.IsDrawingSkipped() {
 		// dump video memory
 		v := cons.MEM.DumpVID()
@@ -90,20 +73,26 @@ func update(screen *ebiten.Image) error {
 		}
 	}
 
+	if cons.Paused {
+		white := tom80.Pixel(0b11111111)
+		screen.Set(0, 0, white)
+		screen.Set(2, 0, white)
+		screen.Set(0, 1, white)
+		screen.Set(2, 1, white)
+		screen.Set(0, 2, white)
+		screen.Set(2, 2, white)
+	}
+
 	return nil
 }
 
 func main() {
 	go opLoop()
+	go debugTextLoop()
 	go controlsLoop()
 	go audsLoop()
-	err := ebiten.Run(
-		update,
-		int(tom80.VIDWidth),
-		int(tom80.VIDHeight),
-		8,
-		"Tom80",
-	)
+	ebiten.SetRunnableInBackground(true)
+	err := ebiten.Run(update, int(tom80.VIDWidth), int(tom80.VIDHeight), 8, "Tom80")
 	if err != nil {
 		panic(err)
 	}
