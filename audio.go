@@ -6,7 +6,7 @@ const (
 )
 
 // A buffer of audio events, similar concept to MIDI.
-type Audio chan byte
+type Audio chan AudioEvent
 
 // Make an Audio.
 func MkAudio() Audio {
@@ -16,10 +16,10 @@ func MkAudio() Audio {
 
 // Read an audio event from the buffer.
 func (a Audio) Read() byte {
-	return <-a
+	return byte(<-a)
 }
 
 // Write an audio event to the buffer.
 func (a Audio) Write(data byte) {
-	a <- data
+	a <- AudioEvent(data)
 }
