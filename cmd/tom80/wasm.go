@@ -22,7 +22,6 @@ func init() {
 
 	rom_select := document.Call("createElement", "input")
 	rom_select.Set("type", "file")
-//	rom_select.Set("value", "Choose ROM")
 	rom_select.Set("onchange", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		if len(args) < 1 {
 			return nil
@@ -69,9 +68,6 @@ func init() {
 	body.Call("prepend", set_clock)
 	body.Call("prepend", rom_select)
 
-	select {
-	case v := <-ready:
-		info := cons.MEM.LoadROM(v)
-		window.Call("alert", "loaded "+info.Name())
-	}
+	info := cons.MEM.LoadROM(<-ready)
+	window.Call("alert", "loaded "+info.Name())
 }

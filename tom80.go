@@ -2,7 +2,7 @@ package tom80
 
 import "github.com/remogatto/z80"
 
-const DefaultClock int = 120000 // 120 KHz
+const DefaultClock int = 1000000 // 1 MHz
 
 // A wrapper for the system components.
 type Tom80 struct {

@@ -51,13 +51,13 @@ func update(screen *ebiten.Image) error {
 			screen.Set(
 				i%int(tom80.VIDWidth),
 				i/int(tom80.VIDWidth),
-				pixel(b),
+				colors[b],
 			)
 		}
 
 		if cons.Paused {
 			// paused symbol
-			white := pixel(0b11111111)
+			white := colors[0b111111]
 			screen.Set(0, 0, white)
 			screen.Set(2, 0, white)
 			screen.Set(0, 1, white)
