@@ -1,10 +1,10 @@
-package tom80
+package main
 
 // 6-bit color type
-type Pixel byte
+type pixel byte
 
 // Get RBGA values from 6-bit color
-func (p Pixel) RGBA() (r, g, b, a uint32) {
+func (p pixel) RGBA() (r, g, b, a uint32) {
 	q := uint32(p)
 	r = ((q & (0b11 << 4)) >> 4) * 0x5555
 	g = ((q & (0b11 << 2)) >> 2) * 0x5555
