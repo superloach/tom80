@@ -25,16 +25,14 @@ func update(screen *ebiten.Image) error {
 	}
 
 	con := cons.IO.Controls[0]
-	con.Lock()
-	con.Up = ebiten.IsKeyPressed(ebiten.KeyW)
-	con.Left = ebiten.IsKeyPressed(ebiten.KeyA)
-	con.Down = ebiten.IsKeyPressed(ebiten.KeyS)
-	con.Right = ebiten.IsKeyPressed(ebiten.KeyD)
-	con.A = ebiten.IsKeyPressed(ebiten.KeyComma)
-	con.B = ebiten.IsKeyPressed(ebiten.KeyPeriod)
-	con.C = ebiten.IsKeyPressed(ebiten.KeySlash)
-	con.Menu = ebiten.IsKeyPressed(ebiten.KeyEscape)
-	con.Unlock()
+	con.Press(tom80.BtnUp, ebiten.IsKeyPressed(ebiten.KeyW))
+	con.Press(tom80.BtnDown, ebiten.IsKeyPressed(ebiten.KeyS))
+	con.Press(tom80.BtnLeft, ebiten.IsKeyPressed(ebiten.KeyA))
+	con.Press(tom80.BtnRight, ebiten.IsKeyPressed(ebiten.KeyD))
+	con.Press(tom80.BtnA, ebiten.IsKeyPressed(ebiten.KeyComma))
+	con.Press(tom80.BtnB, ebiten.IsKeyPressed(ebiten.KeyPeriod))
+	con.Press(tom80.BtnC, ebiten.IsKeyPressed(ebiten.KeySlash))
+	con.Press(tom80.BtnMenu, ebiten.IsKeyPressed(ebiten.KeyEscape))
 
 	select {
 	case b, ok := <-cons.IO.Debug.Text:
