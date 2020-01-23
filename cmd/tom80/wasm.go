@@ -51,22 +51,22 @@ func init() {
 		return nil
 	}))
 
-	set_ipf := document.Call("createElement", "input")
-	set_ipf.Set("type", "button")
-	set_ipf.Set("value", "Set IPF")
-	set_ipf.Set("onclick", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
-		cur_ipf := strconv.Itoa(cons.IPF)
-		prompt := window.Call("prompt", "enter new IPF (instructions per frame)", cur_ipf).String()
-		new_ipf, err := strconv.Atoi(prompt)
+	set_clock := document.Call("createElement", "input")
+	set_clock.Set("type", "button")
+	set_clock.Set("value", "Set Clock Speed")
+	set_clock.Set("onclick", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
+		cur_clock := strconv.Itoa(cons.Clock)
+		prompt := window.Call("prompt", "enter new clock speed", cur_clock).String()
+		new_clock, err := strconv.Atoi(prompt)
 		if err != nil {
-			window.Call("alert", "could not set IPF to " + prompt)
+			window.Call("alert", "could not set clock speed to " + prompt)
 		} else {
-			cons.IPF = new_ipf
+			cons.Clock = new_clock
 		}
 		return nil
 	}))
 
-	body.Call("prepend", set_ipf)
+	body.Call("prepend", set_clock)
 	body.Call("prepend", rom_select)
 
 	select {

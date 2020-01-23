@@ -69,7 +69,7 @@ func update(screen *ebiten.Image) error {
 		screen.Set(2, 2, white)
 	} else {
 		i := 0
-		for i < cons.IPF {
+		for i < cons.Clock / 60 {
 			cons.CPU.DoOpcode()
 			i++
 		}

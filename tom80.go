@@ -2,7 +2,7 @@ package tom80
 
 import "github.com/remogatto/z80"
 
-const DefaultIPF int = 10000
+const DefaultClock int = 120000 // 120 KHz
 
 // A wrapper for the system components.
 type Tom80 struct {
@@ -10,7 +10,7 @@ type Tom80 struct {
 	IO  *IO
 	CPU *z80.Z80
 
-	IPF    int
+	Clock  int
 	Paused bool
 }
 
@@ -21,7 +21,7 @@ func MkTom80() *Tom80 {
 	t.IO = MkIO()
 	t.CPU = z80.NewZ80(t.MEM, t.IO)
 	t.CPU.SetPC(ROMStart)
-	t.IPF = DefaultIPF
+	t.Clock = DefaultClock
 	t.Paused = false
 	return t
 }

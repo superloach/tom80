@@ -14,7 +14,7 @@ func init() {
 
 	game := flag.String("game", "", "`name` of game to load")
 	version := flag.Bool("version", false, "print version info")
-	ipf := flag.Int("ipf", tom80.DefaultIPF, "`number` of instructions per frame")
+	clock := flag.Int("clock", tom80.DefaultClock, "clock `speed`")
 	flag.Parse()
 
 	if *game == "" {
@@ -28,7 +28,7 @@ func init() {
 		os.Exit(0)
 	}
 
-	cons.IPF = *ipf
+	cons.Clock = *clock
 
 	info, err := cons.MEM.LoadROMFile(*game)
 	if err != nil {
