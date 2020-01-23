@@ -57,6 +57,9 @@ order of unfinished items is mostly arbitrary
   - [ ] debug print mode
   - [ ] file list mode
   - [ ] file load mode
+- [ ] OPTIMISE
+  - [x] use byte alias for controls
+  - [ ] use lookup table for pixels (generated?)
 - [ ] "loader" program
   - loaded into rom by default
   - uses file listing/loading
