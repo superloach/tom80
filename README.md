@@ -59,7 +59,7 @@ order of unfinished items is mostly arbitrary
   - [ ] file load mode
 - [ ] OPTIMISE
   - [x] use byte alias for controls
-  - [ ] use lookup table for pixels (generated?)
+  - [x] use lookup table for pixels (filled at init)
 - [ ] "loader" program
   - loaded into rom by default
   - uses file listing/loading
