@@ -20,22 +20,22 @@ func MkMEM() *MEM {
 
 // implements z80.MemoryAccessor
 func (m *MEM) ReadByte(address uint16) byte {
-	return m.ReadByteInternal(address)
+	return m.ReadByteInternal(address % MEMSize)
 }
 
 // implements z80.MemoryAccessor
 func (m *MEM) ReadByteInternal(address uint16) byte {
-	return m.data[address]
+	return m.data[address % MEMSize]
 }
 
 // implements z80.MemoryAccessor
 func (m *MEM) WriteByte(address uint16, value byte) {
-	m.WriteByteInternal(address, value)
+	m.WriteByteInternal(address % MEMSize, value)
 }
 
 // implements z80.MemoryAccessor
 func (m *MEM) WriteByteInternal(address uint16, value byte) {
-	m.data[address] = value
+	m.data[address % MEMSize] = value
 }
 
 // implements z80.MemoryAccessor
