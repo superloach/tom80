@@ -79,7 +79,7 @@ func (m *MEM) GetROMInfo() ROMInfo {
 	bs := []byte{}
 	for i := uint16(0); i < VIDEnd; i++ {
 		b := m.ReadByte(i)
-		if b == 0x00 {
+		if b == 0x00 || b == '\n' {
 			str := string(bs)
 			kv := strings.Split(str, ":")
 			if len(kv) == 0 {

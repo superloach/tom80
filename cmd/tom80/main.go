@@ -1,19 +1,32 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/hajimehoshi/ebiten"
-	"github.com/hajimehoshi/ebiten/audio"
 
 	"github.com/superloach/tom80"
 )
 
-var cons *tom80.Tom80
-var auds []*audio.Player
-var info tom80.ROMInfo
+var cons *tom80.Tom80 = tom80.MkTom80()
+
+func debugLoop() {
+	for b := range cons.IO.Debug.Text {
+		print(string([]byte{b}))
+	}
+}
+
+func audLoop(channel int) {
+	auds[channel].Player.Play()
+	for a := range cons.IO.Audios[channel] {
+		println("audio event", a)
+		auds[channel].Sampler.Frequency = notes[a.Pitch()]
+		auds[channel].Sampler.Volume = volumes[a.Volume()]
+	}
+}
 
 func update(screen *ebiten.Image) error {
+	cons.CPU.Interrupt()
+	println(cons.CPU.SP)
+
 	fg := ebiten.IsForeground()
 
 	if fg {
@@ -33,14 +46,6 @@ func update(screen *ebiten.Image) error {
 	con.Press(tom80.BtnB, ebiten.IsKeyPressed(ebiten.KeyPeriod))
 	con.Press(tom80.BtnC, ebiten.IsKeyPressed(ebiten.KeySlash))
 	con.Press(tom80.BtnMenu, ebiten.IsKeyPressed(ebiten.KeyEscape))
-
-	select {
-	case b, ok := <-cons.IO.Debug.Text:
-		if ok {
-			fmt.Printf("%q %d %X\n", string([]byte{b}), b, b)
-		}
-	default:
-	}
 
 	if !ebiten.IsDrawingSkipped() {
 		// dump video memory
@@ -71,6 +76,8 @@ func update(screen *ebiten.Image) error {
 }
 
 func main() {
+	go debugLoop()
+	go audLoop(0)
 	ebiten.SetRunnableInBackground(true)
 	err := ebiten.Run(update, int(tom80.VIDWidth), int(tom80.VIDHeight), 6, "Tom80")
 	if err != nil {

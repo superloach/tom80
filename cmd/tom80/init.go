@@ -9,9 +9,9 @@ import (
 	"github.com/superloach/tom80"
 )
 
-func init() {
-	cons = tom80.MkTom80()
+var info tom80.ROMInfo
 
+func init() {
 	game := flag.String("game", "", "`name` of game to load")
 	version := flag.Bool("version", false, "print version info")
 	clock := flag.Int("clock", tom80.DefaultClock, "clock `speed`")

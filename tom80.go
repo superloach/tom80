@@ -11,6 +11,7 @@ type Tom80 struct {
 	CPU *z80.Z80
 
 	Clock  int
+	Tick   int
 	Paused bool
 }
 
@@ -22,6 +23,7 @@ func MkTom80() *Tom80 {
 	t.CPU = z80.NewZ80(t.MEM, t.IO)
 	t.CPU.SetPC(ROMStart)
 	t.Clock = DefaultClock
+	t.Tick = 0
 	t.Paused = false
 	return t
 }

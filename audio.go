@@ -2,7 +2,7 @@ package tom80
 
 const (
 	AudioCount uint16 = 8
-	AudioBuf   uint16 = 8
+	AudioBuf   uint16 = 64
 )
 
 // A buffer of audio events, similar concept to MIDI.

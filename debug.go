@@ -1,7 +1,7 @@
 package tom80
 
 const (
-	DebugTextBuf int = 8
+	DebugTextBuf int = 64
 )
 
 // Abstraction of debug information.

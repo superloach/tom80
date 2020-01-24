@@ -65,8 +65,11 @@ order of unfinished items is mostly arbitrary
   - uses file listing/loading
 - [ ] audio working
   - [ ] gather 16 sounds
-  - [x] use ports 0x09 - 0x18
-  - [ ] define event type (`0bVVVPPPPP`)
+  - [x] use ports 9 - 24 (0x09 - 0x18)
+  - [x] define event type (byte alias)
+  - [ ] define bit values (`0bVVPPPPPP`)
+    - VV: volume, 0-3 (25, 50, 75, 100)
+    - PPPPP: pitch 0-63 (C2 - F7)
   - [ ] use audio in asm
 - [ ] standard library for asm
   - [ ] simplify control keys

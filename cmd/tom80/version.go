@@ -1,12 +1,12 @@
 package main
 
 import (
-	"runtime/debug"
+	rt_debug "runtime/debug"
 	"strings"
 )
 
 func version_info() {
-	info, ok := debug.ReadBuildInfo()
+	info, ok := rt_debug.ReadBuildInfo()
 	if ok {
 		println("tom80 version: " + info.Main.Version)
 		for _, dep := range info.Deps {

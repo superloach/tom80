@@ -9,9 +9,9 @@ import (
 	"github.com/superloach/tom80"
 )
 
-func init() {
-	cons = tom80.MkTom80()
+var info tom80.ROMInfo
 
+func init() {
 	version_info()
 
 	window := js.Global()
@@ -68,6 +68,6 @@ func init() {
 	body.Call("prepend", set_clock)
 	body.Call("prepend", rom_select)
 
-	info := cons.MEM.LoadROM(<-ready)
+	info = cons.MEM.LoadROM(<-ready)
 	window.Call("alert", "loaded "+info.Name())
 }

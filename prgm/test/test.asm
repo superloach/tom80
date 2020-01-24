@@ -27,10 +27,14 @@ loop:
 
 upset:
 	v_poke	2,	1,	c_red
+	LD	A,	10000000B
+	OUT	(9),	A
 	JP	updone
 
 upunset:
 	v_poke	2,	1,	c_black
+	LD	A,	00000000B
+	OUT	(9),	A
 	JP	updone
 
 downset:
