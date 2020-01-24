@@ -27,7 +27,7 @@ loop:
 
 upset:
 	v_poke	2,	1,	c_red
-	LD	A,	10000000B
+	LD	A,	10100000B
 	OUT	(9),	A
 	JP	updone
 

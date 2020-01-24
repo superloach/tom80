@@ -64,13 +64,22 @@ order of unfinished items is mostly arbitrary
   - loaded into rom by default
   - uses file listing/loading
 - [ ] audio working
-  - [ ] gather 16 sounds
-  - [x] use ports 9 - 24 (0x09 - 0x18)
+  - [x] sample generation library ([superloach/sampler](https://github.com/superloach/sampler))
+  - [ ] make 8 sounds
+    - [x] sine 1
+    - [ ] sine 2
+    - [ ] sine 3
+    - [ ] square 1
+    - [ ] square 2
+    - [ ] saw 1
+    - [ ] saw 2
+    - [ ] noise
+  - [x] use ports 9 - 16 (0x09 - 0x10)
   - [x] define event type (byte alias)
-  - [ ] define bit values (`0bVVPPPPPP`)
+  - [x] define bit values (`0bVVPPPPPP`)
     - VV: volume, 0-3 (25, 50, 75, 100)
     - PPPPP: pitch 0-63 (C2 - F7)
-  - [ ] use audio in asm
+  - [x] use audio in asm
 - [ ] standard library for asm
   - [ ] simplify control keys
   - [ ] shape drawing macros
