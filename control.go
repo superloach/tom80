@@ -5,7 +5,7 @@ const (
 )
 
 const (
-	BtnUp	int = (7-iota)
+	BtnUp int = (7 - iota)
 	BtnDown
 	BtnLeft
 	BtnRight
@@ -35,12 +35,12 @@ func (c *Control) Write(data byte) {
 
 // Check if a button is pressed
 func (c *Control) Pressed(btn int) bool {
-	return *c&1<<btn>0
+	return *c&1<<btn > 0
 }
 
 // Set a button's state
 func (c *Control) Press(btn int, state bool) {
-	mask := Control(1<<btn)
+	mask := Control(1 << btn)
 	if state {
 		*c |= mask
 	} else {

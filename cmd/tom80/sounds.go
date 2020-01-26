@@ -1,8 +1,8 @@
 package main
 
 // hold 64 cached pitch values
-var notes [1<<6]float64
-var volumes [1<<2]float64
+var notes [1 << 6]float64
+var volumes [1 << 2]float64
 
 // fill notes and volumes tables
 func init() {

@@ -31,7 +31,7 @@ func update(screen *ebiten.Image) error {
 
 	if fg {
 		i := 0
-		for i < cons.Clock / 60 {
+		for i < cons.Clock/60 {
 			cons.CPU.DoOpcode()
 			i++
 		}

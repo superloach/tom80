@@ -58,7 +58,7 @@ func init() {
 		prompt := window.Call("prompt", "enter new clock speed", cur_clock).String()
 		new_clock, err := strconv.Atoi(prompt)
 		if err != nil {
-			window.Call("alert", "could not set clock speed to " + prompt)
+			window.Call("alert", "could not set clock speed to "+prompt)
 		} else {
 			cons.Clock = new_clock
 		}

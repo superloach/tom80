@@ -3,7 +3,7 @@ package main
 import "github.com/superloach/tom80"
 
 // hold 64 cached color values
-var colors [1<<6]cacheRGBA
+var colors [1 << 6]cacheRGBA
 
 // type for cached color values
 type cacheRGBA [4]uint32
