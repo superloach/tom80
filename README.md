@@ -5,7 +5,9 @@ a Z80-based fantasy console.
 
 ## running emulator
 ```bash
-go run -game <name>
+go run ./cmd/tom80 -game <name>
+# or, if you've `go install`ed
+tom80 -game <name>
 ```
 where `name` is the name of a program (compiled program should be at `prgm/<name>/<name>.bin`)
 

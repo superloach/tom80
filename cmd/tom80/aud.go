@@ -17,6 +17,7 @@ var sampleRate int = 44100
 
 func init() {
 	var err error
+
 	ctx := audio.CurrentContext()
 	if ctx == nil {
 		ctx, err = audio.NewContext(sampleRate)
@@ -25,13 +26,32 @@ func init() {
 		}
 	}
 	sampleRate = ctx.SampleRate()
-	sine := &sampler.Sampler{
-		Rate: sampleRate,
-		Func: sampler.Sine,
+
+	sn := 0
+	for sn < 3 {
+		sine := &sampler.Sampler{Rate: sampleRate, Func: sampler.Sine}
+		player, _ := audio.NewPlayer(ctx, sine)
+		auds[sn] = Aud{sine, player}
+		sn++
 	}
-	player, err := audio.NewPlayer(ctx, sine)
-	if err != nil {
-		panic(err)
+
+	qn := 0
+	for qn < 2 {
+		square := &sampler.Sampler{Rate: sampleRate, Func: sampler.Square}
+		player, _ := audio.NewPlayer(ctx, square)
+		auds[3+qn] = Aud{square, player}
+		qn++
 	}
-	auds[0] = Aud{sine, player}
+
+	wn := 0
+	for wn < 2 {
+		saw := &sampler.Sampler{Rate: sampleRate, Func: sampler.Saw}
+		player, _ := audio.NewPlayer(ctx, saw)
+		auds[5+wn] = Aud{saw, player}
+		wn++
+	}
+
+	noise := &sampler.Sampler{Rate: sampleRate, Func: sampler.Noise}
+	player, _ := audio.NewPlayer(ctx, noise)
+	auds[7] = Aud{noise, player}
 }
