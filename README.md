@@ -50,10 +50,9 @@ order of unfinished items is mostly arbitrary
 - [x] use flag
 - [x] add simple way to pause cpu ([hajimehoshi/ebiten#1037](https://github.com/hajimehoshi/ebiten/issues/1037))
 - [x] folder layout
-  - [x] move programs from /ex to /prgm
-  - [x] move system from / to /lib
-  - [x] move frontend from /dist/ebiten to /
-  - [x] use name in /prgm rather than path
+  - [x] backend in /
+  - [x] frontend in /cmd/tom80
+  - [x] programs in /prgm
 - [x] use port 0x00 for system commands
   - [x] mode setting
   - [ ] debug print mode
@@ -65,18 +64,17 @@ order of unfinished items is mostly arbitrary
 - [ ] "loader" program
   - loaded into rom by default
   - uses file listing/loading
-- [ ] audio working
+- [x] audio working
   - [x] sample generation library ([superloach/sampler](https://github.com/superloach/sampler))
-  - [ ] make 8 sounds
-    - [x] sine 1
-    - [ ] sine 2
-    - [ ] sine 3
-    - [ ] square 1
-    - [ ] square 2
-    - [ ] saw 1
-    - [ ] saw 2
-    - [ ] noise
-  - [x] use ports 9 - 16 (0x09 - 0x10)
+  - [x] make 8 sounds
+    - [x] sine 1 (port 9)
+    - [x] sine 2 (port 10)
+    - [x] sine 3 (port 11)
+    - [x] square 1 (port 12)
+    - [x] square 2 (port 13)
+    - [x] saw 1 (port 14)
+    - [x] saw 2 (port 15)
+    - [x] noise (port 16)
   - [x] define event type (byte alias)
   - [x] define bit values (`0bVVPPPPPP`)
     - VV: volume, 0-3 (25, 50, 75, 100)

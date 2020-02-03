@@ -27,7 +27,7 @@ loop:
 
 upset:
 	v_poke	2,	1,	c_red
-	LD	A,	10100000B
+	LD	A,	10010000B
 	OUT	(9),	A
 	JP	updone
 
@@ -39,26 +39,38 @@ upunset:
 
 downset:
 	v_poke	2,	3,	c_red
+	LD	A,	10010000B
+	OUT	(12),	A
 	JP	downdone
 
 downunset:
 	v_poke	2,	3,	c_black
+	LD	A,	00000000B
+	OUT	(12),	A
 	JP	downdone
 
 leftset:
 	v_poke	1,	2,	c_red
+	LD	A,	10010000B
+	OUT	(14),	A
 	JP	leftdone
 
 leftunset:
 	v_poke	1,	2,	c_black
+	LD	A,	00000000B
+	OUT	(14),	A
 	JP	leftdone
 
 rightset:
 	v_poke	3,	2,	c_red
+	LD	A,	10010000B
+	OUT	(16),	A
 	JP	rightdone
 
 rightunset:
 	v_poke	3,	2,	c_black
+	LD	A,	00000000B
+	OUT	(16),	A
 	JP	rightdone
 
 v_poke:	.macro x, y, c

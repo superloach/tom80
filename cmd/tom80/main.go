@@ -15,18 +15,16 @@ func debugLoop() {
 }
 
 func audLoop(channel int) {
-	auds[channel].Player.Play()
+	aud := auds[channel]
+	aud.Player.Play()
 	for a := range cons.IO.Audios[channel] {
-		println("audio event", a)
-		auds[channel].Sampler.Frequency = notes[a.Pitch()]
-		auds[channel].Sampler.Volume = volumes[a.Volume()]
+		p, v := a.Pitch(), a.Volume()
+		aud.Sampler.Frequency = notes[p]
+		aud.Sampler.Volume = volumes[v]
 	}
 }
 
 func update(screen *ebiten.Image) error {
-	cons.CPU.Interrupt()
-	println(cons.CPU.SP)
-
 	fg := ebiten.IsForeground()
 
 	if fg {
@@ -77,7 +75,9 @@ func update(screen *ebiten.Image) error {
 
 func main() {
 	go debugLoop()
-	go audLoop(0)
+	for i := 0; i < int(tom80.AudioCount); i++ {
+		go audLoop(i)
+	}
 	ebiten.SetRunnableInBackground(true)
 	err := ebiten.Run(update, int(tom80.VIDWidth), int(tom80.VIDHeight), 6, "Tom80")
 	if err != nil {
